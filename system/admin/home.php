@@ -6,7 +6,7 @@ include('system/config/conn.php');
 //panggil file header.php untuk menghubungkan konten bagian atas
 include('system/inc/header.php');
 //memberi judul halaman
-echo '<title>Admin - MARI-ABSEN</title>';
+<?= '<title>Admin - MARI-ABSEN</title>' >?;
 //panggil file css.php untuk desain atau tema
 include('system/inc/css.php');
 //panggil file navi-admin.php untuk menghubungkan navigasi admin ke konten
@@ -21,7 +21,7 @@ include('system/inc/nav-admin.php');
 					<?php 
 					//kode php ini kita gunakan untuk menampilkan pesan Selamat datang user!
 					if (!empty($_GET['sign-in']) && $_GET['sign-in'] == 'succes') {
-					echo '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert">
+					<?= '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert"> >?
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 					</button> Assalamualaikum <strong>'.$_SESSION['nama'].' ! </strong> Selamat Datang Di MARI-ABSEN </div>';
@@ -82,15 +82,15 @@ include('system/inc/nav-admin.php');
 								{
 								?>
 								<tr>
-								<td><?php echo $data['nama']; ?></td>
-								<td class="color-blue-grey-lighter" align="center"><?php echo $data['level']; ?></td>
-								<td align="center"><?php echo $data['user']; ?></td>
+								<td><?php <?= $data['nama'] >?; ?></td>
+								<td class="color-blue-grey-lighter" align="center"><?php <?= $data['level'] >?; ?></td>
+								<td align="center"><?php <?= $data['user'] >?; ?></td>
 								<td class="color-blue-grey-lighter" align="center">******</td>
 								<td align="center">
 									<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-										<a href="page.php?edit-user&id=<?php echo $data['id_user'];?>" class="btn btn-default font-icon font-icon-pencil" data-toggle="tooltip" data-placement="top" title="Edit?"></a>
-										<a href="page.php?detail-user&id=<?php echo $data['id_user'];?>" class="btn btn-default font-icon font-icon-eye" data-toggle="tooltip" data-placement="top" title="Detail?"></a>
-										<a href="page.php?delete-user&id=<?php echo $data['id_user'];?>" onClick="return confirm('Yakin akan menghapus data ini?');" class="btn btn-default font-icon font-icon-trash" data-toggle="tooltip" data-placement="top" title="Hapus?"></a>
+										<a href="page.php?edit-user&id=<?php <?= $data['id_user'] >?;?>" class="btn btn-default font-icon font-icon-pencil" data-toggle="tooltip" data-placement="top" title="Edit?"></a>
+										<a href="page.php?detail-user&id=<?php <?= $data['id_user'] >?;?>" class="btn btn-default font-icon font-icon-eye" data-toggle="tooltip" data-placement="top" title="Detail?"></a>
+										<a href="page.php?delete-user&id=<?php <?= $data['id_user'] >?;?>" onClick="return confirm('Yakin akan menghapus data ini?');" class="btn btn-default font-icon font-icon-trash" data-toggle="tooltip" data-placement="top" title="Hapus?"></a>
 										<a href="page.php?tambah-user" class="btn btn-default font-icon font-icon-plus" data-toggle="tooltip" data-placement="top" title="Tambah?"></a>
 									</div>
 								</td>
@@ -113,8 +113,8 @@ include('system/inc/nav-admin.php');
 						?>
 						<br>
   						<span class="label label-success">Info! </span> Total  
-						<span class="label label-primary">User : <?php echo $jml_data; ?> </span>
-  						<span class="label label-primary">Halaman : <?php echo $JmlHalaman; ?> </span>
+						<span class="label label-primary">User : <?php <?= $jml_data >?; ?> </span>
+  						<span class="label label-primary">Halaman : <?php <?= $JmlHalaman >?; ?> </span>
 					</div>
 					
 					<div class="col-md-6" align="right">
@@ -168,7 +168,7 @@ include('system/inc/nav-admin.php');
 								}
  
 								//Tampilkan navigasi
-								echo $prev . $nmr . $next;
+								<?= $prev . $nmr . $next >?;
 								?>
 							</ul>
 						</nav>
@@ -225,12 +225,12 @@ include('system/inc/nav-admin.php');
 								{
 								?>
 								<tr>
-								<td><center><?php echo $data['nm_kelas']; ?></center></td>
+								<td><center><?php <?= $data['nm_kelas'] >?; ?></center></td>
 								<td align="center">
 									<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-										<a href="page.php?edit-kelas&id=<?php echo $data['id_kelas'];?>" class="btn btn-default font-icon font-icon-pencil" data-toggle="tooltip" data-placement="top" title="Edit?"></a>
-										<a href="page.php?detail-kelas&id=<?php echo $data['id_kelas'];?>" class="btn btn-default font-icon font-icon-eye" data-toggle="tooltip" data-placement="top" title="Detail?"></a>
-										<a href="page.php?delete-kelas&id=<?php echo $data['id_kelas'];?>" onClick="return confirm('Yakin akan menghapus data ini?');" class="btn btn-default font-icon font-icon-trash" data-toggle="tooltip" data-placement="top" title="Hapus?"></a>
+										<a href="page.php?edit-kelas&id=<?php <?= $data['id_kelas'] >?;?>" class="btn btn-default font-icon font-icon-pencil" data-toggle="tooltip" data-placement="top" title="Edit?"></a>
+										<a href="page.php?detail-kelas&id=<?php <?= $data['id_kelas'] >?;?>" class="btn btn-default font-icon font-icon-eye" data-toggle="tooltip" data-placement="top" title="Detail?"></a>
+										<a href="page.php?delete-kelas&id=<?php <?= $data['id_kelas'] >?;?>" onClick="return confirm('Yakin akan menghapus data ini?');" class="btn btn-default font-icon font-icon-trash" data-toggle="tooltip" data-placement="top" title="Hapus?"></a>
 										<a href="page.php?tambah-kelas" class="btn btn-default font-icon font-icon-plus" data-toggle="tooltip" data-placement="top" title="Tambah?"></a>
 									</div>
 								</td>
@@ -253,8 +253,8 @@ include('system/inc/nav-admin.php');
 						?>
 						<br>
   						<span class="label label-success">Info! </span> Total  
-						<span class="label label-primary">Kelas : <?php echo $jml_data; ?> </span>
-  						<span class="label label-primary">Halaman : <?php echo $JmlHalaman; ?> </span>
+						<span class="label label-primary">Kelas : <?php <?= $jml_data >?; ?> </span>
+  						<span class="label label-primary">Halaman : <?php <?= $JmlHalaman >?; ?> </span>
 					</div>
 					
 					<div class="col-md-6" align="right">
@@ -308,7 +308,7 @@ include('system/inc/nav-admin.php');
 								}
  
 								//Tampilkan navigasi
-								echo $prev . $nmr . $next;
+								<?= $prev . $nmr . $next >?;
 								?>
 							</ul>
 						</nav>
@@ -368,15 +368,15 @@ include('system/inc/nav-admin.php');
 								{
 								?>
 								<tr>
-								<td><?php echo $data['nama']; ?></td>
-								<td class="color-blue-grey-lighter"><?php echo $data['nis']; ?></td>
-								<td align="center"><?php echo $data['nm_kelas']; ?></td>
-								<td class="color-blue-grey-lighter" align="center"><?php echo $data['jns_kel']; ?></td>
+								<td><?php <?= $data['nama'] >?; ?></td>
+								<td class="color-blue-grey-lighter"><?php <?= $data['nis'] >?; ?></td>
+								<td align="center"><?php <?= $data['nm_kelas'] >?; ?></td>
+								<td class="color-blue-grey-lighter" align="center"><?php <?= $data['jns_kel'] >?; ?></td>
 								<td align="center">
 									<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-										<a href="page.php?edit-siswa&id=<?php echo $data['id_siswa'];?>" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Edit?"><i class="font-icon font-icon-pencil"></i> </a>
-										<a href="page.php?detail-siswa&id=<?php echo $data['id_siswa'];?>" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Detail?"><i class="font-icon font-icon-eye"></i> </a>
-										<a href="page.php?delete-siswa&id=<?php echo $data['id_siswa'];?>" onClick="return confirm('Yakin akan menghapus data ini?');" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Hapus?"><i class="font-icon font-icon-trash"></i> </a>
+										<a href="page.php?edit-siswa&id=<?php <?= $data['id_siswa'] >?;?>" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Edit?"><i class="font-icon font-icon-pencil"></i> </a>
+										<a href="page.php?detail-siswa&id=<?php <?= $data['id_siswa'] >?;?>" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Detail?"><i class="font-icon font-icon-eye"></i> </a>
+										<a href="page.php?delete-siswa&id=<?php <?= $data['id_siswa'] >?;?>" onClick="return confirm('Yakin akan menghapus data ini?');" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Hapus?"><i class="font-icon font-icon-trash"></i> </a>
 										<a href="page.php?tambah-siswa" class="btn btn-default font-icon font-icon-plus" data-toggle="tooltip" data-placement="top" title="Tambah?"></a>
 									</div>
 								</td>
@@ -399,8 +399,8 @@ include('system/inc/nav-admin.php');
 						?>
 						<br>
   						<span class="label label-success">Info! </span> Total  
-						<span class="label label-primary">Siswa : <?php echo $jml_data; ?> </span>
-  						<span class="label label-primary">Halaman : <?php echo $JmlHalaman; ?> </span>
+						<span class="label label-primary">Siswa : <?php <?= $jml_data >?; ?> </span>
+  						<span class="label label-primary">Halaman : <?php <?= $JmlHalaman >?; ?> </span>
 					</div>
 					
 					<div class="col-md-6" align="right">
@@ -454,7 +454,7 @@ include('system/inc/nav-admin.php');
 								}
  
 								//Tampilkan navigasi
-								echo $prev . $nmr . $next;
+								<?= $prev . $nmr . $next >?;
 								?>
 							</ul>
 						</nav>
