@@ -10,7 +10,7 @@ if(isset(FILTER_INPUT(INPUT_POST, 'info'))){
 	$query=mysql_query("SELECT nis FROM siswa WHERE nm_kelas='$nm_kelas' ORDER BY nis ASC");
 	while($data=mysql_fetch_array($query)){
 		mysql_query("DELETE FROM absensi_sholat WHERE nis='$data[nis]' AND tanggal='$tanggal'");
-		if($_POST['absen-'.$data['nis']] == 'sholat'){
+		if(FILTER_INPUT(INPUT_POST, ''absen-'.$data['nis']') == 'sholat'){
 			//parameter
 			$keterangan = $_POST['keterangan-'.$data['nis']];
 			$sholat=mysql_query("INSERT INTO absensi_sholat(nis,nm_kelas,ket,keterangan,tanggal,info) VALUES ('$data[nis]','$nm_kelas','S','$keterangan','$tanggal','succes')",$connect);
