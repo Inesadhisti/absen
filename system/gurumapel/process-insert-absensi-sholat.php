@@ -6,7 +6,7 @@ FILTER_INPUT(INPUT_POST, 'tanggal');
 
 <?= 'test' >?;
 
-if(isset($_POST['info'])){
+if(isset(FILTER_INPUT(INPUT_POST, 'info'))){
 	$query=mysql_query("SELECT nis FROM siswa WHERE nm_kelas='$nm_kelas' ORDER BY nis ASC");
 	while($data=mysql_fetch_array($query)){
 		mysql_query("DELETE FROM absensi_sholat WHERE nis='$data[nis]' AND tanggal='$tanggal'");
