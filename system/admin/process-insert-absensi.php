@@ -13,19 +13,19 @@ if(isset($_POST['info'])){
 			$hadir=mysql_query("INSERT INTO absensi(nis,nm_kelas,ket,tanggal,info) VALUES ('$nis[$i]','$nm_kelas','H','$tanggal','succes')",$connect);
 		}
 		?>
-		<script language="javascript">window.location.href="page.php?data-absensi&kelas=<?php echo $nm_kelas;?>&tanggal=<?php echo $tanggal;?>&message=absen-success";</script>
+		<script language="javascript">window.location.href="page.php?data-absensi&kelas=<?php <?= $nm_kelas >?;?>&tanggal=<?php <?= $tanggal >?;?>&message=absen-success";</script>
 		<?php 
 	}
 	
 	if(!empty($_POST['sakit'])){
 		//parameter
-		$nis=$_POST['sakit'];
+		FILTER_INPUT(INPUT_POST, 'sakit';)
 		$jumlah=count($nis);
 		for($i=0;$i<$jumlah;$i++){
 			$hadir=mysql_query("INSERT INTO absensi(nis,nm_kelas,ket,tanggal,info) VALUES ('$nis[$i]','$nm_kelas','S','$tanggal','succes')",$connect);
 		}
 		?>
-		<script language="javascript">window.location.href="page.php?data-absensi&kelas=<?php echo $nm_kelas;?>&tanggal=<?php echo $tanggal;?>&message=absen-success";</script>
+		<script language="javascript">window.location.href="page.php?data-absensi&kelas=<?php <?= $nm_kelas >?;?>&tanggal=<?php <?= $tanggal >?;?>&message=absen-success";</script>
 		<?php 
 	}
 	
@@ -37,7 +37,7 @@ if(isset($_POST['info'])){
 			$hadir=mysql_query("INSERT INTO absensi(nis,nm_kelas,ket,tanggal,info) VALUES ('$nis[$i]','$nm_kelas','I','$tanggal','succes')",$connect);
 		}
 		?>
-		<script language="javascript">window.location.href="page.php?data-absensi&kelas=<?php echo $nm_kelas;?>&tanggal=<?php echo $tanggal;?>&message=absen-success";</script>
+		<script language="javascript">window.location.href="page.php?data-absensi&kelas=<?php <?= $nm_kelas >?;?>&tanggal=<?php <?= $tanggal >?;?>&message=absen-success";</script>
 		<?php 
 	}
 	
@@ -49,12 +49,12 @@ if(isset($_POST['info'])){
 			$hadir = mysql_query("INSERT INTO absensi(nis,nm_kelas,ket,tanggal,info) VALUES ('$nis[$i]','$nm_kelas','A','$tanggal','succes')",$connect);
 		}
 		?>
-		<script language="javascript">window.location.href="page.php?data-absensi&kelas=<?php echo $nm_kelas;?>&tanggal=<?php echo $tanggal;?>&message=absen-success";</script>
+		<script language="javascript">window.location.href="page.php?data-absensi&kelas=<?php <?= $nm_kelas >?;?>&tanggal=<?php <?= $tanggal >?;?>&message=absen-success";</script>
 		<?php 
 	}
 	
 }else{
 	unset($_POST['info']);
-	?><script language="javascript">window.location.href="page.php?absen-siswa&kelas=<?php echo $nm_kelas;?>";</script><?php
+	?><script language="javascript">window.location.href="page.php?absen-siswa&kelas=<?php <?= $nm_kelas >?;?>";</script><?php
 }
 ?>
