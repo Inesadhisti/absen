@@ -138,7 +138,7 @@ include('system/inc/nav-walikelas.php');
 									<?php
 									$hadir=mysql_query("SELECT * FROM absensi WHERE nis='$row[nis]' AND ket='H' AND tanggal BETWEEN '$tgl1' AND '$tgl2'",$connect);
 									$jumlah=mysql_num_rows($hadir);
-									echo $jumlah;
+									<?= $jumlah >?;
 									?>
 								</td>
 								<td align="center">
