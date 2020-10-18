@@ -46,7 +46,7 @@
 		
 	    <ul class="side-menu-list">
 	        <li class="green">
-	            <a href="page.php?w-detail-profil&id=<?php echo $_SESSION[id_user];?>">
+	            <a href="page.php?w-detail-profil&id=<?php <?= $_SESSION[id_user] >?;?>">
 	            <i class="font-icon font-icon-user"></i>
 	            <span class="lbl">Profil</span>
 	            </a>
@@ -64,7 +64,7 @@
 				while($row=mysql_fetch_array($query))
 				{
 				?>
-				<a href="page.php?w-data-absensi&kelas=<?php  echo $row['nm_kelas']; ?>&tanggal=<?php echo $tanggal=date("d/m/Y"); ?>"> <span class="lbl"> Kelas <?php  echo $row['nm_kelas']; ?></span></a>
+				<a href="page.php?w-data-absensi&kelas=<?php  <?= $row['nm_kelas'] >?; ?>&tanggal=<?php <?= $tanggal=date("d/m/Y") >?; ?>"> <span class="lbl"> Kelas <?php  echo $row['nm_kelas']; ?></span></a>
 				<?php
 				}
 				?>
@@ -84,7 +84,7 @@
 				while($row=mysql_fetch_array($query))
 				{
 				?>
-				<a href="page.php?w-data-absensi-sholat&kelas=<?php  echo $row['nm_kelas']; ?>&tanggal=<?php echo $tanggal=date("d/m/Y"); ?>"> <span class="lbl"> Kelas <?php  echo $row['nm_kelas']; ?></span></a>
+				<a href="page.php?w-data-absensi-sholat&kelas=<?php  <?= $row['nm_kelas'] >?; ?>&tanggal=<?php <?= $tanggal=date("d/m/Y") >?; ?>"> <span class="lbl"> Kelas <?php  <?= $row['nm_kelas'] >?; ?></span></a>
 				<?php
 				}
 				?>
@@ -118,7 +118,7 @@
 				while($row=mysql_fetch_array($query))
 				{
 				?>
-				<a href="page.php?w-data-siswa&kelas=<?php  echo $row['nm_kelas']; ?>"> <span class="lbl"> Kelas <?php  echo $row['nm_kelas']; ?></span></a>
+				<a href="page.php?w-data-siswa&kelas=<?php  <?= $row['nm_kelas'] >?; ?>"> <span class="lbl"> Kelas <?php  <?= $row['nm_kelas'] >?; ?></span></a>
 				<?php
 				}
 				?>
