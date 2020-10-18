@@ -42,7 +42,7 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 					<div class="tbl-row">
 						<div class="tbl-cell tbl-cell-title">
 							<div align="center">
-							<h3 align="center"> DATA ABSENSI SHOLAT KELAS : <?php echo $nm_kelas; ?></h3>
+							<h3 align="center"> DATA ABSENSI SHOLAT KELAS : <?php <?= $nm_kelas >?; ?></h3>
 							<h7 align="center">( <?php <?= "".$hari[date("w")].", ".date("j")." ".$bln[date("n")]." ".date("Y");"" >?; ?> )</h7>
 							</div>
 						</div>
