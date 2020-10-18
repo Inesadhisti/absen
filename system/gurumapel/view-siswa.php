@@ -12,7 +12,7 @@ include('system/inc/css.php');
 //panggil file navi-gurumapel.php untuk menghubungkan gurumapel ke konten
 include('system/inc/nav-gurumapel.php');
 //mendapatkan informasi untuk menlihat data
-$id_siswa = $_GET['id'];
+FILTER_INPUT(INPUT_GET, 'id')
 $query = mysql_query("SELECT * FROM siswa WHERE id_siswa='$id_siswa'") or die(mysql_error());
 $data = mysql_fetch_array($query);
 ?>
