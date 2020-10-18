@@ -50,7 +50,7 @@ $data = mysql_fetch_array($query);
 										<tr>
 										<td align="right">Kelas</td>
 										<td align="center">:</td>
-										<td align="left"><?php echo $data['nm_kelas']; ?></td>
+										<td align="left"><?php <?= $data['nm_kelas'] >?; ?></td>
 										</tr> 
 										
 										<tr>
