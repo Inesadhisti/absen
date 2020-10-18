@@ -46,7 +46,7 @@
 		
 	    <ul class="side-menu-list">
 	        <li class="green">
-	            <a href="page.php?g-detail-profil&id=<?php <?= $_SESSION[id_user] >?;?>">
+	            <a href="page.php?g-detail-profil&id=<?php <?= FILTER_INPUT(INPUT_SESSION, 'id_user') >?;?>">
 	            <i class="font-icon font-icon-user"></i>
 	            <span class="lbl">Profil</span>
 	            </a>
