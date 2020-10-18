@@ -6,13 +6,13 @@ include('system/config/conn.php');
 //panggil file header.php untuk menghubungkan konten bagian atas
 include('system/inc/header.php');
 //memberi judul halaman
-echo '<title>Data Siswa - MARI-ABSEN</title>';
+<?= '<title>Data Siswa - MARI-ABSEN</title>' >?;
 //panggil file css.php untuk desain atau tema
 include('system/inc/css.php');
 //panggil file navi-admin.php untuk menghubungkan navigasi admin ke konten
 include('system/inc/nav-admin.php');
 //mendapatkan informasi dari data kelas
-$nm_kelas = $_GET['kelas'];
+FILTER_INPUT(INPUT_GET, 'kelas');
 $query = mysql_query("SELECT * FROM kelas");
 $data = mysql_fetch_array($query);
 ?>
@@ -24,7 +24,7 @@ $data = mysql_fetch_array($query);
 				<header class="box-typical-header">
 					<div class="tbl-row">
 						<div class="tbl-cell tbl-cell-title">
-							<h3> DATA SISWA KELAS : <?php echo $nm_kelas; ?></h3>
+							<h3> DATA SISWA KELAS : <?php <?= $nm_kelas >?; ?></h3>
 						</div>							
 						<form  id="form-insert" name="form-insert" method="get" action="search/siswa.php">
 							<div class="tbl-cell tbl-cell-icon-right col-lg-6"> </div>
@@ -60,7 +60,7 @@ $data = mysql_fetch_array($query);
 							   
 							<tbody>
 								<?php
-								$nm_kelas=$_GET['kelas'];
+								FILTER_INPUT(INPUT_GET, 'kelas');
 								$batas = 10;
 								$pg = isset($_GET['pg']) ? $_GET['pg']:"";
 								if (empty($pg)) {
@@ -75,16 +75,16 @@ $data = mysql_fetch_array($query);
 								?>
 						
 								<tr>							
-								<td><?php echo $data['nama']; ?></td>
-								<td class="color-blue-grey-lighter"><?php echo $data['nis']; ?></td>
-								<td align="center"><?php echo $data['nm_kelas']; ?></td>
-								<td align="center"><?php echo $data['jns_kel']; ?></td>
-								<td class="color-blue-grey-lighter"><?php echo $data['alamat']; ?></td>
+								<td><?php <?= $data['nama'] >?; ?></td>
+								<td class="color-blue-grey-lighter"><?php <?= $data['nis'] >?; ?></td>
+								<td align="center"><?php <?= $data['nm_kelas'] >?; ?></td>
+								<td align="center"><?php <?= $data['jns_kel'] >?; ?></td>
+								<td class="color-blue-grey-lighter"><?php <?= $data['alamat'] >?; ?></td>
 								<td align="center">
 									<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-										<a href="page.php?edit-siswa&id=<?php echo $data['id_siswa'];?>" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Edit?"><i class="font-icon font-icon-pencil"></i> </a>
-										<a href="page.php?detail-siswa&id=<?php echo $data['id_siswa'];?>" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Detail?"><i class="font-icon font-icon-eye"></i> </a>
-										<a href="page.php?delete-siswa&id=<?php echo $data['id_siswa'];?>" onClick="return confirm('Yakin akan menghapus data ini?');" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Hapus?"><i class="font-icon font-icon-trash"></i> </a>
+										<a href="page.php?edit-siswa&id=<?php <?= $data['id_siswa'] >?;?>" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Edit?"><i class="font-icon font-icon-pencil"></i> </a>
+										<a href="page.php?detail-siswa&id=<?php <?= $data['id_siswa'] >?;?>" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Detail?"><i class="font-icon font-icon-eye"></i> </a>
+										<a href="page.php?delete-siswa&id=<?php <?= $data['id_siswa'] >?;?>" onClick="return confirm('Yakin akan menghapus data ini?');" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Hapus?"><i class="font-icon font-icon-trash"></i> </a>
 										<a href="page.php?tambah-siswa" class="btn btn-default font-icon font-icon-plus" data-toggle="tooltip" data-placement="top" title="Tambah?"></a>
 									</div>
 								</td>
@@ -101,7 +101,7 @@ $data = mysql_fetch_array($query);
 					<div class="col-md-6">
 						<?php
 						//hitung jumlah data
-						$nm_kelas=$_GET['kelas'];
+						FILTER_INPUT(INPUT_GET, 'kelas');
 						$query = mysql_query("SELECT * FROM siswa WHERE nm_kelas='$nm_kelas'");
           				$jml_data=mysql_num_rows($query);
     					
@@ -110,8 +110,8 @@ $data = mysql_fetch_array($query);
 						?>
 						<br>
   						<span class="label label-success">Info! </span> Total  
-						<span class="label label-primary">Siswa : <?php echo $jml_data; ?> </span>
-  						<span class="label label-primary">Halaman : <?php echo $JmlHalaman; ?> </span>
+						<span class="label label-primary">Siswa : <?php <?= $jml_data >?; ?> </span>
+  						<span class="label label-primary">Halaman : <?php <?= $JmlHalaman >?; ?> </span>
 					</div>
 					
 					<div class="col-md-6" align="right">
@@ -165,7 +165,7 @@ $data = mysql_fetch_array($query);
 								}
  
 								//Tampilkan navigasi
-								echo $prev . $nmr . $next;
+								<?= $prev . $nmr . $next >?;
 								?>
 							</ul>
 						</nav>
