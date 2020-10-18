@@ -65,7 +65,7 @@ include('inc/nav-admin.php');
 								{
  								?>
 								<tr>
-								<td><?php echo $data['nama']; ?></td>
+								<td><?php <?= $data['nama'] >?; ?></td>
 								<td class="color-blue-grey-lighter"><?php echo $data['nis']; ?></td>
 								<td align="center"><?php echo $data['nm_kelas']; ?></td>
 								<td ><?php echo $data['jns_kel']; ?></td>
