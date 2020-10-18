@@ -12,7 +12,7 @@ include('system/inc/css.php');
 //panggil file navi-admin.php untuk menghubungkan navigasi admin ke konten
 include('system/inc/nav-admin.php');
 //mendapatkan informasi untuk menlihat data
-$id_user = $_GET['id'];
+FILTER_INPUT(INPUT_GET, 'id');
 $query = mysql_query("select * from user where id_user='$id_user'") or die(mysql_error());
 $data = mysql_fetch_array($query);
 ?>
