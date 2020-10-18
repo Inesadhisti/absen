@@ -6,7 +6,7 @@ include('system/config/conn.php');
 //panggil file header.php untuk menghubungkan konten bagian atas
 include('system/inc/header.php');
 //memberi judul halaman
-echo '<title>Data Semua Kelas - MARI-ABSEN</title>';
+<?= '<title>Data Semua Kelas - MARI-ABSEN</title>' >?;
 //panggil file css.php untuk desain atau tema
 include('system/inc/css.php');
 //panggil file navi-walikelas.php untuk menghubungkan navigasi walikelas ke konten
@@ -20,21 +20,21 @@ include('system/inc/nav-walikelas.php');
 				<?php 
 				//kode php ini kita gunakan untuk menampilkan pesan tambah data sukses
 				if (!empty($_GET['message']) && $_GET['message'] == 'insert-success') {
-				echo '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert">
+				<?= '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert"> >?
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 				</button> SUCCESS !! - Data Kelas Berhasil Di Tambah ! </div>';
 				} 
 				//kode php ini kita gunakan untuk menampilkan pesan edit data sukses
 				else if (!empty($_GET['message']) && $_GET['message'] == 'edit-success') {
-				echo '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert">
+				<?= '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert"> >?
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 				</button> SUCCESS !! - Data Kelas Berhasil Di Edit ! </div>';
 				} 
 				//kode php ini kita gunakan untuk menampilkan pesan tambah data sukses
 				else if (!empty($_GET['message']) && $_GET['message'] == 'delete-success') {
-				echo '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert">
+				<?= '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert"> >?
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 				</button> SUCCESS !! - Data Kelas Berhasil Di Hapus ! </div>';
@@ -92,10 +92,10 @@ include('system/inc/nav-walikelas.php');
 								{
 								?>
 								<tr>
-								<td><center><?php echo $data['nm_kelas']; ?></center></td>
+								<td><center><?php <?= $data['nm_kelas'] >?; ?></center></td>
 								<td align="center">
 								<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-									<a href="page.php?w-detail-kelas&id=<?php echo $data['id_kelas'];?>" class="btn btn-default font-icon font-icon-eye" data-toggle="tooltip" data-placement="top" title="Detail?"></a>
+									<a href="page.php?w-detail-kelas&id=<?php <?= $data['id_kelas'] >?;?>" class="btn btn-default font-icon font-icon-eye" data-toggle="tooltip" data-placement="top" title="Detail?"></a>
 								</div>
 								</td>
 								</tr>
@@ -116,8 +116,8 @@ include('system/inc/nav-walikelas.php');
 						?>
 						<br>
   						<span class="label label-success">Info! </span> Total  
-						<span class="label label-primary">Kelas : <?php echo $jml_data; ?> </span>
-  						<span class="label label-primary">Halaman : <?php echo $JmlHalaman; ?> </span>
+						<span class="label label-primary">Kelas : <?php <?= $jml_data >?; ?> </span>
+  						<span class="label label-primary">Halaman : <?php <?= $JmlHalaman >?; ?> </span>
 					</div>
 					
 				</div><!--.card-block-->
