@@ -6,7 +6,7 @@ include('system/config/conn.php');
 //panggil file header.php untuk menghubungkan konten bagian atas
 include('system/inc/header.php');
 //memberi judul halaman
-echo '<title>Rekap Absensi Sholat- MARI-ABSEN</title>';
+<?= '<title>Rekap Absensi Sholat- MARI-ABSEN</title>' >?;
 //panggil file css.php untuk desain atau tema
 include('system/inc/css.php');
 //panggil file navi-walikelas.php untuk menghubungkan navigasi walikelas ke konten
@@ -26,7 +26,7 @@ include('system/inc/nav-walikelas.php');
 						<div class="col-md-4">
 							<div class="form-group">
 								<div class='input-group date'>
-									<input id="daterange3" type="text" name="tgl1" value="<?php echo $tanggal=date("d/m/Y"); ?>" class="form-control">
+									<input id="daterange3" type="text" name="tgl1" value="<?php <?= $tanggal=date("d/m/Y") >?; ?>" class="form-control">
 									<span class="input-group-addon">
 									<i class="font-icon font-icon-calend"></i>
 									</span>
@@ -45,7 +45,7 @@ include('system/inc/nav-walikelas.php');
 						<div class="col-md-4">
 							<div class="form-group">
 								<div class='input-group date'>
-									<input id="daterange4" type="text" name="tgl2" value="<?php echo $tanggal=date("d/m/Y"); ?>" class="form-control">
+									<input id="daterange4" type="text" name="tgl2" value="<?php <?= $tanggal=date("d/m/Y") >?; ?>" class="form-control">
 									<span class="input-group-addon">
 									<i class="font-icon font-icon-calend"></i>
 									</span>
@@ -67,7 +67,7 @@ include('system/inc/nav-walikelas.php');
 									while($data=mysql_fetch_array($query))
 									{
 									?>
-									<option value="<?php  echo $data['nm_kelas']; ?>"><?php  echo $data['nm_kelas']; ?></option>
+									<option value="<?php  <?= $data['nm_kelas'] >?; ?>"><?php  <?= $data['nm_kelas'] >?; ?></option>
 									<?php 
 									}
 									?>
@@ -96,8 +96,8 @@ include('system/inc/nav-walikelas.php');
 					<div class="tbl-row">
 					 	<div class="tbl-cell tbl-cell-title">
 					  		<div align="center">
-								<h5>DATA HASIL REKAP SHOLAT KELAS : <?php echo $nm_kelas=$_POST['nm_kelas']; ?></h5>
-								<h7>( Tanggal : <?php echo $tgl1=$_POST['tgl1']; ?> - <?php echo $tgl2=$_POST['tgl2']; ?> )</h7> 
+								<h5>DATA HASIL REKAP SHOLAT KELAS : <?php <?= $nm_kelas=$_POST['nm_kelas'] >?; ?></h5>
+								<h7>( Tanggal : <?php <?= $tgl1=$_POST['tgl1'] >?; ?> - <?php <?= $tgl2=$_POST['tgl2'] >?; ?> )</h7> 
 							</div>
 						</div>
 					</div>
@@ -132,34 +132,34 @@ include('system/inc/nav-walikelas.php');
 								?>
 
 								<tr>
-								<td><?php echo $data['nama'];?></td>
-								<td><?php echo $data['nis'];?></td>
+								<td><?php <?= $data['nama'] >?;?></td>
+								<td><?php <?= $data['nis'] >?;?></td>
 								<td align="center">
 									<?php
 									$hadir=mysql_query("SELECT * FROM absensi_sholat WHERE nis='$row[nis]' AND ket='S' AND tanggal BETWEEN '$tgl1' AND '$tgl2'",$connect);
 									$jumlah=mysql_num_rows($hadir);
-									echo $jumlah;
+									<?= $jumlah >?;
 									?>
 								</td>
 								<td align="center">
 									<?php
 									$hadir=mysql_query("SELECT * FROM absensi_sholat WHERE nis='$row[nis]' AND ket='TS' AND tanggal BETWEEN '$tgl1' AND '$tgl2'",$connect);
 									$jumlah=mysql_num_rows($hadir);
-									echo $jumlah;
+									<?= $jumlah >?;
 									?>
 								</td>
 								<td align="center">
 									<?php
 									$hadir=mysql_query("SELECT * FROM absensi_sholat WHERE nis='$row[nis]' AND ket='HL' AND tanggal BETWEEN '$tgl1' AND '$tgl2'",$connect);
 									$jumlah=mysql_num_rows($hadir);
-									echo $jumlah;
+									<?= $jumlah >?;
 									?>
 								</td>
 								<td align="center">
 									<?php
 									$hadir=mysql_query("SELECT * FROM absensi_sholat WHERE nis='$row[nis]' AND ket IN ('TS', 'HL') AND tanggal BETWEEN '$tgl1' AND '$tgl2'",$connect);
 									$jumlah=mysql_num_rows($hadir);
-									echo $jumlah;
+									<?= $jumlah >?;
 									?>
 
 								</td>
