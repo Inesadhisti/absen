@@ -6,13 +6,13 @@ include('system/config/conn.php');
 //panggil file header.php untuk menghubungkan konten bagian atas
 include('system/inc/header.php');
 //memberi judul halaman
-echo '<title>Edit User - MARI-ABSEN</title>';
+<?= '<title>Edit User - MARI-ABSEN</title>' >?;
 //panggil file css.php untuk desain atau tema
 include('system/inc/css.php');
 //panggil file navi-admin.php untuk menghubungkan navigasi admin ke konten
 include('system/inc/nav-admin.php');
 //mendapatkan informasi untuk mengedit data
-$id_kelas = $_GET['id'];
+FILTER_INPUT(FILTER_GET, 'id');
 $query = mysql_query("SELECT * FROM kelas WHERE id_kelas='$id_kelas'") or die(mysql_error());
 $data = mysql_fetch_array($query);
 ?>
@@ -27,19 +27,19 @@ $data = mysql_fetch_array($query);
 						<form id="form-insert" name="form-insert" action="page.php?process-edit-kelas" enctype="multipart/form-data" method="POST">
 							<div class="col-md-3 col-sm-6" ></div>
 							
-							<input type="hidden" name="id_kelas" value="<?php echo $id_kelas; ?>" required="required" />
+							<input type="hidden" name="id_kelas" value="<?php <?= $id_kelas >?; ?>" required="required" />
 							<div class="col-md-6 col-sm-6" >
 								<div class="form-group">
 									<div class="input-group">
 										<div class="form-control-wrapper">
-											<input id="insert-nama" value="<?php echo $data['nm_kelas']; ?>" class="form-control" name="nm_kelas" type="text"
+											<input id="insert-nama" value="<?php <?= $data['nm_kelas'] >?; ?>" class="form-control" name="nm_kelas" type="text"
 											data-validation="[L>=1]"
 											data-validation-message="Nama Kelas Tidak Boleh Kosong" required="required" />
 										</div>		
 									
 										<div class="input-group-btn" role="group">
 											<button type="submit" class="btn btn-default font-icon font-icon-pencil" data-toggle="tooltip" data-placement="top" title="Edit?"></button>
-											<a href="page.php?delete-kelas&id=<?php echo $data['id_kelas'];?>" onClick="return confirm('Yakin akan menghapus data ini?');" class="btn btn-default font-icon font-icon-trash" data-toggle="tooltip" data-placement="top" title="Hapus?"></a>
+											<a href="page.php?delete-kelas&id=<?php <?= $data['id_kelas'] >?;?>" onClick="return confirm('Yakin akan menghapus data ini?');" class="btn btn-default font-icon font-icon-trash" data-toggle="tooltip" data-placement="top" title="Hapus?"></a>
 											<a href="javascript:history.back()" class="btn btn-default font-icon font-icon-refresh-2" data-toggle="tooltip" data-placement="top" title="Kembali?"></a>
 										</div>
 									</div> 
