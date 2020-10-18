@@ -6,7 +6,7 @@ include('../../system/config/conn.php');
 //panggil file header.php untuk menghubungkan konten bagian atas
 include('../../system/inc/header.php');
 //memberi judul halaman
-echo '<title>Absen Siswa - MARI-ABSEN</title>';
+<?= '<title>Absen Siswa - MARI-ABSEN</title>' >?;
 //panggil file css.php untuk desain atau tema
 include('../../system/inc/css.php');
 //panggil file navi-admin.php untuk menghubungkan navigasi admin ke konten
@@ -27,8 +27,8 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 					<div class="tbl-row">
 						<div class="tbl-cell tbl-cell-title">
 							<div align="center">
-								<h3 align="center"> ABSEN SISWA KELAS : <?php echo $nm_kelas; ?></h3>
-								<h7 align="center">( <?php echo "".$hari[date("w")].", ".date("j")." ".$bln[date("n")]." ".date("Y");""; ?> )</h7>
+								<h3 align="center"> ABSEN SISWA KELAS : <?php <?= $nm_kelas >?; ?></h3>
+								<h7 align="center">( <?php <?= "".$hari[date("w")].", ".date("j")." ".$bln[date("n")]." ".date("Y");"" >?; ?> )</h7>
 							</div>
 						</div>
 					</div>
@@ -55,23 +55,23 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 									while($data=mysql_fetch_array($query)){
 									?>
 									<tr>	
-									<input type="hidden" value="<?php echo $data['nm_kelas'];?>" name="nm_kelas"/>
-									<input type="hidden" value="<?php echo $tanggal=date("d/m/Y"); ?>" name="tanggal"/>
-									<td><?php echo $data['nama'];?></td>
+									<input type="hidden" value="<?php <?= $data['nm_kelas'] >?;?>" name="nm_kelas"/>
+									<input type="hidden" value="<?php <?= $tanggal=date("d/m/Y") >?; ?>" name="tanggal"/>
+									<td><?php <?= $data['nama'] >?;?></td>
 									<td class="checkbox" align="center">
 									<?php
-									echo " <input type='checkbox' name='hadir[]' value='$data[nis]' id='$no'><label for='$no'>Hadir  </label>";
+									<?= " <input type='checkbox' name='hadir[]' value='$data[nis]' id='$no'><label for='$no'>Hadir  </label>" >?;
 									$no++;
-									echo " <input type='checkbox' name='sakit[]' value='$data[nis]' id='$no'><label for='$no'>Sakit  </label>";
+									<?= " <input type='checkbox' name='sakit[]' value='$data[nis]' id='$no'><label for='$no'>Sakit  </label>" >?;
 									$no++;
-									echo " <input type='checkbox' name='ijin[]' value='$data[nis]' id='$no'><label for='$no'>Ijin  </label>";
+									<?= " <input type='checkbox' name='ijin[]' value='$data[nis]' id='$no'><label for='$no'>Ijin  </label>" >?;
 									$no++;
-									echo " <input type='checkbox' name='alfa[]' value='$data[nis]' id='$no'><label for='$no'>Alfa  </label>";
+									<?= " <input type='checkbox' name='alfa[]' value='$data[nis]' id='$no'><label for='$no'>Alfa  </label>" >?;
 									$no++;
 									?>
 									</td>
-									<td><?php echo $data['nis'];?></td>
-									<td align="center"><?php echo $data['nm_kelas'];?></td>
+									<td><?php <?= $data['nis'] >?;?></td>
+									<td align="center"><?php <?= $data['nm_kelas'] >?;?></td>
 
 									</tr>
 									<?php
