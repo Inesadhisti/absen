@@ -18,7 +18,7 @@ include'reset.php';
  if(isset($_GET['acces-admin'])){ 
 include'system/error/acces-admin.php';
 }
- if(isset($_GET['acces-walikelas'])){ 
+ if(isset(FILTER_INPUT(INPUT_GET, 'kelas');)){ 
 include'system/error/acces-walikelas.php';
 }
  if(isset($_GET['acces-gurumapel'])){ 
