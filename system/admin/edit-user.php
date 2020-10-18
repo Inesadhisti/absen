@@ -6,13 +6,13 @@ include('system/config/conn.php');
 //panggil file header.php untuk menghubungkan konten bagian atas
 include('system/inc/header.php');
 //memberi judul halaman
-echo '<title>Edit User - MARI-ABSEN</title>';
+<?= '<title>Edit User - MARI-ABSEN</title>' >?;
 //panggil file css.php untuk desain atau tema
 include('system/inc/css.php');
 //panggil file navi-admin.php untuk menghubungkan navigasi admin ke konten
 include('system/inc/nav-admin.php');
 //mendapatkan informasi untuk mengedit data
-$id_user = $_GET['id'];
+FILTER_INPUT(INPUT_GET, 'id');
 $query = mysql_query("SELECT * FROM user WHERE id_user='$id_user'") or die(mysql_error());
 $data = mysql_fetch_array($query);
 ?>
@@ -25,12 +25,12 @@ $data = mysql_fetch_array($query);
 				<div class="card-block"> 
 					<div class="row">
 						<form id="form-insert" name="form-insert" action="page.php?process-edit-user" enctype="multipart/form-data" method="POST">
-							<input type="hidden" name="id_user" value="<?php echo $id_user; ?>" />
+							<input type="hidden" name="id_user" value="<?php <?= $id_user >?; ?>" />
 							<div class="col-md-6">
 								<div class="form-group">
 									<label class="form-label" for="insert-nama"><i class="font-icon font-icon-post"></i> Nama</label>
 									<div class="form-control-wrapper">
-										<input id="insert-nama" class="form-control" name="nama" value="<?php echo $data['nama']; ?>" placeholder="Nama User" type="text"
+										<input id="insert-nama" class="form-control" name="nama" value="<?php <?= $data['nama'] >?; ?>" placeholder="Nama User" type="text"
 										data-validation="[L>=1]"
 										data-validation-message="Nama User Tidak Boleh Kosong">
 									</div>
@@ -39,7 +39,7 @@ $data = mysql_fetch_array($query);
 								<div class="form-group">
 									<label class="form-label" for="insert-user"><i class="font-icon font-icon-user"></i> Username</label>
 									<div class="form-control-wrapper">
-										<input id="insert-user" class="form-control" name="user" value="<?php echo $data['user']; ?>" placeholder="Username" type="text"
+										<input id="insert-user" class="form-control" name="user" value="<?php <?= $data['user'] >?; ?>" placeholder="Username" type="text"
 										data-validation="[L>=1]"
 										data-validation-message="Username Tidak Boleh Kosong">
 									</div>
@@ -69,7 +69,7 @@ $data = mysql_fetch_array($query);
 									<label class="form-label" for="insert-level"><i class="font-icon font-icon-users"></i> Level</label>
 									<div class="form-control-wrapper">
 										<select class="bootstrap-select" name="level" >
-										<option value="<?php echo $data['level']; ?>"  selected/ ><?php echo $data['level']; ?></option>
+										<option value="<?php <?= $data['level'] >?; ?>"  selected/ ><?php <?= $data['level'] >?; ?></option>
 										<option value="Admin">Admin</option>
 										<option value="Wali-Kelas">Wali Kelas</option>
 										<option value="Guru-Mapel">Guru Kelas</option>
@@ -82,7 +82,7 @@ $data = mysql_fetch_array($query);
 								<div class="form-group" align="center">
 									<div class="btn-group" role="group">
 										<button type="submit" class="btn btn-default font-icon font-icon-pencil" data-toggle="tooltip" data-placement="top" title="Edit?"></button>
-										<a href="page.php?delete-user&id=<?php echo $data['id_user'];?>" onClick="return confirm('Yakin akan menghapus data ini?');" class="btn btn-default font-icon font-icon-trash" data-toggle="tooltip" data-placement="top" title="Hapus?"></a>
+										<a href="page.php?delete-user&id=<?php <?= $data['id_user'] >?;?>" onClick="return confirm('Yakin akan menghapus data ini?');" class="btn btn-default font-icon font-icon-trash" data-toggle="tooltip" data-placement="top" title="Hapus?"></a>
 										<a href="javascript:history.back()" class="btn btn-default font-icon font-icon-refresh-2" data-toggle="tooltip" data-placement="top" title="Kembali?"></a>
 									</div>
 								</div>
