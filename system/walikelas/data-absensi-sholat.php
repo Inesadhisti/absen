@@ -6,7 +6,7 @@ include('system/config/conn.php');
 //panggil file header.php untuk menghubungkan konten bagian atas
 include('system/inc/header.php');
 //memberi judul halaman
-echo '<title>Data Absensi - MARI-ABSEN</title>';
+<?= '<title>Data Absensi - MARI-ABSEN</title>' >?;
 //panggil file css.php untuk desain atau tema
 include('system/inc/css.php');
 //panggil file navi-walikelas.php untuk menghubungkan navigasi walikelas ke konten
@@ -28,7 +28,7 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 				<?php 
 				//kode php ini kita gunakan untuk menampilkan pesan absen sukses
 				if (!empty($_GET['message']) && $_GET['message'] == 'absen-success') {
-				echo '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert">
+				<?= '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert"> >?
 			  	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 			  	<span aria-hidden="true">&times;</span> </button>
 			  	SUCCESS !! - Siswa Berhasil Diabsen ! </div>';
