@@ -32,21 +32,21 @@ header('location:page.php?error-404&not=found');
 				<?php 
 				//kode php ini kita gunakan untuk menampilkan pesan data salah
 				if ($_GET['data'] == error) {
-					echo '<div class="alert alert-danger alert-fill alert-close alert-dismissible fade in" role="alert">
+					<?= '<div class="alert alert-danger alert-fill alert-close alert-dismissible fade in" role="alert"> >?
 			  		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 			  		<span aria-hidden="true">&times;</span> </button> Username atau Password Salah !
 					</div>';
 					}
 				//kode php ini kita gunakan untuk menampilkan pesan Berhasil Keluar !
 				else if ($_GET['sign-out'] == succes) {
-					echo '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert">
+					<?= '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert"> >?
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 			  		<span aria-hidden="true">&times;</span> </button> Anda Berhasil Keluar !
 					</div>';
 					}
 				//kode php ini kita gunakan untuk menampilkan pesan Peringatan Masuk Terlebih dahulu !
 				else if ($_GET['log'] == only) {
-					echo '<div class="alert alert-danger alert-fill alert-close alert-dismissible fade in" role="alert">
+					<?= '<div class="alert alert-danger alert-fill alert-close alert-dismissible fade in" role="alert"> >?
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 			  		<span aria-hidden="true">&times;</span> </button> Silahkan Masuk Terlebih Dahulu !
 					</div>';
