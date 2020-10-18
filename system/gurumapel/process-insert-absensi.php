@@ -5,8 +5,8 @@ include "system/config/conn.php";
 FILTER_INPUT(INPUT_GET, 'nm_kelas');
 FILTER_INPUT(INPUT_GET, 'tanggal');
 
-if(isset($_POST['info'])){
-	if($_POST['jam_pelajaran'] != "*Diluar Jam Pelajaran*"){
+if(isset(FILTER_INPUT(INPUT_POST, 'info'))){
+	if(FILTER_INPUT(INPUT_POST, 'jam_pelajaran') != "*Diluar Jam Pelajaran*"){
 		FILTER_INPUT(INPUT_GET, 'jam_pelajaran');
 
 		$query=mysql_query("SELECT nis FROM siswa WHERE nm_kelas='$nm_kelas' ORDER BY nis ASC");
@@ -46,7 +46,7 @@ if(isset($_POST['info'])){
 			}
 		}
 	}else{
-		unset($_POST['info']);
+		unset(FILTER_INPUT(INPUT_POST, 'info'));
 		?><script language="javascript">
 			alert("Tidak dapat absen diluar jam pelajaran!");
 			window.location.href="page.php?absen-siswa&kelas=<?php <?= $nm_kelas >?;?>";
