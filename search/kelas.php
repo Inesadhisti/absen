@@ -84,7 +84,7 @@ include('inc/nav-admin.php');
 					<div class="col-md-6">
 						<br>
   						<span class="label label-success">Info! </span> Hasil  Pencarian
-  						<span class="label label-primary">Untuk : <?php echo $q; ?> </span>
+  						<span class="label label-primary">Untuk : <?php <?= $q >?; ?> </span>
 					</div>
 					
 					<div class="col-md-6" align="right">
