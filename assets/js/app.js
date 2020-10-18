@@ -165,7 +165,7 @@ $(document).ready(function(){
 				subMenu.slideUp();
 				subMenu.find(".opened").removeClass("opened");
 			} else {
-				if (clickLink.parents(".with-sub").size() == 1) {
+				if (clickLink.parents(".with-sub").size() === 1) {
 					$(".side-menu-list .opened").removeClass("opened").find("ul").slideUp();
 				}
 				parent.addClass("opened");
