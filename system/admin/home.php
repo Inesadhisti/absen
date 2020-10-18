@@ -20,11 +20,11 @@ include('system/inc/nav-admin.php');
 				<div class="col-lg-12 col-md-12">
 					<?php 
 					//kode php ini kita gunakan untuk menampilkan pesan Selamat datang user!
-					if (!empty($_GET['sign-in']) && $_GET['sign-in'] == 'succes') {
+					if (!empty(FILTER_INPUT(INPUT_GET, 'sign-in')) && FILTER_INPUT(INPUT_GET, 'sign-in') == 'succes') {
 					<?= '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert"> >?
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
-					</button> Assalamualaikum <strong>'.$_SESSION['nama'].' ! </strong> Selamat Datang Di MARI-ABSEN </div>';
+					</button> Assalamualaikum <strong>'.FILTER_INPUT(INPUT_SESSION, 'nama').' ! </strong> Selamat Datang Di MARI-ABSEN </div>';
 					}
 					?>
 				</div>
@@ -70,7 +70,7 @@ include('system/inc/nav-admin.php');
 							<tbody>
 								<?php								
 								$batas = 5;
-								$pg = isset($_GET['pg']) ? $_GET['pg']:"";
+								$pg = isset(FILTER_INPUT(INPUT_GET, 'pg')) ? FILTER_INPUT(INPUT_GET, 'pg'):"";
 								if (empty($pg)){
 								$posisi = 0;
 								$pg = 1;
@@ -213,7 +213,7 @@ include('system/inc/nav-admin.php');
 							<tbody>
 								<?php
 								$batas = 5;
-								$pgk = isset($_GET['pgk']) ? $_GET['pgk']:"";
+								$pgk = isset(FILTER_INPUT(INPUT_GET, 'pgk')) ? FILTER_INPUT(INPUT_GET, 'pgk'):"";
 								if (empty($pgk)){
 								$posisi = 0;
 								$pgk = 1;
@@ -356,7 +356,7 @@ include('system/inc/nav-admin.php');
 							<tbody>
 								<?php								
 								$batas = 10;
-								$pgs = isset($_GET['pgs']) ? $_GET['pgs']:"";
+								$pgs = isset(FILTER_INPUT(INPUT_GET, 'pgs')) ? FILTER_INPUT(INPUT_GET, 'pgs'):"";
 								if (empty($pgs)){
 								$posisi = 0;
 								$pgs = 1;
