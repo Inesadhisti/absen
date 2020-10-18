@@ -6,7 +6,7 @@ include('system/config/conn.php');
 //panggil file header.php untuk menghubungkan konten bagian atas
 include('system/inc/header.php');
 //memberi judul halaman
-echo '<title>Data Absensi - MARI-ABSEN</title>';
+<?= '<title>Data Absensi - MARI-ABSEN</title>' >?;
 //panggil file css.php untuk desain atau tema
 include('system/inc/css.php');
 //panggil file navi-gurumapel.php untuk menghubungkan gurumapel ke konten
@@ -28,7 +28,7 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 				<?php 
 				//kode php ini kita gunakan untuk menampilkan pesan absen sukses
 				if (!empty($_GET['message']) && $_GET['message'] == 'absen-success') {
-				echo '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert">
+				<?= '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert"> >?
 			  	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 			  	<span aria-hidden="true">&times;</span> </button>
 			  	SUCCESS !! - Siswa Berhasil Diabsen ! </div>';
@@ -42,8 +42,8 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 					<div class="tbl-row">
 						<div class="tbl-cell tbl-cell-title">
 							<div align="center">
-							<h3 align="center"> DATA ABSENSI SISWA KELAS : <?php echo $nm_kelas; ?></h3>
-							<h7 align="center">( <?php echo "".$hari[date("w")].", ".date("j")." ".$bln[date("n")]." ".date("Y");""; ?> )</h7>
+							<h3 align="center"> DATA ABSENSI SISWA KELAS : <?php <?= $nm_kelas >?; ?></h3>
+							<h7 align="center">( <?php <?= "".$hari[date("w")].", ".date("j")." ".$bln[date("n")]." ".date("Y");"" >?; ?> )</h7>
 							</div>
 						</div>
 					</div>
@@ -76,43 +76,43 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 								$keterangan=mysql_fetch_array(mysql_query("SELECT * FROM absensi WHERE nis='$row[nis]' ORDER BY jam_pelajaran DESC",$connect));
 								?>
 								<tr>
-								<td><?php echo $data['nama'];?></td>
-								<td><?php echo $data['nis'];?></td>
+								<td><?php <?= $data['nama'] >?;?></td>
+								<td><?php <?= $data['nis'] >?;?></td>
 								<td align="center">
 									<?php
 									$hadir=mysql_query("SELECT ket FROM absensi WHERE nis='$row[nis]' AND tanggal='$tanggal' AND jam_pelajaran='1-2'",$connect);
-									echo mysql_fetch_array($hadir)[0];
+									<?= mysql_fetch_array($hadir)[0] >?;
 									?>
 								</td>
 								<td align="center">
 									<?php
 									$hadir=mysql_query("SELECT ket FROM absensi WHERE nis='$row[nis]' AND tanggal='$tanggal' AND jam_pelajaran='3-4'",$connect);
-									echo mysql_fetch_array($hadir)[0];
+									<?= mysql_fetch_array($hadir)[0] >?;
 									?>
 								</td>
 								<td align="center">
 									<?php
 									$hadir=mysql_query("SELECT ket FROM absensi WHERE nis='$row[nis]' AND tanggal='$tanggal' AND jam_pelajaran='5-6'",$connect);
-									echo mysql_fetch_array($hadir)[0];
+									<?= mysql_fetch_array($hadir)[0] >?;
 									?>
 								</td>
 								<td align="center">
 									<?php
 									$hadir=mysql_query("SELECT ket FROM absensi WHERE nis='$row[nis]' AND tanggal='$tanggal' AND jam_pelajaran='7-8'",$connect);
-									echo mysql_fetch_array($hadir)[0];
+									<?= mysql_fetch_array($hadir)[0] >?;
 									?>
 								</td>
 								<td align="center">
 									<?php
 									$hadir=mysql_query("SELECT ket FROM absensi WHERE nis='$row[nis]' AND tanggal='$tanggal' AND jam_pelajaran='9'",$connect);
-									echo mysql_fetch_array($hadir)[0];
+									<?= mysql_fetch_array($hadir)[0] >?;
 									?>
 								</td>
 								<td align="center">
 									<?php
 									$hadir=mysql_query("SELECT * FROM absensi WHERE nis='$row[nis]' AND ket='S' + ket='I' + ket='A' AND tanggal='$tanggal'",$connect);
 									$jumlah=mysql_num_rows($hadir);
-									echo $jumlah;
+									<?= $jumlah >?;
 									?>
 								</td>
 								</tr>
@@ -129,7 +129,7 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 						<div class="col-md-12">
 							<div class="form-group" align="center">
 								<div class="btn-group" role="group">
-								<a href="page.php?absen-siswa&kelas=<?php echo $data['nm_kelas'];?>" class="btn btn-default font-icon font-icon-pencil" data-toggle="tooltip" data-placement="top" title="Edit?"></a>
+								<a href="page.php?absen-siswa&kelas=<?php <?= $data['nm_kelas'] >?;?>" class="btn btn-default font-icon font-icon-pencil" data-toggle="tooltip" data-placement="top" title="Edit?"></a>
 								<a href="page.php?g-home" class="btn btn-default font-icon font-icon-home" data-toggle="tooltip" data-placement="top" title="Home"></a>
 								</div>
 							</div>
