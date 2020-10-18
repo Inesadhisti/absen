@@ -123,7 +123,7 @@ include('system/inc/nav-walikelas.php');
 								//untuk option
 								$tgl1=$_POST['tgl1'];
 								$tgl2=$_POST['tgl2'];
-								$nm_kelas=$_POST['nm_kelas'];
+								FILTER_INPUT(INPUT_POST, 'nm_kelas')
 								$query=mysql_query("SELECT DISTINCT nis FROM absensi WHERE nm_kelas='$nm_kelas' AND tanggal BETWEEN '$tgl1' AND '$tgl2' ORDER BY nis ASC",$connect);
 								while($row=mysql_fetch_array($query)){
 								$data=mysql_fetch_array(mysql_query("SELECT * FROM siswa WHERE nis='$row[nis]'",$connect));
