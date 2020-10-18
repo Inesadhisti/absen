@@ -12,7 +12,7 @@ include('system/inc/css.php');
 //panggil file navi-gurumapel.php untuk menghubungkan gurumapel ke konten
 include('system/inc/nav-gurumapel.php');
 //mendapatkan informasi dari hasil absen siswa
-$nm_kelas = $_GET['kelas'];
+FILTER_INPUT(INPUT_POST, 'var_kelas');
 $query = mysql_query("SELECT * FROM kelas");
 $data = mysql_fetch_array($query);
 //merubah waktu kedalam format indonesia
