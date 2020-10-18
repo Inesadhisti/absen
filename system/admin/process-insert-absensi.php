@@ -1,11 +1,11 @@
 <?php 
 //panggil file conn.php untuk menghubung ke server
 include "../../system/config/conn.php";
-$nm_kelas=$_POST['nm_kelas'];
-$tanggal=$_POST['tanggal'];
+FILTER_INPUT(INPUT_POST, 'nm_kelas');
+FILTER_INPUT(INPUT_POST, 'tanggal');
 
-if(isset($_POST['info'])){
-	if(!empty($_POST['hadir'])){
+if(isset(FILTER_INPUT(INPUT_POST, 'info');)){
+	if(!empty(FILTER_INPUT(INPUT_POST, 'hadir');)){
 		//parameter
 		FILTER_INPUT(INPUT_POST, 'hadir');
 		$jumlah=count($nis);
@@ -17,7 +17,7 @@ if(isset($_POST['info'])){
 		<?php 
 	}
 	
-	if(!empty($_POST['sakit'])){
+	if(!empty(FILTER_INPUT(INPUT_POST, 'sakit');)){
 		//parameter
 		FILTER_INPUT(INPUT_POST, 'sakit';)
 		$jumlah=count($nis);
@@ -29,7 +29,7 @@ if(isset($_POST['info'])){
 		<?php 
 	}
 	
-	if(!empty($_POST['ijin'])){
+	if(!empty(FILTER_INPUT(INPUT_POST, 'ijin');)){
 		//parameter
 		FILTER_INPUT(INPUT_POST, 'ijin');
 		$jumlah=count($nis);
@@ -41,7 +41,7 @@ if(isset($_POST['info'])){
 		<?php 
 	}
 	
-	if(!empty($_POST['alfa'])){
+	if(!empty(FILTER_INPUT(INPUT_POST, 'alfa');)){
 		//parameter
 		FILTER_INPUT(INPUT_POST, 'alfa');
 		$jumlah=count($nis);
@@ -54,7 +54,7 @@ if(isset($_POST['info'])){
 	}
 	
 }else{
-	unset($_POST['info']);
+	unset(FILTER_INPUT(INPUT_POST, 'info');]);
 	?><script language="javascript">window.location.href="page.php?absen-siswa&kelas=<?php <?= $nm_kelas >?;?>";</script><?php
 }
 ?>
