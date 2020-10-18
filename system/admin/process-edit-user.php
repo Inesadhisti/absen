@@ -6,14 +6,14 @@ include('system/config/conn.php');
 $folder="system/images/"; 
 
 //tangkap data dari form
-$id_user = $_POST['id_user'];
-$pass = $_POST['pass'];
+FILTER_INPUT(INPUT_POST, 'id_user');
+FILTER_INPUT(INPUT_POST, 'pass');
 $pass = md5($pass);
-$confirm = $_POST['confirm'];
+FILTER_INPUT(INPUT_POST, 'comfirm');
 $confirm = md5($confirm);
-$nama = $_POST['nama'];
-$user = $_POST['user'];
-$level = $_POST['level'];
+FILTER_INPUT(INPUT_POST, 'nama');
+FILTER_INPUT(INPUT_POST, 'user');
+FILTER_INPUT(INPUT_POST, 'level');
 
 //jika gambar kosong atau tidak di ganti 
 	$query = mysql_query("update user set user='$user', pass='$pass', confirm='$confirm', level='$level', nama='$nama' where id_user='$id_user'")
