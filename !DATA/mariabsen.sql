@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `absensi`
 --
 
-CREATE TABLE IF NOT EXISTS `absensi` (
+CREATE TABLE IF NOT EXISTS "absensi" (
 `id_absensi` int(10) NOT NULL,
   `nis` varchar(500) NOT NULL,
   `nm_kelas` char(50) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `absensi` (
 -- Table structure for table `absensi_sholat`
 --
 
-CREATE TABLE IF NOT EXISTS `absensi_sholat` (
+CREATE TABLE IF NOT EXISTS "absensi_sholat" (
 `id_absensi` int(10) NOT NULL,
   `nis` varchar(500) NOT NULL,
   `nm_kelas` char(50) NOT NULL,
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `absensi_sholat` (
 -- Dumping data for table `absensi_sholat`
 --
 
-INSERT INTO `absensi_sholat` (`id_absensi`, `nis`, `nm_kelas`, `ket`, `keterangan`, `tanggal`, `info`) VALUES
+INSERT INTO "absensi_sholat" (`id_absensi`, `nis`, `nm_kelas`, `ket`, `keterangan`, `tanggal`, `info`) VALUES
 (11, '121233740003175848', 'IX-C', 'S', 'waw', '25/02/2020', 'succes'),
 (12, '121233740003175859', 'IX-C', 'TS', 'wadu', '25/02/2020', 'succes'),
 (13, '121233740003175868', 'IX-C', 'TS', 'parrsss', '25/02/2020', 'succes'),
@@ -69,7 +69,7 @@ INSERT INTO `absensi_sholat` (`id_absensi`, `nis`, `nm_kelas`, `ket`, `keteranga
 -- Table structure for table `kelas`
 --
 
-CREATE TABLE IF NOT EXISTS `kelas` (
+CREATE TABLE IF NOT EXISTS "kelas" (
 `id_kelas` int(10) NOT NULL,
   `nm_kelas` char(50) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL
 ) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `kelas` (
 -- Dumping data for table `kelas`
 --
 
-INSERT INTO `kelas` (`id_kelas`, `nm_kelas`) VALUES
+INSERT INTO "kelas" (`id_kelas`, `nm_kelas`) VALUES
 (20, 'VII-D'),
 (21, 'VII-E'),
 (19, 'VII-C'),
