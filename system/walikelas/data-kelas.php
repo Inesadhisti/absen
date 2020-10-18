@@ -80,7 +80,7 @@ include('system/inc/nav-walikelas.php');
 							<tbody>
 								<?php
 								$batas = 10;
-								$pg = isset($_GET['pg']) ? $_GET['pg']:"";
+								$pg = isset(FILTER_INPUT(INPUT_GET, 'pg') ? FILTER_INPUT(INPUT_GET, 'pg'):"";
 								if (empty($pg)) {
 								$posisi = 0;
 								$pg = 1;
