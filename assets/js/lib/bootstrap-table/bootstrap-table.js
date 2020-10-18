@@ -672,7 +672,7 @@
         $.each(this.options.columns, function (i, columns) {
             html.push("<tr>");
 
-            if (i == 0 && !that.options.cardView && that.options.detailView) {
+            if (i === 0 && !that.options.cardView && that.options.detailView) {
                 html.push(sprintf("<th class="detail" rowspan="%s"><div class="fht-cell"></div></th>",
                     that.options.columns.length));
             }
@@ -780,7 +780,7 @@
         this.$header.children().children().off("keypress").on("keypress", function (event) {
             if (that.options.sortable && $(this).data().sortable) {
                 var code = event.keyCode || event.which;
-                if (code == 13) { //Enter keycode
+                if (code === 13) { //Enter keycode
                     that.onSort(event);
                 }
             }
