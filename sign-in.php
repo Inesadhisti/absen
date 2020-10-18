@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_SESSION['user']) {
+if (FILTER_INPUT(INPUT_SESSION, 'user');) {
 //redirect ke halaman error
 header('location:page.php?error-404&not=found');
 }
@@ -31,21 +31,21 @@ header('location:page.php?error-404&not=found');
                 <header class="sign-title">Masuk</header>
 				<?php 
 				//kode php ini kita gunakan untuk menampilkan pesan data salah
-				if ($_GET['data'] == error) {
+				if (FILTER_INPUT(INPUT_GET, 'data'); == error) {
 					<?= '<div class="alert alert-danger alert-fill alert-close alert-dismissible fade in" role="alert"> >?
 			  		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 			  		<span aria-hidden="true">&times;</span> </button> Username atau Password Salah !
 					</div>';
 					}
 				//kode php ini kita gunakan untuk menampilkan pesan Berhasil Keluar !
-				else if ($_GET['sign-out'] == succes) {
+				else if (FILTER_INPUT(INPUT_GET, 'sign-out'); == succes) {
 					<?= '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert"> >?
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 			  		<span aria-hidden="true">&times;</span> </button> Anda Berhasil Keluar !
 					</div>';
 					}
 				//kode php ini kita gunakan untuk menampilkan pesan Peringatan Masuk Terlebih dahulu !
-				else if ($_GET['log'] == only) {
+				else if (FILTER_INPUT(INPUT_GET, 'log'); == only) {
 					<?= '<div class="alert alert-danger alert-fill alert-close alert-dismissible fade in" role="alert"> >?
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 			  		<span aria-hidden="true">&times;</span> </button> Silahkan Masuk Terlebih Dahulu !
