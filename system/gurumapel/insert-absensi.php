@@ -6,7 +6,7 @@ include('system/config/conn.php');
 //panggil file header.php untuk menghubungkan konten bagian atas
 include('system/inc/header.php');
 //memberi judul halaman
-echo '<title>Absen Siswa - MARI-ABSEN</title>';
+<?= '<title>Absen Siswa - MARI-ABSEN</title>' >?;
 //panggil file css.php untuk desain atau tema
 include('system/inc/css.php');
 //panggil file navi-gurumapel.php untuk menghubungkan gurumapel ke konten
@@ -49,8 +49,8 @@ else{
 					<div class="tbl-row">
 						<div class="tbl-cell tbl-cell-title">
 							<div align="center">
-								<h3 align="center"> ABSEN SISWA KELAS : <?php echo $nm_kelas; ?></h3>
-								<h7 align="center">( <?php echo "".$hari[date("w")].", ".date("j")." ".$bln[date("n")]." ".date("Y")." Jam Pelajaran ".$jp; ?> )</h7>
+								<h3 align="center"> ABSEN SISWA KELAS : <?php <?= $nm_kelas >?; ?></h3>
+								<h7 align="center">( <?php <?= "".$hari[date("w")].", ".date("j")." ".$bln[date("n")]." ".date("Y")." Jam Pelajaran ".$jp >?; ?> )</h7>
 							</div>
 						</div>
 					</div>
@@ -82,26 +82,26 @@ else{
 										$absen = mysql_fetch_array(mysql_query("SELECT ket, keterangan, jam_pelajaran FROM absensi WHERE nis='$nis' AND (jam_pelajaran = '$jp' OR jam_pelajaran IS NULL)"));
 									?>
 									<tr>	
-									<input type="hidden" value="<?php echo $data['nm_kelas'];?>" name="nm_kelas"/>
-									<input type="hidden" value="<?php echo $tanggal; ?>" name="tanggal"/>
-									<input type="hidden" value="<?php echo $jp; ?>" name="jam_pelajaran"/>
-									<td><?php echo $i;?></td>
-									<td><?php echo $data['nama'];?></td>
+									<input type="hidden" value="<?php <?= $data['nm_kelas'] >?;?>" name="nm_kelas"/>
+									<input type="hidden" value="<?php <?= $tanggal >?; ?>" name="tanggal"/>
+									<input type="hidden" value="<?php <?= $jp >?; ?>" name="jam_pelajaran"/>
+									<td><?php <?= $i >?;?></td>
+									<td><?php <?= $data['nama'] >?;?></td>
 									<td class="radio" align="center">
 										<?php
-										echo " <input type='radio' name='absen-$data[nis]' value='hadir' id='$no'"; if($absen['jam_pelajaran'] == $jp && $absen['ket'] == "H") echo 'checked'; echo "><label for='$no'>Hadir  </label>";
+										<?= " <input type='radio' name='absen-$data[nis]' value='hadir' id='$no'" >?; if($absen['jam_pelajaran'] == $jp && $absen['ket'] == "H") <?= 'checked' >?; <?= "><label for='$no'>Hadir  </label>" >?;
 										$no++;
-										echo " <input type='radio' name='absen-$data[nis]' value='sakit' id='$no'"; if($absen['jam_pelajaran'] == $jp && $absen['ket'] == "S") echo 'checked'; echo "><label for='$no'>Sakit  </label>";
+										<?= " <input type='radio' name='absen-$data[nis]' value='sakit' id='$no'" >?; if($absen['jam_pelajaran'] == $jp && $absen['ket'] == "S") <?= 'checked' >?; <?= "><label for='$no'>Sakit  </label>" >?;
 										$no++;
-										echo " <input type='radio' name='absen-$data[nis]' value='ijin' id='$no'"; if($absen['jam_pelajaran'] == $jp && $absen['ket'] == "I") echo 'checked'; echo "><label for='$no'>Ijin  </label>";
+										<?= " <input type='radio' name='absen-$data[nis]' value='ijin' id='$no'" >?; if($absen['jam_pelajaran'] == $jp && $absen['ket'] == "I") <?= 'checked' >?; <?= "><label for='$no'>Ijin  </label>" >?;
 										$no++;
-										echo " <input type='radio' name='absen-$data[nis]' value='alfa' id='$no'"; if($absen['jam_pelajaran'] == $jp && $absen['ket'] == "A") echo 'checked'; echo "><label for='$no'>Alfa  </label>";
+										<?= " <input type='radio' name='absen-$data[nis]' value='alfa' id='$no'" >?; if($absen['jam_pelajaran'] == $jp && $absen['ket'] == "A") <?= 'checked' >?; <?= "><label for='$no'>Alfa  </label>" >?;
 										$no++;
 										?>
 									</td>
-									<td><?php echo $data['nis'];?></td>
+									<td><?php <?= $data['nis'] >?;?></td>
 									
-									<td align="center"><?php echo $data['nm_kelas'];?></td>
+									<td align="center"><?php <?= $data['nm_kelas'] >?;?></td>
 									</tr>
 									<?php
 									$i++;
