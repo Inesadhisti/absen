@@ -6,7 +6,7 @@ include('../system/config/conn.php');
 //panggil file header.php untuk menghubungkan konten bagian atas
 include('inc/header.php');
 //memberi judul halaman
-	echo '<title>Pencarian Data User - MARI-ABSEN</title>';
+	<?= '<title>Pencarian Data User - MARI-ABSEN</title>' >?;
 //panggil file css.php untuk desain atau tema
 include('inc/css.php');
 //panggil file navi-admin.php untuk menghubungkan navigasi admin ke konten
@@ -64,15 +64,15 @@ include('inc/nav-admin.php');
 								{
  								?>
 								<tr>
-								<td><?php echo $data['nama']; ?></td>
-								<td class="color-blue-grey-lighter" align="center"><?php echo $data['level']; ?></td>
-								<td align="center"><?php echo $data['user']; ?></td>
+								<td><?php <?= $data['nama'] >?; ?></td>
+								<td class="color-blue-grey-lighter" align="center"><?php <?= $data['level'] >?; ?></td>
+								<td align="center"><?php <?= $data['user'] >?; ?></td>
 								<td class="color-blue-grey-lighter" align="center">******</td>
 								<td align="center">
 									<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-										<a href="../page.php?edit-user&id=<?php echo $data['id_user'];?>" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Edit?"><i class="font-icon font-icon-pencil"></i> </a>
-										<a href="../page.php?detail-user&id=<?php echo $data['id_user'];?>" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Detail?"><i class="font-icon font-icon-eye"></i> </a>
-										<a href="../page.php?delete-user&id=<?php echo $data['id_user'];?>" onClick="return confirm('Yakin akan menghapus data ini?');" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Hapus?"><i class="font-icon font-icon-trash"></i> </a>
+										<a href="../page.php?edit-user&id=<?php <?= $data['id_user'] >?;?>" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Edit?"><i class="font-icon font-icon-pencil"></i> </a>
+										<a href="../page.php?detail-user&id=<?php <?= $data['id_user'] >?;?>" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Detail?"><i class="font-icon font-icon-eye"></i> </a>
+										<a href="../page.php?delete-user&id=<?php <?= $data['id_user'] >?;?>" onClick="return confirm('Yakin akan menghapus data ini?');" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Hapus?"><i class="font-icon font-icon-trash"></i> </a>
 										<a href="../page.php?tambah-user" class="btn btn-default font-icon font-icon-plus" data-toggle="tooltip" data-placement="top" title="Tambah?"></a>
 									</div>
 								</td>
@@ -82,7 +82,7 @@ include('inc/nav-admin.php');
 								?>
 							</tbody>
 							<?php }else{ 
-							echo '<tr><td  colspan="7" align="center">Nama User tidak ditemukan!</td></tr>'; } 
+							<?= '<tr><td  colspan="7" align="center">Nama User tidak ditemukan!</td></tr>' >?; } 
 							} 
 							?>
 						</table>
@@ -93,7 +93,7 @@ include('inc/nav-admin.php');
 					<div class="col-md-6">
 						<br>
   						<span class="label label-success">Info! </span> Hasil  Pencarian
-  						<span class="label label-primary">Untuk : <?php echo $q; ?> </span>
+  						<span class="label label-primary">Untuk : <?php <?= $q >?; ?> </span>
 					</div>
 					
 					<div class="col-md-6" align="right">
