@@ -6,7 +6,7 @@ include('system/config/conn.php');
 //panggil file header.php untuk menghubungkan konten bagian atas
 include('system/inc/header.php');
 //memberi judul halaman
-echo '<title>walikelas Piket - MARI-ABSEN</title>';
+<?= '<title>walikelas Piket - MARI-ABSEN</title>' >?;
 //panggil file css.php untuk desain atau tema
 include('system/inc/css.php');
 //panggil file navi-walikelas.php untuk menghubungkan navigasi walikelas ke konten
@@ -25,7 +25,7 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 				<?php 
                 //kode php ini kita gunakan untuk menampilkan pesan Selamat datang user!
 				if (!empty($_GET['sign-in']) && $_GET['sign-in'] == 'succes') {
-				echo '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert">
+				<?= '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert"> >?
 			  	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 			  	<span aria-hidden="true">&times;</span>
 			  	</button>
@@ -34,7 +34,7 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 				}
 				//kode php ini kita gunakan untuk menampilkan pesan Edit sukses
 				else if (!empty($_GET['message']) && $_GET['message'] == 'edit-success') {
-				echo '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert">
+				<?= '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert"> >?
 			  	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 			  	<span aria-hidden="true">&times;</span>
 			 	</button>
@@ -93,12 +93,12 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 						?>
 						<tr>
 						
-						<td align="center"><?php echo $row['nm_kelas']; ?></td>
-						<td align="center"><?php echo "".$hari[date("w")].", ".date("j")." ".$bln[date("n")]." ".date("Y");""; ?></td>
-						<td align="center"><?php echo $jumlah;?></td>
+						<td align="center"><?php <?= $row['nm_kelas'] >?; ?></td>
+						<td align="center"><?php <?= "".$hari[date("w")].", ".date("j")." ".$bln[date("n")]." ".date("Y");"" >?; ?></td>
+						<td align="center"><?php <?= $jumlah >?;?></td>
 						<td align="center">
 							<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-							<a href="page.php?w-data-absensi&kelas=<?php  echo $row['nm_kelas']; ?>&tanggal=<?php echo $tanggal=date("d/m/Y"); ?>" class="btn btn-default font-icon font-icon-eye" data-toggle="tooltip" data-placement="top" title="Lihat?"></a>
+							<a href="page.php?w-data-absensi&kelas=<?php  <?= $row['nm_kelas'] >?; ?>&tanggal=<?php <?= $tanggal=date("d/m/Y") >?; ?>" class="btn btn-default font-icon font-icon-eye" data-toggle="tooltip" data-placement="top" title="Lihat?"></a>
 							</div>
 						</td>
 						</tr>
@@ -118,12 +118,12 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 						$query=mysql_query("select * from kelas order by nm_kelas");
           				$jmlh_kelas=mysql_num_rows($query);
     					?>
-  						<span class="label label-primary">Kelas : <?php echo "$jmlh_kelas";?> </span>
+  						<span class="label label-primary">Kelas : <?php <?= "$jmlh_kelas" >?;?> </span>
 						<?php 
 						$query=mysql_query("select * from siswa order by id_siswa");
           				$jmlh_siswa=mysql_num_rows($query);
     					?>
-						<span class="label label-primary">Siswa : <?php echo "$jmlh_siswa";?> </span>
+						<span class="label label-primary">Siswa : <?php <?= "$jmlh_siswa" >?;?> </span>
 					</div>
 					
 					<div class="col-md-6" align="right">
