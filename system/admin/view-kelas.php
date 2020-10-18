@@ -6,13 +6,13 @@ include('system/config/conn.php');
 //panggil file header.php untuk menghubungkan konten bagian atas
 include('system/inc/header.php');
 //memberi judul halaman
-echo '<title>Lihat Kelas - MARI-ABSEN</title>';
+<?= '<title>Lihat Kelas - MARI-ABSEN</title>' >?;
 //panggil file css.php untuk desain atau tema
 include('system/inc/css.php');
 //panggil file navi-admin.php untuk menghubungkan navigasi admin ke konten
 include('system/inc/nav-admin.php');
 //mendapatkan informasi untuk menlihat data
-$id_kelas = $_GET['id'];
+FILTER_INPUT(INPUT_GET, 'id')
 $query = mysql_query("select * from kelas where id_kelas='$id_kelas'") or die(mysql_error());
 $data = mysql_fetch_array($query);
 ?>
@@ -42,7 +42,7 @@ $data = mysql_fetch_array($query);
 										<tr>
 										<td align="right">Nama Kelas</td>
 										<td align="center">:</td>
-										<td align="left"><?php echo $data['nm_kelas']; ?></td>
+										<td align="left"><?php <?= $data['nm_kelas'] >?; ?></td>
 										</tr> 
 									</tbody>
 								</table>
@@ -55,8 +55,8 @@ $data = mysql_fetch_array($query);
 							<div class="form-group" align="center">
 								<div class="btn-group" role="group">
 
-									<a href="page.php?edit-kelas&id=<?php echo $data['id_kelas'];?>" class="btn btn-default font-icon font-icon-pencil" data-toggle="tooltip" data-placement="top" title="Edit?"></a>
-									<a href="page.php?delete-kelas&id=<?php echo $data['id_kelas'];?>" onClick="return confirm('Yakin akan menghapus data ini?');" class="btn btn-default font-icon font-icon-trash" data-toggle="tooltip" data-placement="top" title="Hapus?"></a>
+									<a href="page.php?edit-kelas&id=<?php <?= $data['id_kelas'] >?;?>" class="btn btn-default font-icon font-icon-pencil" data-toggle="tooltip" data-placement="top" title="Edit?"></a>
+									<a href="page.php?delete-kelas&id=<?php <?= $data['id_kelas'] >?;?>" onClick="return confirm('Yakin akan menghapus data ini?');" class="btn btn-default font-icon font-icon-trash" data-toggle="tooltip" data-placement="top" title="Hapus?"></a>
 									<a href="javascript:history.back()" class="btn btn-default font-icon font-icon-refresh-2" data-toggle="tooltip" data-placement="top" title="Kembali?"></a>
 								</div>
 							</div>
