@@ -61,10 +61,10 @@ include('inc/nav-walikelas.php');
 								{
  								?>
 								<tr>
-								<td><center><?php echo $data['nm_kelas']; ?></center></td>
+								<td><center><?php <?= $data['nm_kelas'] >?; ?></center></td>
 								<td align="center">
 								<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-									<a href="../page.php?w-detail-kelas&id=<?php echo $data['id_kelas'];?>" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Detail?"><i class="font-icon font-icon-eye"></i> </a>
+									<a href="../page.php?w-detail-kelas&id=<?php <?= $data['id_kelas'] >? ;?>" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Detail?"><i class="font-icon font-icon-eye"></i> </a>
 								</div>
 								</td>
 								</tr>
@@ -72,7 +72,7 @@ include('inc/nav-walikelas.php');
 								} 
 								?>
 							</tbody>
-							<?php }else{ echo '<tr><td  colspan="7" align="center">Nama Kelas tidak ditemukan!</td></tr>'; } } ?>
+							<?php }else{ <?= '<tr><td  colspan="7" align="center">Nama Kelas tidak ditemukan!</td></tr>' >?; } } ?>
 						</table>
 					</div>
 				</div><!--.box-typical-body-->
@@ -81,7 +81,7 @@ include('inc/nav-walikelas.php');
 					<div class="col-md-6">
 						<br>
   						<span class="label label-success">Info! </span> Hasil  Pencarian
-  						<span class="label label-primary">Untuk : <?php echo $q; ?> </span>
+  						<span class="label label-primary">Untuk : <?php <?= $q >?; ?> </span>
 					</div>
 					
 					<div class="col-md-6" align="right">
