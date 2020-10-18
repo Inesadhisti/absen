@@ -1298,7 +1298,7 @@
                 }
 
                 if (this.options.pageNumber >= 4) {
-                    if (this.options.pageNumber == 4 || this.totalPages == 6 || this.totalPages == 7) {
+                    if (this.options.pageNumber === 4 || this.totalPages === 6 || this.totalPages === 7) {
                         from--;
                     } else {
                         html.push("<li class="page-first-separator disabled">",
@@ -1316,12 +1316,12 @@
                 }
             }
 
-            if (this.totalPages == 6) {
+            if (this.totalPages === 6) {
                 if (this.options.pageNumber >= (this.totalPages - 2)) {
                     to++;
                 }
             } else if (this.totalPages >= 7) {
-                if (this.totalPages == 7 || this.options.pageNumber >= (this.totalPages - 3)) {
+                if (this.totalPages === 7 || this.options.pageNumber >= (this.totalPages - 3)) {
                     to++;
                 }
             }
@@ -1423,7 +1423,7 @@
     };
 
     BootstrapTable.prototype.onPagePre = function (event) {
-        if ((this.options.pageNumber - 1) == 0) {
+        if ((this.options.pageNumber - 1) === 0) {
             this.options.pageNumber = this.options.totalPages;
         } else {
             this.options.pageNumber--;
