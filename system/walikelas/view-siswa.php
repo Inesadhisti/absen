@@ -6,7 +6,7 @@ include('system/config/conn.php');
 //panggil file header.php untuk menghubungkan konten bagian atas
 include('system/inc/header.php');
 //memberi judul halaman
-echo '<title>Lihat User - MARI-ABSEN</title>';
+<?= '<title>Lihat User - MARI-ABSEN</title>' >?;
 //panggil file css.php untuk desain atau tema
 include('system/inc/css.php');
 //panggil file navi-walikelas.php untuk menghubungkan navigasi walikelas ke konten
@@ -38,13 +38,13 @@ $data = mysql_fetch_array($query);
 										<tr>
 										<td align="right">Nama</td>
 										<td align="center">:</td>
-										<td align="left"><?php echo $data['nama']; ?></td>
+										<td align="left"><?php <?= $data['nama'] >?; ?></td>
 										</tr> 
 										
 										<tr>
 										<td align="right">NIS</td>
 										<td align="center">:</td>
-										<td align="left"><?php echo $data['nis']; ?></td>
+										<td align="left"><?php <?= $data['nis'] >?; ?></td>
 										</tr> 
 										
 										<tr>
@@ -56,25 +56,25 @@ $data = mysql_fetch_array($query);
 										<tr>
 										<td align="right">Jenis Kelamin</td>
 										<td align="center">:</td>
-										<td align="left"><?php echo $data['jns_kel']; ?></td>
+										<td align="left"><?php <?= $data['jns_kel'] >?; ?></td>
 										</tr> 
 										
 										<tr>
 										<td align="right">Tanggal Lahir</td>
 										<td align="center">:</td>
-										<td align="left"><?php echo $data['tgl_lahir']; ?></td>
+										<td align="left"><?php <?= $data['tgl_lahir'] >?; ?></td>
 										</tr> 
 										
 										<tr>
 										<td align="right">Tempat Lahir</td>
 										<td align="center">:</td>
-										<td align="left"><?php echo $data['tmpt_lahir']; ?></td>
+										<td align="left"><?php <?= $data['tmpt_lahir'] >?; ?></td>
 										</tr> 
 										
 										<tr>
 										<td align="right">Alamat</td>
 										<td align="center">:</td>
-										<td align="left"><?php echo $data['alamat']; ?></td>
+										<td align="left"><?php <?= $data['alamat'] >?; ?></td>
 										</tr> 
 									</tbody>
 								</table>
