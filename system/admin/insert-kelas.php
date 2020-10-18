@@ -49,5 +49,5 @@ include('system/inc/nav-admin.php');
 
 <?php 
 //panggil file footer.php untuk menghubungkan konten bagian bawah
-print ('system/inc/footer.php');
+include ('system/inc/footer.php');
 ?>
