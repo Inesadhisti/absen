@@ -60,6 +60,7 @@
   0% {
     top: 50%;
   }
+  
   100% {
     top: 70%;
   }
@@ -466,6 +467,7 @@ body.stop-scrolling {
   transform: rotate(-45deg);
   transform-origin: 60px 60px;
 }
+
 .sweet-alert .sa-icon.sa-success::after {
   border-radius: 0 120px 120px 0;
   top: -11px;
@@ -473,6 +475,7 @@ body.stop-scrolling {
   transform: rotate(-45deg);
   transform-origin: 0px 60px;
 }
+
 .sweet-alert .sa-icon.sa-success .sa-placeholder {
   width: 80px;
   height: 80px;
@@ -484,6 +487,7 @@ body.stop-scrolling {
   top: -4px;
   z-index: 2;
 }
+
 .sweet-alert .sa-icon.sa-success .sa-fix {
   width: 5px;
   height: 90px;
@@ -494,6 +498,7 @@ body.stop-scrolling {
   z-index: 1;
   transform: rotate(-45deg);
 }
+
 .sweet-alert .sa-icon.sa-success .sa-line {
   height: 5px;
   background-color: #5cb85c;
@@ -502,18 +507,21 @@ body.stop-scrolling {
   position: absolute;
   z-index: 2;
 }
+
 .sweet-alert .sa-icon.sa-success .sa-line.sa-tip {
   width: 25px;
   left: 14px;
   top: 46px;
   transform: rotate(45deg);
 }
+
 .sweet-alert .sa-icon.sa-success .sa-line.sa-long {
   width: 47px;
   right: 8px;
   top: 38px;
   transform: rotate(-45deg);
 }
+
 .sweet-alert .sa-icon.sa-custom {
   background-size: contain;
   border-radius: 0;
@@ -521,36 +529,42 @@ body.stop-scrolling {
   background-position: center center;
   background-repeat: no-repeat;
 }
+
 .sweet-alert .btn-default:focus {
   border-color: #cccccc;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(204, 204, 204, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(204, 204, 204, 0.6);
 }
+
 .sweet-alert .btn-success:focus {
   border-color: #4cae4c;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(76, 174, 76, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(76, 174, 76, 0.6);
 }
+
 .sweet-alert .btn-info:focus {
   border-color: #46b8da;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(70, 184, 218, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(70, 184, 218, 0.6);
 }
+
 .sweet-alert .btn-danger:focus {
   border-color: #d43f3a;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(212, 63, 58, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(212, 63, 58, 0.6);
 }
+
 .sweet-alert .btn-warning:focus {
   border-color: #eea236;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(238, 162, 54, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(238, 162, 54, 0.6);
 }
+
 .sweet-alert button::-moz-focus-inner {
   border: 0;
 }
@@ -566,24 +580,29 @@ body.stop-scrolling {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 .la-ball-fall {
   display: block;
   font-size: 0;
   color: #fff;
 }
+
 .la-ball-fall.la-dark {
   color: #333;
 }
+
 .la-ball-fall > div {
   display: inline-block;
   float: none;
   background-color: currentColor;
   border: 0 solid currentColor;
 }
+
 .la-ball-fall {
   width: 54px;
   height: 18px;
 }
+
 .la-ball-fall > div {
   width: 10px;
   height: 10px;
@@ -595,33 +614,39 @@ body.stop-scrolling {
   -o-animation: ball-fall 1s ease-in-out infinite;
   animation: ball-fall 1s ease-in-out infinite;
 }
+
 .la-ball-fall > div:nth-child(1) {
   -webkit-animation-delay: -200ms;
   -moz-animation-delay: -200ms;
   -o-animation-delay: -200ms;
   animation-delay: -200ms;
 }
+
 .la-ball-fall > div:nth-child(2) {
   -webkit-animation-delay: -100ms;
   -moz-animation-delay: -100ms;
   -o-animation-delay: -100ms;
   animation-delay: -100ms;
 }
+
 .la-ball-fall > div:nth-child(3) {
   -webkit-animation-delay: 0ms;
   -moz-animation-delay: 0ms;
   -o-animation-delay: 0ms;
   animation-delay: 0ms;
 }
+
 .la-ball-fall.la-sm {
   width: 26px;
   height: 8px;
 }
+
 .la-ball-fall.la-sm > div {
   width: 4px;
   height: 4px;
   margin: 2px;
 }
+
 .la-ball-fall.la-2x {
   width: 108px;
   height: 36px;
@@ -631,10 +656,12 @@ body.stop-scrolling {
   height: 20px;
   margin: 8px;
 }
+
 .la-ball-fall.la-3x {
   width: 162px;
   height: 54px;
 }
+
 .la-ball-fall.la-3x > div {
   width: 30px;
   height: 30px;
@@ -651,22 +678,27 @@ body.stop-scrolling {
     -webkit-transform: translateY(-145%);
     transform: translateY(-145%);
   }
+  
   10% {
     opacity: .5;
   }
+  
   20% {
     opacity: 1;
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
+  
   80% {
     opacity: 1;
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
+  
   90% {
     opacity: .5;
   }
+  
   100% {
     opacity: 0;
     -webkit-transform: translateY(145%);
@@ -680,22 +712,27 @@ body.stop-scrolling {
     -moz-transform: translateY(-145%);
     transform: translateY(-145%);
   }
+  
   10% {
     opacity: .5;
   }
+  
   20% {
     opacity: 1;
     -moz-transform: translateY(0);
     transform: translateY(0);
   }
+  
   80% {
     opacity: 1;
     -moz-transform: translateY(0);
     transform: translateY(0);
   }
+  
   90% {
     opacity: .5;
   }
+  
   100% {
     opacity: 0;
     -moz-transform: translateY(145%);
@@ -709,22 +746,27 @@ body.stop-scrolling {
     -o-transform: translateY(-145%);
     transform: translateY(-145%);
   }
+  
   10% {
     opacity: .5;
   }
+  
   20% {
     opacity: 1;
     -o-transform: translateY(0);
     transform: translateY(0);
   }
+  
   80% {
     opacity: 1;
     -o-transform: translateY(0);
     transform: translateY(0);
   }
+  
   90% {
     opacity: .5;
   }
+  
   100% {
     opacity: 0;
     -o-transform: translateY(145%);
@@ -740,9 +782,11 @@ body.stop-scrolling {
     -o-transform: translateY(-145%);
     transform: translateY(-145%);
   }
+  
   10% {
     opacity: .5;
   }
+  
   20% {
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -750,6 +794,7 @@ body.stop-scrolling {
     -o-transform: translateY(0);
     transform: translateY(0);
   }
+  
   80% {
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -757,9 +802,11 @@ body.stop-scrolling {
     -o-transform: translateY(0);
     transform: translateY(0);
   }
+  
   90% {
     opacity: .5;
   }
+  
   100% {
     opacity: 0;
     -webkit-transform: translateY(145%);
