@@ -12,7 +12,7 @@ include('system/inc/css.php');
 //panggil file navi-walikelas.php untuk menghubungkan navigasi walikelas ke konten
 include('system/inc/nav-walikelas.php');
 //mendapatkan informasi dari data kelas
-$nm_kelas = $_GET['kelas'];
+FILTER_INPUT(INPUT_GET, 'kelas');
 $query = mysql_query("SELECT * FROM kelas");
 $data = mysql_fetch_array($query);
 ?>
@@ -60,7 +60,7 @@ $data = mysql_fetch_array($query);
 							   
 							<tbody>
 								<?php
-								$nm_kelas=$_GET['kelas'];
+								FILTER_INPUT(INPUT_GET, 'kelas');
 								$batas = 10;
 								$pg = isset($_GET['pg']) ? $_GET['pg']:"";
 								if (empty($pg)) {
@@ -98,7 +98,7 @@ $data = mysql_fetch_array($query);
 					<div class="col-md-6">
 						<?php
 						//hitung jumlah data
-						$nm_kelas=$_GET['kelas'];
+						FILTER_INPUT(INPUT_GET, 'kelas');
 						$query = mysql_query("SELECT * FROM siswa WHERE nm_kelas='$nm_kelas'");
           				$jml_data=mysql_num_rows($query);
     					
