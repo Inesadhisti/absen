@@ -6,7 +6,7 @@ include('../system/config/conn.php');
 //panggil file header.php untuk menghubungkan konten bagian atas
 include('inc/header.php');
 //memberi judul halaman
-	echo '<title>Pencarian Data Siswa - MARI-ABSEN</title>';
+	<?= '<title>Pencarian Data Siswa - MARI-ABSEN</title>' >?;
 //panggil file css.php untuk desain atau tema
 include('inc/css.php');
 //panggil file navi-admin.php untuk menghubungkan navigasi admin ke konten
@@ -66,15 +66,15 @@ include('inc/nav-admin.php');
  								?>
 								<tr>
 								<td><?php <?= $data['nama'] >?; ?></td>
-								<td class="color-blue-grey-lighter"><?php echo $data['nis']; ?></td>
-								<td align="center"><?php echo $data['nm_kelas']; ?></td>
-								<td ><?php echo $data['jns_kel']; ?></td>
-								<td class="color-blue-grey-lighter"><?php echo $data['alamat']; ?></td>
+								<td class="color-blue-grey-lighter"><?php <?= $data['nis'] >?; ?></td>
+								<td align="center"><?php <?= $data['nm_kelas'] >?; ?></td>
+								<td ><?php <?= $data['jns_kel'] >?; ?></td>
+								<td class="color-blue-grey-lighter"><?php <?= $data['alamat'] >?; ?></td>
 								<td align="center">
 									<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-										<a href="../page.php?edit-siswa&id=<?php echo $data['id_siswa'];?>" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Edit?"><i class="font-icon font-icon-pencil"></i> </a>
-										<a href="../page.php?detail-siswa&id=<?php echo $data['id_siswa'];?>" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Detail?"><i class="font-icon font-icon-eye"></i> </a>
-										<a href="../page.php?delete-siswa&id=<?php echo $data['id_siswa'];?>" onClick="return confirm('Yakin akan menghapus data ini?');" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Hapus?"><i class="font-icon font-icon-trash"></i> </a>
+										<a href="../page.php?edit-siswa&id=<?php <?= $data['id_siswa'] >?;?>" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Edit?"><i class="font-icon font-icon-pencil"></i> </a>
+										<a href="../page.php?detail-siswa&id=<?php <?= $data['id_siswa'] >?;?>" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Detail?"><i class="font-icon font-icon-eye"></i> </a>
+										<a href="../page.php?delete-siswa&id=<?php <?= $data['id_siswa'] >?;?>" onClick="return confirm('Yakin akan menghapus data ini?');" class="btn btn btn-default" data-toggle="tooltip" data-placement="top" title="Hapus?"><i class="font-icon font-icon-trash"></i> </a>
 										<a href="../page.php?tambah-siswa" class="btn btn-default font-icon font-icon-plus" data-toggle="tooltip" data-placement="top" title="Tambah?"></a>
 									</div>
 								</td>
@@ -83,7 +83,7 @@ include('inc/nav-admin.php');
 								} 
 								?>
 							</tbody>
-							<?php }else{ echo '<tr><td  colspan="7" align="center">NIS atau Nama Siswa tidak ditemukan!</td></tr>'; } } ?>
+							<?php }else{ <?= '<tr><td  colspan="7" align="center">NIS atau Nama Siswa tidak ditemukan!</td></tr>' >?; } } ?>
 						</table>
 					</div>
 				</div><!--.box-typical-body-->
@@ -92,7 +92,7 @@ include('inc/nav-admin.php');
 					<div class="col-md-6">
 						<br>
   						<span class="label label-success">Info! </span> Hasil  Pencarian
-  						<span class="label label-primary">Untuk : <?php echo $q; ?> </span>
+  						<span class="label label-primary">Untuk : <?php <?= $q >?; ?> </span>
 					</div>
 					
 					<div class="col-md-6" align="right">
