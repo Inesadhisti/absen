@@ -76,8 +76,8 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 
 								?>
 								<tr>
-								<td><?php echo $data['nama'];?></td>
-								<td><?php echo $data['nis'];?></td>
+								<td><?php <?= $data['nama'] >? ;?></td>
+								<td><?php <?= $data['nis'] >? ;?></td>
 								<td align="center">
 									<?php
 									$hadir=mysql_query("SELECT * FROM absensi_sholat WHERE nis='$row[nis]' AND tanggal='$tanggal' AND ket='S'",$connect);
@@ -89,21 +89,21 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 									<?php
 									$hadir=mysql_query("SELECT * FROM absensi_sholat WHERE nis='$row[nis]' AND tanggal='$tanggal' AND ket='TS'",$connect);
 									$jumlah=mysql_num_rows($hadir);
-									echo $jumlah;
+									<?= $jumlah >?;
 									?>
 								</td>
 								<td align="center">
 									<?php
 									$hadir=mysql_query("SELECT * FROM absensi_sholat WHERE nis='$row[nis]' AND tanggal='$tanggal' AND ket='HL'",$connect);
 									$jumlah=mysql_num_rows($hadir);
-									echo $jumlah;
+									<?= $jumlah >?;
 									?>
 								</td>
 								<td align="center">
 									<?php
 									$hadir=mysql_query("SELECT * FROM absensi_sholat WHERE nis='$row[nis]' AND tanggal='$tanggal' AND ket IN ('TS', 'HL')",$connect);
 									$jumlah=mysql_num_rows($hadir);
-									echo $jumlah;
+									<?= $jumlah >?;
 									?>
 								</td>
 								</tr>
