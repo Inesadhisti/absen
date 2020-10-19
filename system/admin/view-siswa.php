@@ -12,8 +12,8 @@ include('system/inc/css.php');
 //panggil file navi-admin.php untuk menghubungkan navigasi admin ke konten
 include('system/inc/nav-admin.php');
 //mendapatkan informasi untuk menlihat data
-$id_siswa = $_GET['id'];
-$query = mysql_query("SELECT * FROM siswa WHERE id_siswa='$id_siswa'") or die(mysql_error());
+$id_siswa = (FILTER_INPUT(INPUT_GET, 'id'));
+$query = mysql_query("SELECT * FROM siswa WHERE id_siswa='$id_siswa'");
 $data = mysql_fetch_array($query);
 ?>
 
