@@ -20,21 +20,21 @@ include('system/inc/nav-admin.php');
 				<div class="col-lg-12 col-md-12">
 				<?php 
 				//kode php ini kita gunakan untuk menampilkan pesan tambah data sukses
-				if (!empty($_GET['message']) && $_GET['message'] == 'insert-success') {
+				if (!empty(FILTER_INPUT(INPUT_GET, 'message')) && FILTER_INPUT(INPUT_GET, 'message') == 'insert-success') {
 				<?= '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert"> >?
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 				</button> SUCCESS !! - Data User Berhasil Di Tambah ! </div>';
 				} 
 				//kode php ini kita gunakan untuk menampilkan pesan edit data sukses
-				else if (!empty($_GET['message']) && $_GET['message'] == 'edit-success') {
+				else if (!empty(FILTER_INPUT(INPUT_GET, 'message')) && FILTER_INPUT(INPUT_GET, 'message') == 'edit-success') {
 				<?= '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert"> >?
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 				</button> SUCCESS !! - Data User Berhasil Di Edit ! </div>';
 				} 
 				//kode php ini kita gunakan untuk menampilkan pesan tambah data sukses
-				else if (!empty($_GET['message']) && $_GET['message'] == 'delete-success') {
+				else if (!empty(FILTER_INPUT(INPUT_GET, 'message')) && FILTER_INPUT(INPUT_GET, 'message') == 'delete-success') {
 				<?= '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert"> >?
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
