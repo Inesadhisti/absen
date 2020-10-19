@@ -45,7 +45,7 @@ $data = mysql_fetch_array($query);
 										<tr>
 										<td align="right">Username</td>
 										<td align="center">:</td>
-										<td align="left"><?= $data['user']; ?></td>
+										<td align="left"> <?= $data['user'] >?; ?></td>
 										</tr> 
 										
 										<tr>
