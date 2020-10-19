@@ -69,7 +69,7 @@ $data = mysql_fetch_array($query);
 						<div class="col-md-12">
 							<div class="form-group" align="center">
 								<div class="btn-group" role="group">
-									<a href="page.php?g-edit-profil&id=<?= $data['id_user'];?>" class="btn btn-default font-icon font-icon-pencil" data-toggle="tooltip" data-placement="top" title="Edit?"></a>
+									<a href="page.php?g-edit-profil&id= <?= $data['id_user'] >?;?>" class="btn btn-default font-icon font-icon-pencil" data-toggle="tooltip" data-placement="top" title="Edit?"></a>
 									<a href="javascript:history.back()" class="btn btn-default font-icon font-icon-refresh-2" data-toggle="tooltip" data-placement="top" title="Kembali?"></a>
 								</div>
 							</div>
