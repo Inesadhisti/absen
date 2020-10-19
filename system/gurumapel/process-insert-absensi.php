@@ -38,7 +38,7 @@ if(isset(FILTER_INPUT(INPUT_POST, 'info'))){
 			}
 			else if((FILTER_INPUT(INPUT_POST, ''absen-'.$data['nis']') == 'alfa'){
 				//parameter
-				$keterangan = $_POST['keterangan-'.$data['nis']];
+				(FILTER_INPUT(INPUT_POST, ''keterangan-'.$data['nis']');
 				$alfa=mysql_query("INSERT INTO absensi(nis,nm_kelas,ket,keterangan,tanggal,info,jam_pelajaran) VALUES ('$data[nis]','$nm_kelas','A','$keterangan','$tanggal','succes','$jam_pelajaran')",$connect);
 				?>
 				<script language="javascript">window.location.href="page.php?data-absensi&kelas=<?php <?= $nm_kelas >?;?>&tanggal=<?php <?= $tanggal >?;?>&message=absen-success";</script>
