@@ -23,16 +23,16 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 				<div class="col-lg-12 col-md-12">
 				<?php 
                 //kode php ini kita gunakan untuk menampilkan pesan Selamat datang user!
-				if (!empty($_GET['sign-in']) && $_GET['sign-in'] == 'succes') {
+				if (!empty(FILTER_INPUT(INPUT_GET, 'sign-in')) && FILTER_INPUT(INPUT_GET, 'sign-in') == 'succes') {
 				<?= '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert"> >?
 			  	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 			  	<span aria-hidden="true">&times;</span>
 			  	</button>
-			  	Assalamualaikum <strong>'.$_SESSION['nama'].' ! </strong>
+			  	Assalamualaikum <strong>'.(FILTER_INPUT(INPUT_SESSION, 'nama').' ! </strong>
 				Selamat Datang Di MARI-ABSEN </div>';
 				}
 				//kode php ini kita gunakan untuk menampilkan pesan Edit sukses
-				else if (!empty($_GET['message']) && $_GET['message'] == 'edit-success') {
+				else if (!empty(FILTER_INPUT(INPUT_GET, 'message')) && FILTER_INPUT(INPUT_GET, 'message') == 'edit-success') {
 				<?= '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert"> >?
 			  	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 			  	<span aria-hidden="true">&times;</span>
