@@ -96,8 +96,8 @@ include('system/inc/nav-walikelas.php');
 					<div class="tbl-row">
 					 	<div class="tbl-cell tbl-cell-title">
 					  		<div align="center">
-								<h5>DATA HASIL REKAP KELAS : <?php <?= $nm_kelas=$_POST['nm_kelas'] >?; ?></h5>
-								<h7>( Tanggal : <?php <?= $tgl1=$_POST['tgl1'] >?; ?> - <?php <?= $tgl2=$_POST['tgl2'] >?; ?> )</h7> 
+								<h5>DATA HASIL REKAP KELAS : <?php <?= (FILTER_INPUT(INPUT_POST, 'nm_kelas') >?; ?></h5>
+								<h7>( Tanggal : <?php <?= (FILTER_INPUT(INPUT_POST, 'tgl1') >?; ?> - <?php <?= (FILTER_INPUT(INPUT_POST, 'tgl2') >?; ?> )</h7> 
 							</div>
 						</div>
 					</div>
@@ -121,8 +121,8 @@ include('system/inc/nav-walikelas.php');
 							<tbody>
 								<?php
 								//untuk option
-								$tgl1=$_POST['tgl1'];
-								$tgl2=$_POST['tgl2'];
+								(FILTER_INPUT(INPUT_POST, 'tgl1');
+								(FILTER_INPUT(INPUT_POST, 'tgl2');
 								FILTER_INPUT(INPUT_POST, 'nm_kelas')
 								$query=mysql_query("SELECT DISTINCT nis FROM absensi WHERE nm_kelas='$nm_kelas' AND tanggal BETWEEN '$tgl1' AND '$tgl2' ORDER BY nis ASC",$connect);
 								while($row=mysql_fetch_array($query)){
