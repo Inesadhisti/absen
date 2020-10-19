@@ -37,7 +37,7 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 			  	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 			  	<span aria-hidden="true">&times;</span>
 			 	</button>
-			  	SUCCESS !! - Data Profil Berhasil Di Edit ! [ <a href="page.php?g-detail-profil&id='.$_SESSION['id_user'].'">Lihat Perubahan Disini !</a> ]
+			  	SUCCESS !! - Data Profil Berhasil Di Edit ! [ <a href="page.php?g-detail-profil&id='.FILTER_INPUT(INPUT_SESSION, 'id_user').'">Lihat Perubahan Disini !</a> ]
 				</div>';
 				}
 				?>
