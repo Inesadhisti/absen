@@ -12,31 +12,31 @@ if(isset(FILTER_INPUT(INPUT_POST, 'info'))){
 		$query=mysql_query("SELECT nis FROM siswa WHERE nm_kelas='$nm_kelas' ORDER BY nis ASC");
 		while($data=mysql_fetch_array($query)){
 			mysql_query("DELETE FROM absensi WHERE nis='$data[nis]' AND tanggal='$tanggal' AND jam_pelajaran='$jam_pelajaran'");
-			if($_POST['absen-'.$data['nis']] == 'hadir'){
+			if(FILTER_INPUT(INPUT_POST, ''absen-'.$data['nis']') == 'hadir'){
 				//parameter
-				$keterangan = $_POST['keterangan-'.$data['nis']];
+				(FILTER_INPUT(INPUT_POST, ''keterangan-'.$data['nis']');
 				$hadir=mysql_query("INSERT INTO absensi(nis,nm_kelas,ket,keterangan,tanggal,info,jam_pelajaran) VALUES ('$data[nis]','$nm_kelas','H','$keterangan','$tanggal','succes','$jam_pelajaran')",$connect);
 				?>
 					<script language="javascript">window.location.href="page.php?data-absensi&kelas=<?php <?= $nm_kelas >?;?>&tanggal=<?php <?= $tanggal >?;?>&message=absen-success";</script>
 				<?php 
 			}
-			else if($_POST['absen-'.$data['nis']] == 'sakit'){
+			else if((FILTER_INPUT(INPUT_POST, ''absen-'.$data['nis']') == 'sakit'){
 				//parameter
-				$keterangan = $_POST['keterangan-'.$data['nis']];
+				(FILTER_INPUT(INPUT_POST, ''keterangan-'.$data['nis']');
 				$hadir=mysql_query("INSERT INTO absensi(nis,nm_kelas,ket,keterangan,tanggal,info,jam_pelajaran) VALUES ('$data[nis]','$nm_kelas','S','$keterangan','$tanggal','succes','$jam_pelajaran')",$connect);
 				?>
 				<script language="javascript">window.location.href="page.php?data-absensi&kelas=<?php <?= $nm_kelas >?;?>&tanggal=<?php <?= $tanggal >?;?>&message=absen-success";</script>
 				<?php 
 			}
-			else if($_POST['absen-'.$data['nis']] == 'ijin'){
+			else if((FILTER_INPUT(INPUT_POST, ''absen-'.$data['nis']') == 'ijin'){
 				//parameter
-				$keterangan = $_POST['keterangan-'.$data['nis']];
+				(FILTER_INPUT(INPUT_POST, ''keterangan-'.$data['nis']');
 				$hadir=mysql_query("INSERT INTO absensi(nis,nm_kelas,ket,keterangan,tanggal,info,jam_pelajaran) VALUES ('$data[nis]','$nm_kelas','I','$keterangan','$tanggal','succes','$jam_pelajaran')",$connect);
 				?>
 				<script language="javascript">window.location.href="page.php?data-absensi&kelas=<?php <?= $nm_kelas >?;?>&tanggal=<?php <?= $tanggal >?;?>&message=absen-success";</script>
 				<?php 
 			}
-			else if($_POST['absen-'.$data['nis']] == 'alfa'){
+			else if((FILTER_INPUT(INPUT_POST, ''absen-'.$data['nis']') == 'alfa'){
 				//parameter
 				$keterangan = $_POST['keterangan-'.$data['nis']];
 				$alfa=mysql_query("INSERT INTO absensi(nis,nm_kelas,ket,keterangan,tanggal,info,jam_pelajaran) VALUES ('$data[nis]','$nm_kelas','A','$keterangan','$tanggal','succes','$jam_pelajaran')",$connect);
