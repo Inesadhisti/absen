@@ -27,7 +27,7 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 				<div class="col-lg-12 col-md-12">
 				<?php 
 				//kode php ini kita gunakan untuk menampilkan pesan absen sukses
-				if (!empty($_GET['message']) && $_GET['message'] == 'absen-success') {
+				if (!empty(FILTER_INPUT(INPUT_GET, 'message')) && FILTER_INPUT(INPUT_GET, 'message') == 'absen-success') {
 				<?= '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert"> >?
 			  	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 			  	<span aria-hidden="true">&times;</span> </button>
@@ -42,7 +42,7 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 					<div class="tbl-row">
 						<div class="tbl-cell tbl-cell-title">
 							<div align="center">
-							<h3 align="center"> DATA ABSENSI SISWA KELAS : <?php echo $nm_kelas; ?></h3>
+							<h3 align="center"> DATA ABSENSI SISWA KELAS : <?php <?= $nm_kelas >?; ?></h3>
 							<h7 align="center">( <?php <?= "".$hari[date("w")].", ".date("j")." ".$bln[date("n")]." ".date("Y");"" >?; ?> )</h7>
 							</div>
 						</div>
