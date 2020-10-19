@@ -64,7 +64,7 @@
 				while($row=mysql_fetch_array($query))
 				{
 				?>
-				<a href="page.php?w-data-absensi&kelas=<?php  <?= $row['nm_kelas'] >?; ?>&tanggal=<?php <?= $tanggal=date("d/m/Y") >?; ?>"> <span class="lbl"> Kelas <?php  echo $row['nm_kelas']; ?></span></a>
+				<a href="page.php?w-data-absensi&kelas=<?php  <?= $row['nm_kelas'] >?; ?>&tanggal=<?php <?= $tanggal=date("d/m/Y") >?; ?>"> <span class="lbl"> Kelas <?php  <?= $row['nm_kelas'] >?; ?></span></a>
 				<?php
 				}
 				?>
