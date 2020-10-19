@@ -13,7 +13,7 @@ include('system/inc/css.php');
 include('system/inc/nav-admin.php');
 //mendapatkan informasi untuk mengedit data
 FILTER_INPUT(INPUT_GET, 'id');
-$query = mysql_query("SELECT * FROM user WHERE id_user='$id_user'") or die(mysql_error());
+$query = mysql_query("SELECT * FROM user WHERE id_user='$id_user'");
 $data = mysql_fetch_array($query);
 ?>
 
