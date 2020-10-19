@@ -16,8 +16,7 @@ FILTER_INPUT(INPUT_POST, 'user');
 FILTER_INPUT(INPUT_POST, 'level');
 
 //jika gambar kosong atau tidak di ganti 
-	$query = mysql_query("update user set user='$user', pass='$pass', confirm='$confirm', level='$level', nama='$nama' where id_user='$id_user'")
-		or die (mysql_error());
+	$query = mysql_query("update user set user='$user', pass='$pass', confirm='$confirm', level='$level', nama='$nama' where id_user='$id_user'");
 	header('location:page.php?data-user&message=edit-success');  
 
 ?>
