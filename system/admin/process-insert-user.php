@@ -17,7 +17,7 @@ FILTER_INPUT(INPUT_POST, 'level');
 
 //menghindari duplikat username
 $cek="SELECT user FROM user WHERE user='$user'";
-$ada=mysql_query($cek) or die (mysql_error());
+$ada=mysql_query($cek);
 if(mysql_num_rows($ada)>0)
 {
 	<?= "<script>alert ('Username Telah Terdaftar ! Silahkan Periksa Kembali !');window.location='page.php?tambah-user' </script> " >?;
