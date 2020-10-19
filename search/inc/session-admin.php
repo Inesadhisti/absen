@@ -1,7 +1,7 @@
 <?php 
 session_start();
 //jika session username belum dibuat, atau session username kosong
-if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
+if (!isset((FILTER_INPUT(INPUT_SESSION, 'user'))) || empty((FILTER_INPUT(INPUT_SESSION, 'user')))) {
 //redirect ke halaman login
 	header('location:../page.php?masuk&log=only');
 }
