@@ -15,8 +15,7 @@ FILTER_INPUT(INPUT_POST, 'nama')
 FILTER_INPUT(INPUT_POST, 'user')
 FILTER_INPUT(INPUT_POST, 'level')
 
-	$query = mysql_query("update user set user='$user', pass='$pass', confirm='$confirm', level='$level', nama='$nama' where id_user='$id_user'")
-		or die (mysql_error());
+	$query = mysql_query("update user set user='$user', pass='$pass', confirm='$confirm', level='$level', nama='$nama' where id_user='$id_user'");
 	header('location:page.php?w-home&message=edit-success');  
 
 ?>
