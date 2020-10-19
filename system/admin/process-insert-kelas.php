@@ -14,7 +14,7 @@ if(mysql_num_rows($ada)>0)
 
 //simpan data ke database
 else { 
-$query = mysql_query("insert into kelas values('','$nm_kelas')") or die(mysql_error());
+$query = mysql_query("insert into kelas values('','$nm_kelas')");
  }
  if ($query) {
 	header('location:page.php?data-kelas&message=insert-success');
