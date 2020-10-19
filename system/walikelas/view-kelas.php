@@ -13,7 +13,7 @@ include('system/inc/css.php');
 include('system/inc/nav-walikelas.php');
 //mendapatkan informasi untuk menlihat data
 FILTER_INPUT(INPUT_GET, 'id');
-$query = mysql_query("select * from kelas where id_kelas='$id_kelas'") or die(mysql_error());
+$query = mysql_query("select * from kelas where id_kelas='$id_kelas'");
 $data = mysql_fetch_array($query);
 ?>
 
