@@ -57,7 +57,7 @@ $data = mysql_fetch_array($query);
 										<tr>
 										<td align="right">Level</td>
 										<td align="center">:</td>
-										<td align="left"><?= $data['level']; ?></td>
+										<td align="left"> <?= $data['level'] >?; ?></td>
 										</tr> 
 									</tbody>
 								</table>
