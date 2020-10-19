@@ -1,13 +1,13 @@
 <?php 
 session_start();
 //jika session username belum dibuat, atau session username kosong
-if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
+if (!isset(FILTER_INPUT(INPUT_SESSION, 'user')) || empty(FILTER_INPUT(INPUT_SESSION, 'user'))) {
 //redirect ke halaman login
 	header('location:page.php?masuk&log=only');
 }
 
 //pemisah hak akses level
-else if ($_SESSION['level']!="Wali-Kelas"){
+else if (FILTER_INPUT(INPUT_SESSION, 'level')!="Wali-Kelas"){
 //jika bukan admin tidak bisa masuk, redirect ke halaman error
 	header('location:page.php?acces-walikelas&pembatasan=hak-akses');
 }
