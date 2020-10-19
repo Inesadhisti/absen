@@ -4,8 +4,8 @@ include('system/config/conn.php');
 
 session_start();
 //tangkap data dari form login
-$user = $_POST['user'];
-$pass = $_POST['pass'];
+FILTER_INPUT(INPUT_POST, 'user')
+FILTER_INPUT(INPUT_POST, 'pass')
 $pass = md5($pass);
 
 //untuk mencegah sql injection
@@ -20,11 +20,11 @@ if (mysql_num_rows($data) == 1)
 //kalau username dan password sudah terdaftar di database
 //buat session dengan username dan level dengan isi nama user yang login
 $row = mysql_fetch_array($data);
-$_SESSION['id_user'] = $row['id_user'];
-$_SESSION['user'] = $row['user'];
-$_SESSION['nama'] = $row['nama'];
-$_SESSION['level'] = $row['level'];
-$_SESSION['foto'] = $row['foto'];
+FILTER_INPUT(INPUT_SESSION, 'id_user') = $row['id_user'];
+FILTER_INPUT(INPUT_SESSION, 'user') = $row['user'];
+FILTER_INPUT(INPUT_SESSION, 'nama') = $row['nama'];
+FILTER_INPUT(INPUT_SESSION, 'level') = $row['level'];
+FILTER_INPUT(INPUT_SESSION, 'foto') = $row['foto'];
 
 if($row['level']=="Admin"){
 //redirect ke halaman admin
