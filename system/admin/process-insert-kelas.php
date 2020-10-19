@@ -6,7 +6,7 @@ FILTER_INPUT(INPUT_POST, 'nm_kelas');
 
 //menghindari duplikat nama kelas
 $cek="SELECT nm_kelas FROM kelas WHERE nm_kelas='$nm_kelas'";
-$ada=mysql_query($cek) or die (mysql_error());
+$ada=mysql_query($cek);
 if(mysql_num_rows($ada)>0)
 {
 	<?= "<script>alert ('Nama Kelas Telah Terdaftar ! Silahkan Periksa Kembali !');window.location='page.php?tambah-kelas' </script> " >?;
