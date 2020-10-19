@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `absensi`
 --
 
-CREATE TABLE IF NOT EXISTS `absensi` (
+CREATE TABLE IF NOT EXISTS "absensi" (
 `id_absensi` int(10) NOT NULL,
   `nis` varchar(500) NOT NULL,
   `nm_kelas` char(50) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `absensi` (
 -- Dumping data for table `absensi`
 --
 
-INSERT INTO `absensi` (`id_absensi`, `nis`, `nm_kelas`, `ket`, `keterangan`, `tanggal`, `info`, `jam_pelajaran`) VALUES
+INSERT INTO "absensi" (`id_absensi`, `nis`, `nm_kelas`, `ket`, `keterangan`, `tanggal`, `info`, `jam_pelajaran`) VALUES
 (416, '121233740003175771', 'IX-A', 'H', '', '03/03/2020', 'succes', '3-4'),
 (415, '121233740003175770', 'IX-A', 'A', '', '03/03/2020', 'succes', '3-4'),
 (418, '121233740003175769', 'IX-A', 'H', '', '03/03/2020', 'succes', '1-2'),
@@ -57,7 +57,7 @@ INSERT INTO `absensi` (`id_absensi`, `nis`, `nm_kelas`, `ket`, `keterangan`, `ta
 -- Table structure for table `absensi_sholat`
 --
 
-CREATE TABLE IF NOT EXISTS `absensi_sholat` (
+CREATE TABLE IF NOT EXISTS "absensi_sholat" (
 `id_absensi` int(10) NOT NULL,
   `nis` varchar(500) NOT NULL,
   `nm_kelas` char(50) NOT NULL,
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `absensi_sholat` (
 -- Dumping data for table `absensi_sholat`
 --
 
-INSERT INTO `absensi_sholat` (`id_absensi`, `nis`, `nm_kelas`, `ket`, `keterangan`, `tanggal`, `info`) VALUES
+INSERT INTO "absensi_sholat" (`id_absensi`, `nis`, `nm_kelas`, `ket`, `keterangan`, `tanggal`, `info`) VALUES
 (11, '121233740003175848', 'IX-C', 'S', 'waw', '25/02/2020', 'succes'),
 (12, '121233740003175859', 'IX-C', 'TS', 'wadu', '25/02/2020', 'succes'),
 (13, '121233740003175868', 'IX-C', 'TS', 'parrsss', '25/02/2020', 'succes'),
@@ -83,7 +83,7 @@ INSERT INTO `absensi_sholat` (`id_absensi`, `nis`, `nm_kelas`, `ket`, `keteranga
 -- Table structure for table `kelas`
 --
 
-CREATE TABLE IF NOT EXISTS `kelas` (
+CREATE TABLE IF NOT EXISTS "kelas" (
 `id_kelas` int(10) NOT NULL,
   `nm_kelas` char(50) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL
 ) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `kelas` (
 -- Dumping data for table `kelas`
 --
 
-INSERT INTO `kelas` (`id_kelas`, `nm_kelas`) VALUES
+INSERT INTO "kelas" (`id_kelas`, `nm_kelas`) VALUES
 (20, 'VII-D'),
 (21, 'VII-E'),
 (19, 'VII-C'),
@@ -118,7 +118,7 @@ INSERT INTO `kelas` (`id_kelas`, `nm_kelas`) VALUES
 -- Table structure for table `siswa`
 --
 
-CREATE TABLE IF NOT EXISTS `siswa` (
+CREATE TABLE IF NOT EXISTS "siswa" (
   `id_siswa` varchar(40) DEFAULT NULL,
   `nama` varchar(50) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `nis` varchar(40) NOT NULL DEFAULT '',
@@ -134,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `siswa` (
 -- Dumping data for table `siswa`
 --
 
-INSERT INTO `siswa` (`id_siswa`, `nama`, `nis`, `jns_kel`, `tgl_lahir`, `tmpt_lahir`, `alamat`, `nm_kelas`, `nama_ortu`) VALUES
+INSERT INTO "siswa" (`id_siswa`, `nama`, `nis`, `jns_kel`, `tgl_lahir`, `tmpt_lahir`, `alamat`, `nm_kelas`, `nama_ortu`) VALUES
 ('121233740003175803', 'ANGGA SYAHPUTRA PRATAMA', '121233740003175803', 'Laki-laki', '060604', 'SEMARANG', 'Perum Mangunsari Asri No. 113 RT. 07 RW. 04', 'IX-C', 'Slamet Widodo'),
 ('121233740003175864', 'YUDA', '121233740003175864', 'Laki-laki', '090604', 'SEMARANG', 'Winongsari RT. 05 RW. 02', 'IX-B', 'Suwartiah'),
 ('121233740003175833', 'AFANDI KURNIAWAN', '121233740003175833', 'Laki-laki', '220603', 'SEMARANG', 'Bantardowo RT. 02 RW. 07', 'IX-C', 'Juwasis'),
@@ -700,7 +700,7 @@ INSERT INTO `siswa` (`id_siswa`, `nama`, `nis`, `jns_kel`, `tgl_lahir`, `tmpt_la
 -- Table structure for table `user`
 --
 
-CREATE TABLE IF NOT EXISTS `user` (
+CREATE TABLE IF NOT EXISTS "user" (
 `id_user` int(10) NOT NULL,
   `user` char(25) COLLATE latin1_general_ci NOT NULL,
   `pass` char(200) COLLATE latin1_general_ci NOT NULL,
@@ -714,7 +714,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `user`, `pass`, `confirm`, `level`, `nama`, `foto`) VALUES
+INSERT INTO "user" (`id_user`, `user`, `pass`, `confirm`, `level`, `nama`, `foto`) VALUES
 (1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'e10adc3949ba59abbe56e057f20f883e', 'Admin', 'Admin', 'system/images/avatar-1-256.png'),
 (2, 'walikelas', 'e10adc3949ba59abbe56e057f20f883e', 'e10adc3949ba59abbe56e057f20f883e', 'Wali-Kelas', 'Wali-Kelas', 'system/images/avatar-1-256.png'),
 (3, 'gurumapel', 'e10adc3949ba59abbe56e057f20f883e', 'e10adc3949ba59abbe56e057f20f883e', 'Guru-Mapel', 'Guru-Mapel', 'system/images/avatar-1-256.png');
@@ -726,31 +726,31 @@ INSERT INTO `user` (`id_user`, `user`, `pass`, `confirm`, `level`, `nama`, `foto
 --
 -- Indexes for table `absensi`
 --
-ALTER TABLE `absensi`
+ALTER TABLE "absensi"
  ADD PRIMARY KEY (`id_absensi`);
 
 --
 -- Indexes for table `absensi_sholat`
 --
-ALTER TABLE `absensi_sholat`
+ALTER TABLE "absensi_sholat"
  ADD PRIMARY KEY (`id_absensi`);
 
 --
 -- Indexes for table `kelas`
 --
-ALTER TABLE `kelas`
+ALTER TABLE "kelas"
  ADD PRIMARY KEY (`id_kelas`);
 
 --
 -- Indexes for table `siswa`
 --
-ALTER TABLE `siswa`
+ALTER TABLE "siswa"
  ADD PRIMARY KEY (`nis`);
 
 --
 -- Indexes for table `user`
 --
-ALTER TABLE `user`
+ALTER TABLE "user"
  ADD PRIMARY KEY (`id_user`);
 
 --
@@ -760,22 +760,22 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for table `absensi`
 --
-ALTER TABLE `absensi`
+ALTER TABLE "absensi"
 MODIFY `id_absensi` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=421;
 --
 -- AUTO_INCREMENT for table `absensi_sholat`
 --
-ALTER TABLE `absensi_sholat`
+ALTER TABLE "absensi_sholat"
 MODIFY `id_absensi` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `kelas`
 --
-ALTER TABLE `kelas`
+ALTER TABLE "kelas"
 MODIFY `id_kelas` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `user`
 --
-ALTER TABLE `user`
+ALTER TABLE "user"
 MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
