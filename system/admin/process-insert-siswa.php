@@ -24,8 +24,7 @@ if(mysql_num_rows($ada)>0)
 	}
 
 else{			
-	$query = mysql_query ("INSERT INTO siswa VALUES('','$nama','$nis','$jns_kel','$tgl_lahir','$tmpt_lahir','$alamat','$nm_kelas','$nama_ortu')")
-			or die (mysql_error());
+	$query = mysql_query ("INSERT INTO siswa VALUES('','$nama','$nis','$jns_kel','$tgl_lahir','$tmpt_lahir','$alamat','$nm_kelas','$nama_ortu')");
 	header('location:page.php?data-semua-siswa&message=insert-success');
 	
 }
