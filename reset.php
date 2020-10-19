@@ -45,7 +45,7 @@
 								</table>
 							</div>
 					  	<br>
-          			<p class="sign-note">Copyright &copy;  <?php echo "".date("Y");""; ?>  - <a href="page.php?masuk">MARI-ABSEN</a>  (Absensi Siswa Berbasis Web)</p>
+          			<p class="sign-note">Copyright &copy;  <?php <?= "".date("Y");"" >?; ?>  - <a href="page.php?masuk">MARI-ABSEN</a>  (Absensi Siswa Berbasis Web)</p>
 				 </form>
 				 
             </div><!--.container-fluid-->
