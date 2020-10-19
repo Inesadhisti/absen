@@ -145,7 +145,7 @@
   
   84% {
     width: 55px;
-    right: 0px;
+    right: 0;
     top: 35px;
   }
   
@@ -473,7 +473,7 @@ body.stop-scrolling {
   top: -11px;
   left: 30px;
   transform: rotate(-45deg);
-  transform-origin: 0px 60px;
+  transform-origin: 0 60px;
 }
 
 .sweet-alert .sa-icon.sa-success .sa-placeholder {
@@ -491,7 +491,7 @@ body.stop-scrolling {
 .sweet-alert .sa-icon.sa-success .sa-fix {
   width: 5px;
   height: 90px;
-  background-color: #ffffff;
+  background-color: #fff;
   position: absolute;
   left: 28px;
   top: 8px;
