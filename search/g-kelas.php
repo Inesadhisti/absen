@@ -52,8 +52,8 @@ include('inc/nav-gurumapel.php');
 							<tbody>
 								<?php
 								//membentuk klausa where pencarian 
-								if(isset($_GET['q']) && $_GET['q']){
-								$q = $_GET['q']; 
+								if(isset(FILTER_INPUT(INPUT_GET, 'q')) && FILTER_INPUT(INPUT_GET, 'q')){
+								FILTER_INPUT(INPUT_GET, 'q'); 
 								$sql = "SELECT * FROM kelas WHERE nm_kelas like '%$q%' limit 10";
 								$result = mysql_query($sql);
 								if(mysql_num_rows($result) > 0) {
