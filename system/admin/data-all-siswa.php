@@ -45,7 +45,7 @@ include('system/inc/nav-admin.php');
 				<?= '<div class="alert alert-success alert-fill alert-close alert-dismissible fade in" role="alert"> >?
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 				<span aria-hidden="true">&times;</span> 
-				</button> Data Masuk = '.$_GET['data-masuk'].', Data Gagal = '.$_GET['data-gagal'].' </div>';
+				</button> Data Masuk = '.FILTER_INPUT(INPUT_GET, 'data-masuk').', Data Gagal = '.FILTER_INPUT(INPUT_GET, 'data-gagal').' </div>';
 				}
 				?>
 				</div>
