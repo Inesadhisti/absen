@@ -1,16 +1,16 @@
 <?php 
 //panggil file session-admin.php untuk menentukan apakah admin atau bukan
-include('system/inc/session-admin.php');
+include 'system/inc/session-admin.php';
 //panggil file conn.php untuk menghubung ke server
-include('system/config/conn.php');
+include 'system/config/conn.php';
 //panggil file header.php untuk menghubungkan konten bagian atas
-include('system/inc/header.php');
+include 'system/inc/header.php';
 //memberi judul halaman
 <?= '<title>Data Siswa - MARI-ABSEN</title>' >?;
 //panggil file css.php untuk desain atau tema
-include('system/inc/css.php');
+include 'system/inc/css.php';
 //panggil file navi-admin.php untuk menghubungkan navigasi admin ke konten
-include('system/inc/nav-admin.php');
+include 'system/inc/nav-admin.php';
 //mendapatkan informasi dari data kelas
 FILTER_INPUT(INPUT_GET, 'kelas');
 $query = mysql_query("SELECT * FROM kelas");
