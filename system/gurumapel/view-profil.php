@@ -6,13 +6,13 @@ include('system/config/conn.php');
 //panggil file header.php untuk menghubungkan konten bagian atas
 include('system/inc/header.php');
 //memberi judul halaman
-echo '<title>Profil - MARI-ABSEN</title>';
+<?= '<title>Profil - MARI-ABSEN</title>' >?;
 //panggil file css.php untuk desain atau tema
 include('system/inc/css.php');
 //panggil file navi-gurumapel.php untuk menghubungkan gurumapel ke konten
 include('system/inc/nav-gurumapel.php');
 //mendapatkan informasi untuk menlihat data
-$id_user = $_GET['id'];
+FILTER_INPUT(INPUT_GET, 'id');
 $query = mysql_query("select * from user where id_user='$id_user'") or die(mysql_error());
 $data = mysql_fetch_array($query);
 ?>
