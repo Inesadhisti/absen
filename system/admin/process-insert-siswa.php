@@ -17,7 +17,7 @@ FILTER_INPUT(INPUT_POST, 'nama_ortu')
 
 //menghindari duplikat nis
 $cek="SELECT nis FROM siswa WHERE nis='$nis'";
-$ada=mysql_query($cek) or die (mysql_error());
+$ada=mysql_query($cek);
 if(mysql_num_rows($ada)>0)
 {
 	<?= "<script>alert ('NIS Telah Terdaftar ! Silahkan Periksa Kembali !');window.location='page.php?tambah-siswa' </script> " >?;
