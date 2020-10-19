@@ -53,7 +53,7 @@ if(isset(FILTER_INPUT(INPUT_POST, 'info'))){
 		</script><?php
 	}
 }else{
-	unset($_POST['info']);
+	unset((FILTER_INPUT(INPUT_POST, 'info'));
 	?><script language="javascript">window.location.href="page.php?absen-siswa&kelas=<?php <?= $nm_kelas >?;?>";</script><?php
 }
 ?>
