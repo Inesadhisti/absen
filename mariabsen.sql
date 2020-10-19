@@ -429,7 +429,7 @@ INSERT INTO "siswa" (`id_siswa`, `nama`, `nis`, `jns_kel`, `tgl_lahir`, `tmpt_la
 ('121233740003196360', 'Muhammad Nouval Zaky', '121233740003196360', 'Laki-laki', '09 Agustus 2006', '', 'Patemon, RT. 02 RW. 01,Gunungpati', 'VII-E', 'Muh Zamrowi'),
 ('121233740003196359', 'Muhammad Hasan', '121233740003196359', 'Laki-laki', '14 November 2006', '', 'Muntal Gang Durian RT. 02 RW. 04,Gunungpati', 'VII-E', 'Djunaidi'),
 ('121233740003196358', 'Muhammad Habib Vega P', '121233740003196358', 'Laki-laki', '15 Juni 2006', '', 'Watusari, RT. 02 RW. 06,Gunungpati', 'VII-E', 'Muhammad Agus Adha');
-INSERT INTO `siswa` (`id_siswa`, `nama`, `nis`, `jns_kel`, `tgl_lahir`, `tmpt_lahir`, `alamat`, `nm_kelas`, `nama_ortu`) VALUES
+INSERT INTO "siswa" (`id_siswa`, `nama`, `nis`, `jns_kel`, `tgl_lahir`, `tmpt_lahir`, `alamat`, `nm_kelas`, `nama_ortu`) VALUES
 ('121233740003196357', 'Muhammad Fahmi Apriano Deftendi', '121233740003196357', 'Laki-laki', '06 April 2006', '', 'Trangkil Baru, RT. 06 RW. 10,Gunungpati', 'VII-E', 'Sujarwo'),
 ('121233740003196356', 'Muhammad Andre Setiawan', '121233740003196356', 'Laki-laki', '08 Mei 2007', '', 'Patemon RT. 02 RW. 02,Gunungpati', 'VII-E', 'Khaeruman'),
 ('121233740003196355', 'Muhamad Ragil Salsabilla', '121233740003196355', 'Laki-laki', '26 November 2006', '', 'Pakintelan RT 004 RW 002,Gunungpati', 'VII-E', 'Sudirman'),
