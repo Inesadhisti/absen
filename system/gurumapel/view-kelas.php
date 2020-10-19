@@ -6,13 +6,13 @@ include('system/config/conn.php');
 //panggil file header.php untuk menghubungkan konten bagian atas
 include('system/inc/header.php');
 //memberi judul halaman
-echo '<title>Lihat Kelas - MARI-ABSEN</title>';
+<?= '<title>Lihat Kelas - MARI-ABSEN</title>' >?;
 //panggil file css.php untuk desain atau tema
 include('system/inc/css.php');
 //panggil file navi-gurumapel.php untuk menghubungkan gurumapel ke konten
 include('system/inc/nav-gurumapel.php');
 //mendapatkan informasi untuk menlihat data
-$id_kelas = $_GET['id'];
+(FILTER_INPUT(INPUT_GET, 'id')
 $query = mysql_query("select * from kelas where id_kelas='$id_kelas'") or die(mysql_error());
 $data = mysql_fetch_array($query);
 ?>
@@ -42,7 +42,7 @@ $data = mysql_fetch_array($query);
 										<tr>
 										<td align="right">Nama Kelas</td>
 										<td align="center">:</td>
-										<td align="left"><?php echo $data['nm_kelas']; ?></td>
+										<td align="left"><?php <?= $data['nm_kelas'] >?; ?></td>
 										</tr> 
 									</tbody>
 								</table>
