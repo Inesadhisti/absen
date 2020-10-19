@@ -65,8 +65,8 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 							
 							<tbody>
 								<?php
-								$nm_kelas=$_GET['kelas'];
-								$tanggal=$_GET['tanggal'];
+								(FILTER_INPUT(INPUT_GET, 'kelas');
+								(FILTER_INPUT(INPUT_GET, 'tanggal');
 								$query=mysql_query("SELECT * FROM absensi_sholat WHERE nm_kelas='$nm_kelas' AND tanggal='$tanggal' ORDER BY nis ASC",$connect);
 								while($row=mysql_fetch_array($query)){
 								$data=mysql_fetch_array(mysql_query("SELECT * FROM siswa WHERE nis='$row[nis]'",$connect));
