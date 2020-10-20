@@ -9,13 +9,27 @@ if(isset(FILTER_INPUT(INPUT_POST, 'info'))){
 	if(FILTER_INPUT(INPUT_POST, 'jam_pelajaran') != "*Diluar Jam Pelajaran*"){
 		FILTER_INPUT(INPUT_GET, 'jam_pelajaran');
 
-		$query=mysql_query("SELECT nis FROM siswa WHERE nm_kelas='$nm_kelas' ORDER BY nis ASC");
+		$this->db->from('siswa');
+		$this->db->where('nm_kelas');
+		$this->db->order_by('nis', 'asc');
+		$query->db->get();
 		while($data=mysql_fetch_array($query)){
-			mysql_query("DELETE FROM absensi WHERE nis='$data[nis]' AND tanggal='$tanggal' AND jam_pelajaran='$jam_pelajaran'");
+			
+			$this->db->where('$data[nis]', '$tanggal', '$jam_pelajaran');
+			$this->db->delete('absensi');
+			
 			if(FILTER_INPUT(INPUT_POST, ''absen-'.$data['nis']') == 'hadir'){
 				//parameter
 				(FILTER_INPUT(INPUT_POST, ''keterangan-'.$data['nis']');
-				$hadir=mysql_query("INSERT INTO absensi(nis,nm_kelas,ket,keterangan,tanggal,info,jam_pelajaran) VALUES ('$data[nis]','$nm_kelas','H','$keterangan','$tanggal','succes','$jam_pelajaran')",$connect);
+				 $data = array(
+				'nis' => '$data[nis]',
+      				'nm_kelas' => '$nm_kelas',
+				'ket' => 'H',
+				'keterangan' => '$keterangan',
+				'tanggal' => '$tanggal',
+				'info' => 'success'
+				'jam_pelajaran => '$jam_pelajaran');
+				$this->db->insert('absensi', $data);
 				?>
 					<script language="javascript">window.location.href="page.php?data-absensi&kelas=<?php <?= $nm_kelas >?;?>&tanggal=<?php <?= $tanggal >?;?>&message=absen-success";</script>
 				<?php 
@@ -23,7 +37,15 @@ if(isset(FILTER_INPUT(INPUT_POST, 'info'))){
 			else if((FILTER_INPUT(INPUT_POST, ''absen-'.$data['nis']') == 'sakit'){
 				//parameter
 				(FILTER_INPUT(INPUT_POST, ''keterangan-'.$data['nis']');
-				$hadir=mysql_query("INSERT INTO absensi(nis,nm_kelas,ket,keterangan,tanggal,info,jam_pelajaran) VALUES ('$data[nis]','$nm_kelas','S','$keterangan','$tanggal','succes','$jam_pelajaran')",$connect);
+				$data = array(
+				'nis' => '$data[nis]',
+      				'nm_kelas' => '$nm_kelas',
+				'ket' => 'S',
+				'keterangan' => '$keterangan',
+				'tanggal' => '$tanggal',
+				'info' => 'success'
+				'jam_pelajaran => '$jam_pelajaran');
+				$this->db->insert('absensi', $data);
 				?>
 				<script language="javascript">window.location.href="page.php?data-absensi&kelas=<?php <?= $nm_kelas >?;?>&tanggal=<?php <?= $tanggal >?;?>&message=absen-success";</script>
 				<?php 
@@ -31,7 +53,15 @@ if(isset(FILTER_INPUT(INPUT_POST, 'info'))){
 			else if((FILTER_INPUT(INPUT_POST, ''absen-'.$data['nis']') == 'ijin'){
 				//parameter
 				(FILTER_INPUT(INPUT_POST, ''keterangan-'.$data['nis']');
-				$hadir=mysql_query("INSERT INTO absensi(nis,nm_kelas,ket,keterangan,tanggal,info,jam_pelajaran) VALUES ('$data[nis]','$nm_kelas','I','$keterangan','$tanggal','succes','$jam_pelajaran')",$connect);
+				$data = array(
+				'nis' => '$data[nis]',
+      				'nm_kelas' => '$nm_kelas',
+				'ket' => 'I',
+				'keterangan' => '$keterangan',
+				'tanggal' => '$tanggal',
+				'info' => 'success'
+				'jam_pelajaran => '$jam_pelajaran');
+				$this->db->insert('absensi', $data);
 				?>
 				<script language="javascript">window.location.href="page.php?data-absensi&kelas=<?php <?= $nm_kelas >?;?>&tanggal=<?php <?= $tanggal >?;?>&message=absen-success";</script>
 				<?php 
@@ -39,7 +69,15 @@ if(isset(FILTER_INPUT(INPUT_POST, 'info'))){
 			else if((FILTER_INPUT(INPUT_POST, ''absen-'.$data['nis']') == 'alfa'){
 				//parameter
 				(FILTER_INPUT(INPUT_POST, ''keterangan-'.$data['nis']');
-				$alfa=mysql_query("INSERT INTO absensi(nis,nm_kelas,ket,keterangan,tanggal,info,jam_pelajaran) VALUES ('$data[nis]','$nm_kelas','A','$keterangan','$tanggal','succes','$jam_pelajaran')",$connect);
+				$data = array(
+				'nis' => '$data[nis]',
+      				'nm_kelas' => '$nm_kelas',
+				'ket' => 'A',
+				'keterangan' => '$keterangan',
+				'tanggal' => '$tanggal',
+				'info' => 'success'
+				'jam_pelajaran => '$jam_pelajaran');
+				$this->db->insert('absensi', $data);
 				?>
 				<script language="javascript">window.location.href="page.php?data-absensi&kelas=<?php <?= $nm_kelas >?;?>&tanggal=<?php <?= $tanggal >?;?>&message=absen-success";</script>
 				<?php 
