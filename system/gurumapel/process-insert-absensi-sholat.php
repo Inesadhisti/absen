@@ -1,6 +1,6 @@
 <?php 
 //panggil file conn.php untuk menghubung ke server
-include_once 'system/config/conn.php';
+require 'system/config/conn.php';
 FILTER_INPUT(INPUT_POST, 'nm_kelas');
 FILTER_INPUT(INPUT_POST, 'tanggal');
 
