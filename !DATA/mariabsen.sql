@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS "kelas" (
 -- Dumping data for table `kelas`
 --
 
-INSERT INTO "kelas" (`id_kelas`, `nm_kelas`) VALUES
+INSERT INTO "kelas" (id_kelas, nm_kelas) VALUES
 (20, 'VII-D'),
 (21, 'VII-E'),
 (19, 'VII-C'),
