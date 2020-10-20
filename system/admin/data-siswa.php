@@ -13,7 +13,7 @@ include 'system/inc/css.php';
 include 'system/inc/nav-admin.php';
 //mendapatkan informasi dari data kelas
 FILTER_INPUT(INPUT_GET, 'kelas');
-$query = mysql_query("SELECT * FROM kelas");
+$query = $this->db->get();
 $data = mysql_fetch_array($query);
 ?>
 
