@@ -120,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `siswa` (
 -- Dumping data for table `siswa`
 --
 
-INSERT INTO `siswa` (`id_siswa`, `nama`, `nis`, `jns_kel`, `tgl_lahir`, `tmpt_lahir`, `alamat`, `nm_kelas`, `nama_ortu`) VALUES
+INSERT INTO siswa (id_siswa, nama, nis, jns_kel, tgl_lahir, tmpt_lahir, alamat, nm_kelas, nama_ortu) VALUES
 ('121233740003175888', 'ZIARA LAILATUL FAJRI', '121233740003175888', 'Perempuan', '190704', 'SEMARANG', 'Bantardowo RT. 02 RW. 07', 'IX-C', 'Totok Budi Santoso'),
 ('121233740003175830', 'ZAINUS PRAMUDYA', '121233740003175830', 'Laki-laki', '291104', 'KABUPATEN SEMARANG', 'kepil RT. 04 RW. 02', 'IX-C', 'Nur Riyadin'),
 ('121233740003175934', 'WAHYU LISTIA KANDUNG', '121233740003175934', 'Perempuan', '020105', 'KABUPATEN SEMARANG', 'SEKARAN RT.01/RW.02', 'IX-C', 'MUHLISIN'),
@@ -682,7 +682,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `user`, `pass`, `confirm`, `level`, `nama`, `foto`) VALUES
+INSERT INTO user (id_user, user, pass, confirm, level, nama, foto) VALUES
 (1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'e10adc3949ba59abbe56e057f20f883e', 'Admin', 'Admin', 'system/images/avatar-1-256.png'),
 (2, 'walikelas', 'e10adc3949ba59abbe56e057f20f883e', 'e10adc3949ba59abbe56e057f20f883e', 'Wali-Kelas', 'Wali-Kelas', 'system/images/avatar-1-256.png'),
 (3, 'gurumapel', 'e10adc3949ba59abbe56e057f20f883e', 'e10adc3949ba59abbe56e057f20f883e', 'Guru-Mapel', 'Guru-Mapel', 'system/images/avatar-1-256.png');
@@ -694,32 +694,32 @@ INSERT INTO `user` (`id_user`, `user`, `pass`, `confirm`, `level`, `nama`, `foto
 --
 -- Indexes for table `absensi`
 --
-ALTER TABLE `absensi`
- ADD PRIMARY KEY (`id_absensi`);
+ALTER TABLE absensi
+ ADD PRIMARY KEY (id_absensi);
 
 --
 -- Indexes for table `absensi_sholat`
 --
-ALTER TABLE `absensi_sholat`
- ADD PRIMARY KEY (`id_absensi`);
+ALTER TABLE absensi_sholat
+ ADD PRIMARY KEY (id_absensi);
 
 --
 -- Indexes for table `kelas`
 --
-ALTER TABLE `kelas`
- ADD PRIMARY KEY (`id_kelas`);
+ALTER TABLE kelas
+ ADD PRIMARY KEY (id_kelas);
 
 --
 -- Indexes for table `siswa`
 --
-ALTER TABLE `siswa`
- ADD PRIMARY KEY (`nis`);
+ALTER TABLE siswa
+ ADD PRIMARY KEY (nis);
 
 --
 -- Indexes for table `user`
 --
-ALTER TABLE `user`
- ADD PRIMARY KEY (`id_user`);
+ALTER TABLE user
+ ADD PRIMARY KEY (id_user);
 
 --
 -- AUTO_INCREMENT for dumped tables
