@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS "absensi" (
-`id_absensi` int(10) NOT NULL,
+  `id_absensi` int(10) NOT NULL,
   `nis` varchar(500) NOT NULL,
   `nm_kelas` char(50) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `ket` enum('H','S','I','A') CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS "absensi_sholat" (
 -- Dumping data for table `absensi_sholat`
 --
 
-INSERT INTO "absensi_sholat" (`id_absensi`, `nis`, `nm_kelas`, `ket`, `keterangan`, `tanggal`, `info`) VALUES
+INSERT INTO "absensi_sholat" (id_absensi, nis, nm_kelas, ket, keterangan, tanggal, info) VALUES
 (11, '121233740003175848', 'IX-C', 'S', 'waw', '25/02/2020', 'succes'),
 (12, '121233740003175859', 'IX-C', 'TS', 'wadu', '25/02/2020', 'succes'),
 (13, '121233740003175868', 'IX-C', 'TS', 'parrsss', '25/02/2020', 'succes'),
@@ -70,7 +70,7 @@ INSERT INTO "absensi_sholat" (`id_absensi`, `nis`, `nm_kelas`, `ket`, `keteranga
 --
 
 CREATE TABLE IF NOT EXISTS "kelas" (
-id_kelas int(10) NOT NULL,
+  `id_kelas` int(10) NOT NULL,
   `nm_kelas` char(50) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL
 ) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
 
@@ -106,7 +106,7 @@ INSERT INTO "kelas" (id_kelas, nm_kelas) VALUES
 
 CREATE TABLE IF NOT EXISTS siswa (
   id_siswa varchar(40) DEFAULT NULL,
-  `nama` varchar(50) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  nama varchar(50) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `nis` varchar(40) NOT NULL DEFAULT '',
   `jns_kel` enum('Laki-laki','Perempuan') CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `tgl_lahir` varchar(20) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
@@ -418,7 +418,7 @@ INSERT INTO siswa (id_siswa, nama, nis, jns_kel, tgl_lahir, tmpt_lahir, alamat, 
 ('121233740003185997', 'Fatkhu Amanullah', '121233740003185997', 'Laki-laki', '24/06/2006', '', 'Watupawon RT. 01 RW. 05 ,Kawengen ,Ungaran Timur', 'VIII-C', 'Rohman'),
 ('121233740003186168', 'Fitron Nazid', '121233740003186168', 'Laki-laki', '03/11/2005', '', 'Randusari, RT. 02 RW. 02 ,Nongkosawit,Gunung Pati', 'VIII-C', 'Nasikin'),
 ('121233740003185998', 'Hareva Esayani', '121233740003185998', 'Perempuan', '06/09/2006', '', 'Dusun Kliwonan RT. 01 RW. 03 ,Ngabean,Boja', 'VIII-C', 'Khuzaeni');
-INSERT INTO `siswa` (id_siswa, nama, nis, jns_kel, tgl_lahir, tmpt_lahir, alamat, nm_kelas, nama_ortu) VALUES
+INSERT INTO "siswa" (id_siswa, nama, nis, jns_kel, tgl_lahir, tmpt_lahir, alamat, nm_kelas, nama_ortu) VALUES
 ('121233740003185999', 'Ianatul Azizah ', '121233740003185999', 'Perempuan', '08/01/2006', '', 'Cepoko RT. 03 RW. 01,Cepoko,Gunung Pati', 'VIII-C', 'Ansori'),
 ('121233740003186000', 'Ilmando Dewantoro Adi', '121233740003186000', 'Laki-laki', '01/05/2006', '', 'Jl. Pusponjolo Tengah III No. 80 A RT. 07 RW. 02,Gisikdrono,Semarang Barat', 'VIII-C', 'Adi Waluyo'),
 ('121233740003186001', 'Juliananda Hindri Nurbaya', '121233740003186001', 'Perempuan', '16/07/2006', '', 'Ngempon RT. 03 RW. 05,Ngempon ,Bergas ', 'VIII-C', 'Hendro Trisnanto'),
@@ -668,8 +668,8 @@ INSERT INTO `siswa` (id_siswa, nama, nis, jns_kel, tgl_lahir, tmpt_lahir, alamat
 -- Table structure for table `user`
 --
 
-CREATE TABLE IF NOT EXISTS user (
-`id_user` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `user` (
+  `id_user` int(10) NOT NULL,
   `user` char(25) COLLATE latin1_general_ci NOT NULL,
   `pass` char(200) COLLATE latin1_general_ci NOT NULL,
   `confirm` char(200) COLLATE latin1_general_ci NOT NULL,
@@ -682,7 +682,7 @@ CREATE TABLE IF NOT EXISTS user (
 -- Dumping data for table `user`
 --
 
-INSERT INTO user (id_user, user, pass, confirm, level, nama, foto) VALUES
+INSERT INTO `user` (id_user, user, pass, confirm, level, nama, foto) VALUES
 (1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'e10adc3949ba59abbe56e057f20f883e', 'Admin', 'Admin', 'system/images/avatar-1-256.png'),
 (2, 'walikelas', 'e10adc3949ba59abbe56e057f20f883e', 'e10adc3949ba59abbe56e057f20f883e', 'Wali-Kelas', 'Wali-Kelas', 'system/images/avatar-1-256.png'),
 (3, 'gurumapel', 'e10adc3949ba59abbe56e057f20f883e', 'e10adc3949ba59abbe56e057f20f883e', 'Guru-Mapel', 'Guru-Mapel', 'system/images/avatar-1-256.png');
@@ -718,7 +718,7 @@ ALTER TABLE siswa
 --
 -- Indexes for table `user`
 --
-ALTER TABLE user
+ALTER TABLE `user`
  ADD PRIMARY KEY (id_user);
 
 --
@@ -728,7 +728,7 @@ ALTER TABLE user
 --
 -- AUTO_INCREMENT for table `absensi`
 --
-ALTER TABLE `absensi`
+ALTER TABLE absensi
 MODIFY `id_absensi` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=539;
 --
 -- AUTO_INCREMENT for table `absensi_sholat`
@@ -743,7 +743,7 @@ MODIFY `id_kelas` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `user`
 --
-ALTER TABLE `user`
+ALTER TABLE user
 MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
