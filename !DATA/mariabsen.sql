@@ -70,7 +70,7 @@ INSERT INTO "absensi_sholat" (`id_absensi`, `nis`, `nm_kelas`, `ket`, `keteranga
 --
 
 CREATE TABLE IF NOT EXISTS "kelas" (
-`id_kelas` int(10) NOT NULL,
+id_kelas int(10) NOT NULL,
   `nm_kelas` char(50) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL
 ) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
 
@@ -105,7 +105,7 @@ INSERT INTO "kelas" (id_kelas, nm_kelas) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS siswa (
-  `id_siswa` varchar(40) DEFAULT NULL,
+  id_siswa varchar(40) DEFAULT NULL,
   `nama` varchar(50) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `nis` varchar(40) NOT NULL DEFAULT '',
   `jns_kel` enum('Laki-laki','Perempuan') CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
@@ -668,7 +668,7 @@ INSERT INTO `siswa` (id_siswa, nama, nis, jns_kel, tgl_lahir, tmpt_lahir, alamat
 -- Table structure for table `user`
 --
 
-CREATE TABLE IF NOT EXISTS `user` (
+CREATE TABLE IF NOT EXISTS user (
 `id_user` int(10) NOT NULL,
   `user` char(25) COLLATE latin1_general_ci NOT NULL,
   `pass` char(200) COLLATE latin1_general_ci NOT NULL,
@@ -682,7 +682,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (id_user, user, pass, confirm, level, nama, foto) VALUES
+INSERT INTO user (id_user, user, pass, confirm, level, nama, foto) VALUES
 (1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'e10adc3949ba59abbe56e057f20f883e', 'Admin', 'Admin', 'system/images/avatar-1-256.png'),
 (2, 'walikelas', 'e10adc3949ba59abbe56e057f20f883e', 'e10adc3949ba59abbe56e057f20f883e', 'Wali-Kelas', 'Wali-Kelas', 'system/images/avatar-1-256.png'),
 (3, 'gurumapel', 'e10adc3949ba59abbe56e057f20f883e', 'e10adc3949ba59abbe56e057f20f883e', 'Guru-Mapel', 'Guru-Mapel', 'system/images/avatar-1-256.png');
@@ -694,7 +694,7 @@ INSERT INTO `user` (id_user, user, pass, confirm, level, nama, foto) VALUES
 --
 -- Indexes for table `absensi`
 --
-ALTER TABLE `absensi`
+ALTER TABLE absensi
  ADD PRIMARY KEY (id_absensi);
 
 --
@@ -718,7 +718,7 @@ ALTER TABLE siswa
 --
 -- Indexes for table `user`
 --
-ALTER TABLE `user`
+ALTER TABLE user
  ADD PRIMARY KEY (id_user);
 
 --
@@ -733,12 +733,12 @@ MODIFY `id_absensi` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=539;
 --
 -- AUTO_INCREMENT for table `absensi_sholat`
 --
-ALTER TABLE `absensi_sholat`
+ALTER TABLE absensi_sholat
 MODIFY `id_absensi` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `kelas`
 --
-ALTER TABLE `kelas`
+ALTER TABLE kelas
 MODIFY `id_kelas` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `user`
