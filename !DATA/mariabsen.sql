@@ -70,7 +70,7 @@ INSERT INTO "absensi_sholat" (id_absensi, nis, nm_kelas, ket, keterangan, tangga
 --
 
 CREATE TABLE IF NOT EXISTS "kelas" (
-  `id_kelas` int(10) NOT NULL,
+  id_kelas int(10) NOT NULL,
   `nm_kelas` char(50) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL
 ) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
 
@@ -682,7 +682,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (id_user, user, pass, confirm, level, nama, foto) VALUES
+INSERT INTO user (id_user, user, pass, confirm, level, nama, foto) VALUES
 (1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'e10adc3949ba59abbe56e057f20f883e', 'Admin', 'Admin', 'system/images/avatar-1-256.png'),
 (2, 'walikelas', 'e10adc3949ba59abbe56e057f20f883e', 'e10adc3949ba59abbe56e057f20f883e', 'Wali-Kelas', 'Wali-Kelas', 'system/images/avatar-1-256.png'),
 (3, 'gurumapel', 'e10adc3949ba59abbe56e057f20f883e', 'e10adc3949ba59abbe56e057f20f883e', 'Guru-Mapel', 'Guru-Mapel', 'system/images/avatar-1-256.png');
@@ -718,7 +718,7 @@ ALTER TABLE siswa
 --
 -- Indexes for table `user`
 --
-ALTER TABLE `user`
+ALTER TABLE user
  ADD PRIMARY KEY (id_user);
 
 --
@@ -743,7 +743,7 @@ MODIFY `id_kelas` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `user`
 --
-ALTER TABLE user
+ALTER TABLE `user`
 MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
