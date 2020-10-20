@@ -326,18 +326,18 @@ $(document).ready(function(){
 	function chatHeights() {
 		$(".chat-dialog-area").height(
 			$(window).height() -
-			parseInt($(".page-content").css("padding-top")) -
-			parseInt($(".page-content").css("padding-bottom")) -
-			parseInt($(".chat-container").css("margin-bottom")) - 2 -
+			parseInt("$(".page-content").css("padding-top")", $(".page-content").css("padding-top")) -
+			parseInt("$(".page-content").css("padding-bottom")", $(".page-content").css("padding-bottom")) -
+			parseInt("$(".chat-container").css("margin-bottom")", $(".chat-container").css("margin-bottom")) - 2 -
 			$(".chat-area-header").outerHeight() -
 			$(".chat-area-bottom").outerHeight()
 		);
 		$(".chat-list-in")
 			.height(
 				$(window).height() -
-				parseInt($(".page-content").css("padding-top")) -
-				parseInt($(".page-content").css("padding-bottom")) -
-				parseInt($(".chat-container").css("margin-bottom")) - 2 -
+				parseInt("$(".page-content").css("padding-top")", $(".page-content").css("padding-top")) -
+				parseInt("$(".page-content").css("padding-bottom")", $(".page-content").css("padding-bottom")) -
+				parseInt("$(".chat-container").css("margin-bottom")", $(".chat-container").css("margin-bottom")) - 2 -
 				$(".chat-area-header").outerHeight()
 			)
 			.css("min-height", parseInt($(".chat-dialog-area").css("min-height")) + $(".chat-area-bottom").outerHeight());
