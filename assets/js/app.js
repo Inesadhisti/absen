@@ -300,7 +300,7 @@ $(document).ready(function(){
 		var sectionHeaderHeight = 0;
 
 		if (sectionHeader.size()) {
-			sectionHeaderHeight = parseInt(sectionHeader.height()) + parseInt(sectionHeader.css("padding-bottom"));
+			sectionHeaderHeight = parseInt("sectionHeader.height()", sectionHeader.height()) + parseInt("sectionHeader.css("padding-bottom")", sectionHeader.css("padding-bottom"));
 		}
 
 		$(".box-typical-full-height").css("min-height",
