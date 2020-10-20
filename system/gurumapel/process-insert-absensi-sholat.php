@@ -31,7 +31,14 @@ if(isset(FILTER_INPUT(INPUT_POST, 'info'))){
 		else if(FILTER_INPUT(INPUT_POST, ''absen-'.$data['nis']') == 'tidaksholat'){
 			//parameter
 			FILTER_INPUT(INPUT_POST, ''keterangan-'.$data['nis']');
-			$sholat=mysql_query("INSERT INTO absensi_sholat(nis,nm_kelas,ket,keterangan,tanggal,info) VALUES ('$data[nis]','$nm_kelas','TS','$keterangan','$tanggal','succes')",$connect);
+			$data = array(
+				'nis' => '$data[nis]',
+      				'nm_kelas' => '$nm_kelas',
+				'ket' => 'TS',
+				'keterangan' => '$keterangan',
+				'tanggal' => 'tanggal',
+				'info' => 'success');
+				$this->db->insert('absensi_sholat', $data);
 			?>
 			<script language="javascript">window.location.href="page.php?data-absensi-sholat&kelas=<?php <?= $nm_kelas >?;?>&tanggal=<?php <?= $tanggal >?;?>&message=absen-success";</script>
 			<?php 
@@ -39,7 +46,14 @@ if(isset(FILTER_INPUT(INPUT_POST, 'info'))){
 		else if(FILTER_INPUT(INPUT_POST, ''absen-'.$data['nis']') == 'halangan'){
 			//parameter
 			FILTER_INPUT(INPUT_POST, ''keterangan-'.$data['nis']');
-			$sholat=mysql_query("INSERT INTO absensi_sholat(nis,nm_kelas,ket,keterangan,tanggal,info) VALUES ('$data[nis]','$nm_kelas','HL','$keterangan','$tanggal','succes')",$connect);
+			$data = array(
+				'nis' => '$data[nis]',
+      				'nm_kelas' => '$nm_kelas',
+				'ket' => 'HL',
+				'keterangan' => '$keterangan',
+				'tanggal' => 'tanggal',
+				'info' => 'success');
+				$this->db->insert('absensi_sholat', $data);
 			?>
 			<script language="javascript">window.location.href="page.php?data-absensi-sholat&kelas=<?php <?= $nm_kelas >?;?>&tanggal=<?php <?= $tanggal >?;?>&message=absen-success";</script>
 			<?php 
