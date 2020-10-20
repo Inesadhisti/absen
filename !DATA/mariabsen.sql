@@ -105,7 +105,7 @@ INSERT INTO "kelas" (id_kelas, nm_kelas) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS siswa (
-  `id_siswa` varchar(40) DEFAULT NULL,
+  id_siswa varchar(40) DEFAULT NULL,
   `nama` varchar(50) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `nis` varchar(40) NOT NULL DEFAULT '',
   `jns_kel` enum('Laki-laki','Perempuan') CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
