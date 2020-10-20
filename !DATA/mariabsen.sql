@@ -694,31 +694,31 @@ INSERT INTO user (id_user, user, pass, confirm, level, nama, foto) VALUES
 --
 -- Indexes for table `absensi`
 --
-ALTER TABLE 'absensi'
+ALTER TABLE `absensi`
  ADD PRIMARY KEY (id_absensi);
 
 --
 -- Indexes for table `absensi_sholat`
 --
-ALTER TABLE 'absensi_sholat'
+ALTER TABLE `absensi_sholat`
  ADD PRIMARY KEY (id_absensi);
 
 --
 -- Indexes for table `kelas`
 --
-ALTER TABLE 'kelas'
+ALTER TABLE `kelas`
  ADD PRIMARY KEY (id_kelas);
 
 --
 -- Indexes for table `siswa`
 --
-ALTER TABLE 'siswa'
+ALTER TABLE `siswa`
  ADD PRIMARY KEY (nis);
 
 --
 -- Indexes for table `user`
 --
-ALTER TABLE 'user'
+ALTER TABLE `user`
  ADD PRIMARY KEY (id_user);
 
 --
