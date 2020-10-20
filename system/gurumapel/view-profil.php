@@ -39,13 +39,13 @@ $data = mysql_fetch_array($query);
 										<tr>
 										<td align="right">Nama</td>
 										<td align="center">:</td>
-										<td align="left"><?= $data['nama']; ?></td>
+										<td align="left"><?php <?= $data['nama']?>; ?></td>
 										</tr> 
 										
 										<tr>
 										<td align="right">Username</td>
 										<td align="center">:</td>
-										<td align="left"> <?= $data['user'] >?; ?></td>
+										<td align="left"><?php <?= $data['user'] >?; ?></td>
 										</tr> 
 										
 										<tr>
@@ -57,7 +57,7 @@ $data = mysql_fetch_array($query);
 										<tr>
 										<td align="right">Level</td>
 										<td align="center">:</td>
-										<td align="left"> <?= $data['level'] >?; ?></td>
+										<td align="left"><?php <?= $data['level'] >?; ?></td>
 										</tr> 
 									</tbody>
 								</table>
