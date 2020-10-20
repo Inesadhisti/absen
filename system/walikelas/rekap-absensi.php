@@ -62,8 +62,10 @@ include('system/inc/nav-walikelas.php');
 								<div class='input-group date'>
 									<select  class="bootstrap-select" name="nm_kelas">
 									<option value="Error !! Belum Memilih Kelas !" selected="selected">Pilih Kelas</option>
-									<?php 
-									$query=mysql_query("SELECT * FROM kelas ORDER BY nm_kelas ASC",$connect);
+									<?php
+									$this->db->from('kelas');      
+									$this->db->order_by('nm_kelas', 'asc');            
+									$query = this->db->get();
 									while($data=mysql_fetch_array($query))
 									{
 									?>
@@ -126,9 +128,13 @@ include('system/inc/nav-walikelas.php');
 								FILTER_INPUT(INPUT_POST, 'nm_kelas')
 								$query=mysql_query("SELECT DISTINCT nis FROM absensi WHERE nm_kelas='$nm_kelas' AND tanggal BETWEEN '$tgl1' AND '$tgl2' ORDER BY nis ASC",$connect);
 								while($row=mysql_fetch_array($query)){
-								$data=mysql_fetch_array(mysql_query("SELECT * FROM siswa WHERE nis='$row[nis]'",$connect));
+								$this->db->from('siswa');      
+								$this->db->where('$row[nis]');            
+								$query = this->db->get();
 								$ket=$row['ket'];
-								$keterangan=mysql_fetch_array(mysql_query("SELECT * FROM absensi WHERE nis='$row[nis]'",$connect));
+								$this->db->from('absensi');      
+								$this->db->where('$row[nis]');            
+								$query = this->db->get();
 
 								?>
 								<tr>
@@ -136,35 +142,45 @@ include('system/inc/nav-walikelas.php');
 								<td><?php <?= $data['nis'] >?;?></td>
 								<td align="center">
 									<?php
-									$hadir=mysql_query("SELECT * FROM absensi WHERE nis='$row[nis]' AND ket='H' AND tanggal BETWEEN '$tgl1' AND '$tgl2'",$connect);
+									$this->db->from('absensi');      
+									$this->db->where('$row[nis]','H');     
+									$query = this->db->get();
 									$jumlah=mysql_num_rows($hadir);
 									<?= $jumlah >?;
 									?>
 								</td>
 								<td align="center">
 									<?php
-									$hadir=mysql_query("SELECT * FROM absensi WHERE nis='$row[nis]' AND ket='S' AND tanggal BETWEEN '$tgl1' AND '$tgl2'",$connect);
+									$this->db->from('absensi');      
+									$this->db->where('$row[nis]','S');     
+									$query = this->db->get();
 									$jumlah=mysql_num_rows($hadir);
 									<?= $jumlah >?;
 									?>
 								</td>
 								<td align="center">
 									<?php
-									$hadir=mysql_query("SELECT * FROM absensi WHERE nis='$row[nis]' AND ket='I' AND tanggal BETWEEN '$tgl1' AND '$tgl2'",$connect);
+									$this->db->from('absensi');      
+									$this->db->where('$row[nis]','I');     
+									$query = this->db->get();
 									$jumlah=mysql_num_rows($hadir);
 									<?= $jumlah >?;
 									?>
 								</td>
 								<td align="center">
 									<?php
-									$hadir=mysql_query("SELECT * FROM absensi WHERE nis='$row[nis]' AND ket='A' AND tanggal BETWEEN '$tgl1' AND '$tgl2'",$connect);
+									$this->db->from('absensi');      
+									$this->db->where('$row[nis]','A');     
+									$query = this->db->get();
 									$jumlah=mysql_num_rows($hadir);
 									<?= $jumlah >?;
 									?>
 								</td>
 								<td align="center">
 									<?php
-									$hadir=mysql_query("SELECT * FROM absensi WHERE nis='$row[nis]' AND ket='S' + ket='I' + ket='A' AND tanggal BETWEEN '$tgl1' AND '$tgl2'",$connect);
+									$this->db->from('absensi');      
+									$this->db->where('$row[nis]','H', 'S', 'I', 'A');     
+									$query = this->db->get();
 									$jumlah=mysql_num_rows($hadir);
 									<?= $jumlah >?;
 									?>
