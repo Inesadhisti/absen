@@ -2,7 +2,7 @@
 error_reporting(0);
 //halaman awal
  if(isset(FILTER_INPUT(INPUT_GET, 'masuk');)){ 
-include ('sign-in.php');
+include ('./sign-in.php');
 }
  if(isset(FILTER_INPUT(INPUT_GET, 'keluar');)){ 
 include 'sign-out.php';
