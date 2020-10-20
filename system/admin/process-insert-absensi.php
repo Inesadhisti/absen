@@ -10,6 +10,13 @@ if(isset(FILTER_INPUT(INPUT_POST, 'info');)){
 		FILTER_INPUT(INPUT_POST, 'hadir');
 		$jumlah=count($nis);
 		for($i=0;$i<$jumlah;$i++){
+			$data = array(
+        		'nis' => '$nis[i]',
+        		'nm_kelas' => '$nm_kelas',
+        		'ket' => 'H',
+			'tanggal' => '$tanggal',
+			'info'	=> 'success');
+			$this->db->insert('absensi', $data);
 			$hadir=mysql_query("INSERT INTO absensi(nis,nm_kelas,ket,tanggal,info) VALUES ('$nis[$i]','$nm_kelas','H','$tanggal','succes')",$connect);
 		}
 		?>
@@ -22,7 +29,13 @@ if(isset(FILTER_INPUT(INPUT_POST, 'info');)){
 		FILTER_INPUT(INPUT_POST, 'sakit';)
 		$jumlah=count($nis);
 		for($i=0;$i<$jumlah;$i++){
-			$hadir=mysql_query("INSERT INTO absensi(nis,nm_kelas,ket,tanggal,info) VALUES ('$nis[$i]','$nm_kelas','S','$tanggal','succes')",$connect);
+			$data = array(
+        		'nis' => '$nis[i]',
+        		'nm_kelas' => '$nm_kelas',
+        		'ket' => 'S',
+			'tanggal' => '$tanggal',
+			'info'	=> 'success');
+			$this->db->insert('absensi', $data);
 		}
 		?>
 		<script language="javascript">window.location.href="page.php?data-absensi&kelas=<?php <?= $nm_kelas >?;?>&tanggal=<?php <?= $tanggal >?;?>&message=absen-success";</script>
@@ -34,7 +47,13 @@ if(isset(FILTER_INPUT(INPUT_POST, 'info');)){
 		FILTER_INPUT(INPUT_POST, 'ijin');
 		$jumlah=count($nis);
 			for($i=0;$i<$jumlah;$i++){
-			$hadir=mysql_query("INSERT INTO absensi(nis,nm_kelas,ket,tanggal,info) VALUES ('$nis[$i]','$nm_kelas','I','$tanggal','succes')",$connect);
+			$data = array(
+        		'nis' => '$nis[i]',
+        		'nm_kelas' => '$nm_kelas',
+        		'ket' => 'I',
+			'tanggal' => '$tanggal',
+			'info'	=> 'success');
+			$this->db->insert('absensi', $data);
 		}
 		?>
 		<script language="javascript">window.location.href="page.php?data-absensi&kelas=<?php <?= $nm_kelas >?;?>&tanggal=<?php <?= $tanggal >?;?>&message=absen-success";</script>
@@ -46,7 +65,13 @@ if(isset(FILTER_INPUT(INPUT_POST, 'info');)){
 		FILTER_INPUT(INPUT_POST, 'alfa');
 		$jumlah=count($nis);
 		for($i=0;$i<$jumlah;$i++){
-			$hadir = mysql_query("INSERT INTO absensi(nis,nm_kelas,ket,tanggal,info) VALUES ('$nis[$i]','$nm_kelas','A','$tanggal','succes')",$connect);
+			$data = array(
+        		'nis' => '$nis[i]',
+        		'nm_kelas' => '$nm_kelas',
+        		'ket' => 'A',
+			'tanggal' => '$tanggal',
+			'info'	=> 'success');
+			$this->db->insert('absensi', $data);
 		}
 		?>
 		<script language="javascript">window.location.href="page.php?data-absensi&kelas=<?php <?= $nm_kelas >?;?>&tanggal=<?php <?= $tanggal >?;?>&message=absen-success";</script>
