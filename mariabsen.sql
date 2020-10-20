@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS "absensi" (
-id_absensi int(10) NOT NULL,
+`id_absensi` int(10) NOT NULL,
   `nis` varchar(500) NOT NULL,
   `nm_kelas` char(50) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `ket` enum('H','S','I','A') CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
