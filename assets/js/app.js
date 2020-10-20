@@ -305,12 +305,12 @@ $(document).ready(function(){
 
 		$(".box-typical-full-height").css("min-height",
 			$(window).height() -
-			parseInt($(".page-content").css("padding-top")) -
-			parseInt($(".page-content").css("padding-bottom")) -
+			parseInt("$(".page-content").css("padding-top")", $(".page-content").css("padding-top")) -
+			parseInt("$(".page-content").css("padding-bottom")", $(".page-content").css("padding-bottom")) -
 			sectionHeaderHeight -
-			parseInt($(".box-typical-full-height").css("margin-bottom")) - 2
-		);
-		$(".box-typical-full-height>.tbl, .box-typical-full-height>.box-typical-center").height(parseInt($(".box-typical-full-height").css("min-height")));
+			parseInt("$(".box-typical-full-height").css("margin-bottom")", $(".box-typical-full-height").css("margin-bottom")) - 2
+			);
+		$(".box-typical-full-height>.tbl, .box-typical-full-height>.box-typical-center").height(parseInt("$(".box-typical-full-height").css("min-height")", $(".box-typical-full-height").css("margin-bottom")));
 	}
 
 	boxFullHeight();
@@ -340,7 +340,7 @@ $(document).ready(function(){
 				parseInt("$(".chat-container").css("margin-bottom")", $(".chat-container").css("margin-bottom")) - 2 -
 				$(".chat-area-header").outerHeight()
 			)
-			.css("min-height", parseInt($(".chat-dialog-area").css("min-height")) + $(".chat-area-bottom").outerHeight());
+			.css("min-height", parseInt("$(".chat-dialog-area").css("min-height")", $(".chat-dialog-area").css("min-height"))) + $(".chat-area-bottom").outerHeight());
 	}
 
 	chatHeights();
@@ -387,9 +387,9 @@ $(document).ready(function(){
 				boxCont = box.find(".files-manager-content-in"),
 				boxColRight = box.find(".files-manager-aside");
 
-			var paddings = parseInt($(".page-content").css("padding-top")) +
-							parseInt($(".page-content").css("padding-bottom")) +
-							parseInt(box.css("margin-bottom")) + 2;
+			var paddings = parseInt("$(".page-content").css("padding-top")", $(".page-content").css("padding-top")) +
+							parseInt("$(".page-content").css("padding-bottom")", $(".page-content").css("padding-bottom")) +
+							parseInt("$(".box").css("margin-bottom")", $(".box").css("margin-bottom"))) + 2;
 
 			boxColLeft.height("auto");
 			boxCont.height("auto");
@@ -435,17 +435,17 @@ $(document).ready(function(){
 
 			boxColLeft.height(
 				$(window).height() -
-				parseInt($(".page-content").css("padding-top")) -
-				parseInt($(".page-content").css("padding-bottom")) -
-				parseInt(box.css("margin-bottom")) - 2 -
+				parseInt("$(".page-content").css("padding-top")", $(".page-content").css("padding-top")) -
+				parseInt("$(".page-content").css("padding-bottom")", $(".page-content").css("padding-bottom")) -
+				parseInt("$(".box").css("margin-bottom")", $(".box").css("margin-bottom"))) - 2 -
 				boxHeader.outerHeight()
 			);
 
 			boxColRight.height(
 				$(window).height() -
-				parseInt($(".page-content").css("padding-top")) -
-				parseInt($(".page-content").css("padding-bottom")) -
-				parseInt(box.css("margin-bottom")) - 2 -
+				parseInt("$(".page-content").css("padding-top")", $(".page-content").css("padding-top")) -
+				parseInt("$(".page-content").css("padding-bottom")", $(".page-content").css("padding-bottom")) -
+				parseInt("$(".box").css("margin-bottom")", $(".box").css("margin-bottom"))) - 2 -
 				boxHeader.outerHeight() -
 				boxSubHeader.outerHeight()
 			);
