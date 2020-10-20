@@ -574,8 +574,7 @@ body.stop-scrolling {
  * Copyright 2015 Daniel Cardoso <@DanielCardoso>
  * Licensed under MIT
  */
-.la-ball-fall,
-.la-ball-fall > div {
+.la-ball-fall, .la-ball-fall > div {
   position: relative;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
