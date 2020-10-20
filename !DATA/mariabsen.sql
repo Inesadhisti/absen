@@ -718,7 +718,7 @@ ALTER TABLE siswa
 --
 -- Indexes for table `user`
 --
-ALTER TABLE user
+ALTER TABLE `user`
  ADD PRIMARY KEY (id_user);
 
 --
