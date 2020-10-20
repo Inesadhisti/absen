@@ -7,7 +7,7 @@ if (!isset((FILTER_INPUT(INPUT_SESSION, 'user'))) || empty((FILTER_INPUT(INPUT_S
 }
 
 //pemisah hak akses level
-else if ($_SESSION['level']!="Admin"){
+else if ((FILTER_INPUT(INPUT_SESSION, 'level'))!="Admin"){
 //jika bukan admin tidak bisa masuk, redirect ke halaman error
 	header('location:../page.php?acces-admin&pembatasan=hak-akses');
 }
