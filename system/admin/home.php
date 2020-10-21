@@ -107,7 +107,8 @@ include('system/inc/nav-admin.php');
 					<div class="col-md-6">
 						<?php
 						//hitung jumlah data
-						$jml_data = mysql_num_rows(mysql_query("SELECT * FROM user"));
+						$this->db->count_all_results('user');
+						
 						//Jumlah halaman
 						$JmlHalaman = ceil($jml_data/$batas); //ceil digunakan untuk pembulatan keatas
 						?>
@@ -247,7 +248,8 @@ include('system/inc/nav-admin.php');
 					<div class="col-md-6">
 						<?php
 						//hitung jumlah data
-						$jml_data = mysql_num_rows(mysql_query("SELECT * FROM kelas"));
+						$this->db->count_all_results('kelas');
+						
 						//Jumlah halaman
 						$JmlHalaman = ceil($jml_data/$batas); //ceil digunakan untuk pembulatan keatas
 						?>
@@ -393,7 +395,8 @@ include('system/inc/nav-admin.php');
 					<div class="col-md-6">
 						<?php
 						//hitung jumlah data
-						$jml_data = mysql_num_rows(mysql_query("SELECT * FROM siswa"));
+						$this->db->count_all_results('siswa');
+						
 						//Jumlah halaman
 						$JmlHalaman = ceil($jml_data/$batas); //ceil digunakan untuk pembulatan keatas
 						?>
