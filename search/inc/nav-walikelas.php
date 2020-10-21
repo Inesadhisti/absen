@@ -82,9 +82,9 @@
 	            <ul>
 	            <li>
 				<?php 
-				$query=mysql_query("SELECT * FROM kelas ORDER BY nm_kelas ASC",$connect);
+			    	
 			    	$this->db->from('kelas');
-			    	$this->db->order_by('nm_kelas');
+			    	$this->db->order_by('nm_kelas', 'asc');
 			    	$query= $this->db->get();
 				while($row=$query->result_array())
 				{
