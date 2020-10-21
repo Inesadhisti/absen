@@ -14,7 +14,6 @@ $user = mysql_real_escape_string($user);
 $pass = mysql_real_escape_string($pass);
 
 //cek data yang dikirim, apakah kosong atau tidak
-$data = mysql_query("SELECT * FROM user WHERE user='$user' AND pass='$pass'");
 $this->db->from('user');
 $this->db->where('user', '$user');
 $this->db->where('pass', '$pass');
