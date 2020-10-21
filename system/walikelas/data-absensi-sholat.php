@@ -81,8 +81,12 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 									$no = $data->result_array();
 								
 								$ket=$row['ket'];
-								$keterangan=mysql_fetch_array(mysql_query("SELECT * FROM absensi_sholat WHERE nis='$row[nis]'",$connect));
-
+									
+									$keterangan = 	$this->db->from('absensi_sholat');
+											$this->db->where('$row[nis]');
+											$query->db->get();
+									$no = $keterangan->result_array();
+								
 								?>
 								<tr>
 								<td><?php <?= $data['nama'] >? ;?></td>
