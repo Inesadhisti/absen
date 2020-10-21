@@ -69,9 +69,14 @@ $data = $query->result_array();
 								$pg = 1;
 								} else {
 								$posisi = ($pg-1)*$batas; }
-								$sql = mysql_query("SELECT * FROM siswa WHERE nm_kelas='$nm_kelas' ORDER BY nis ASC limit $posisi, $batas ");
+								$this->db->from('siswa');
+								$this->db->where('$nm_kelas');
+								$this->db->order_by('nis', 'asc');
+								$this->db->limit('$posisi', '$batas');
+								$query->db->get();
+								
 								$no = 1+$posisi;
-								while ($data = mysql_fetch_assoc($sql)) 
+								while ($data = $sql->result_array()) 
 								{
 								?>
 						
@@ -100,8 +105,11 @@ $data = $query->result_array();
 						<?php
 						//hitung jumlah data
 						FILTER_INPUT(INPUT_GET, 'kelas');
-						$query = mysql_query("SELECT * FROM siswa WHERE nm_kelas='$nm_kelas'");
-          				$jml_data=mysql_num_rows($query);
+						$this->db->from('siswa');
+						$this->db->where('$nm_kelas');
+						$query->db->get();
+						
+          				$jml_data=$query0>result_array();
     					
 						//Jumlah halaman
 						$JmlHalaman = ceil($jml_data/$batas); //ceil digunakan untuk pembulatan keatas
