@@ -17,8 +17,7 @@ if(isset(FILTER_INPUT(INPUT_POST, 'info');)){
 			'tanggal' => '$tanggal',
 			'info'	=> 'success');
 			$this->db->insert('absensi', $data);
-			$hadir=mysql_query("INSERT INTO absensi(nis,nm_kelas,ket,tanggal,info) VALUES ('$nis[$i]','$nm_kelas','H','$tanggal','succes')",$connect);
-		}
+					}
 		?>
 		<script language="javascript">window.location.href="page.php?data-absensi&kelas=<?php <?= $nm_kelas >?;?>&tanggal=<?php <?= $tanggal >?;?>&message=absen-success";</script>
 		<?php 
