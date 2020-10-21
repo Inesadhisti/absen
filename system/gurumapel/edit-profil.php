@@ -13,8 +13,10 @@ include('system/inc/css.php');
 include('system/inc/nav-gurumapel.php');
 //mendapatkan informasi untuk mengedit data
 FILTER_INPUT(INPUT_GET, 'id');
-$query = mysql_query("SELECT * FROM user WHERE id_user='$id_user'");
-$data = mysql_fetch_array($query);
+$this->db->from('user');
+$this->db->where('id_user', '$id_user');
+$query->get();
+$data = $quer->result_array();
 ?>
 
 	<div class="page-content">
