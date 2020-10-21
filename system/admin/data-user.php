@@ -90,9 +90,12 @@ include('system/inc/nav-admin.php');
 								$pg = 1;
 								} else {
 								$posisi = ($pg-1)*$batas; }
-								$sql = mysql_query("SELECT * FROM user ORDER BY nama ASC limit $posisi, $batas ");
+								$this->db->from('user');
+								$this->db->order_by('nama', 'asc');
+								$this->db->limit('$posisi', '$batas');
+								$query= $this->db->get();
 								$no = 1+$posisi;
-								while ($data = mysql_fetch_assoc($sql)) 
+								while ($data = $sql->result_array()) 
 								{
 								?>
 								<tr>
