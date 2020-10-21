@@ -27,14 +27,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS "absensi" (
-  `id_absensi` int(10) NOT NULL,
-  `nis` varchar(500) NOT NULL,
-  `nm_kelas` char(50) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `ket` enum('H','S','I','A') CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `keterangan` varchar(300) NOT NULL,
-  `tanggal` varchar(20) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `info` char(10) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `jam_pelajaran` varchar(3) NOT NULL
+  "id_absensi" int(10) NOT NULL,
+  "nis" varchar(500) NOT NULL,
+  "nm_kelas" char(50) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  "ket" enum('H','S','I','A') CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  "keterangan" varchar(300) NOT NULL,
+  "tanggal" varchar(20) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  "info" char(10) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  "jam_pelajaran" varchar(3) NOT NULL
 ) ENGINE=MyISAM AUTO_INCREMENT=539 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -44,13 +44,13 @@ CREATE TABLE IF NOT EXISTS "absensi" (
 --
 
 CREATE TABLE IF NOT EXISTS "absensi_sholat" (
-`id_absensi` int(10) NOT NULL,
-  `nis` varchar(500) NOT NULL,
-  `nm_kelas` char(50) NOT NULL,
-  `ket` enum('S','TS','HL') NOT NULL,
-  `keterangan` varchar(300) NOT NULL,
-  `tanggal` char(20) NOT NULL,
-  `info` char(10) NOT NULL
+"id_absensi" int(10) NOT NULL,
+  "nis" varchar(500) NOT NULL,
+  "nm_kelas" char(50) NOT NULL,
+  "ket" enum('S','TS','HL') NOT NULL,
+  "keterangan" varchar(300) NOT NULL,
+  "tanggal" char(20) NOT NULL,
+  "info" char(10) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
