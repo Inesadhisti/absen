@@ -13,7 +13,7 @@ if(isset(FILTER_INPUT(INPUT_POST, 'info'))){
 		$this->db->where('nm_kelas');
 		$this->db->order_by('nis', 'asc');
 		$query->db->get();
-		while($data=mysql_fetch_array($query)){
+		while($data$query->result_array()){
 			
 			$this->db->where('$data[nis]', '$tanggal', '$jam_pelajaran');
 			$this->db->delete('absensi');
