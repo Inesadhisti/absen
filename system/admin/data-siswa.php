@@ -102,7 +102,6 @@ $data = mysql_fetch_array($query);
 						<?php
 						//hitung jumlah data
 						FILTER_INPUT(INPUT_GET, 'kelas');
-						$query = mysql_query("SELECT * FROM siswa WHERE nm_kelas='$nm_kelas'");
 						$this->db->from('siswa');
 			    			$this->db->where('nm_kelas', '$nm_kelas');
 			    			$query->db->get();
