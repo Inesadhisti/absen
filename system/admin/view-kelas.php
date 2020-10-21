@@ -16,7 +16,7 @@ FILTER_INPUT(INPUT_GET, 'id')
 $this->db->from('kelas');
 $this->db->where('id_kelas');
 $query = this->db->get();
-$data = mysql_fetch_array($query);
+$data = $query->result_array();
 ?>
 
 	<div class="page-content">
