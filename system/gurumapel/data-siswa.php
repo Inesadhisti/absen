@@ -13,7 +13,8 @@ include('system/inc/css.php');
 include('system/inc/nav-gurumapel.php');
 //mendapatkan informasi dari data kelas
 (FILTER_INPUT(INPUT_GET, 'kelas')
-$query = mysql_query("SELECT * FROM kelas");
+$this->db->from('kelas');
+$query->db->get();
 $data = mysql_fetch_array($query);
 ?>
 
@@ -68,7 +69,11 @@ $data = mysql_fetch_array($query);
 								$pg = 1;
 								} else {
 								$posisi = ($pg-1)*$batas; }
-								$sql = mysql_query("SELECT * FROM siswa WHERE nm_kelas='$nm_kelas' ORDER BY nis ASC limit $posisi, $batas ");
+								$this->db->from('siswa');
+								$this->db->where('$nm_kelas');
+			    					$this->db->order_by('nis', 'asc');
+								$this->db->limit('$posisi', '$batas');
+			    					$query->db->get();
 								$no = 1+$posisi;
 								while ($data = mysql_fetch_assoc($sql)) 
 								{
@@ -99,6 +104,9 @@ $data = mysql_fetch_array($query);
 						<?php
 						//hitung jumlah data
 						(FILTER_INPUT(INPUT_GET, 'kelas');
+						$this->db->from('siswa');
+						$this->db->where('$nm_kelas');
+			    			$query->db->get();
 						$query = mysql_query("SELECT * FROM siswa WHERE nm_kelas='$nm_kelas'");
           				$jml_data=mysql_num_rows($query);
     					
