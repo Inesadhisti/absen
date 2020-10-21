@@ -12,9 +12,11 @@ include('system/inc/css.php');
 //panggil file navi-gurumapel.php untuk menghubungkan gurumapel ke konten
 include('system/inc/nav-gurumapel.php');
 //mendapatkan informasi untuk menlihat data
-(FILTER_INPUT(INPUT_GET, 'id')
-$query = mysql_query("select * from kelas where id_kelas='$id_kelas'");
-$data = mysql_fetch_array($query);
+(FILTER_INPUT(INPUT_GET, 'id');
+$this->db->from('kelas');
+$this->db->where('$id_kelas');
+$query->db->get();
+$data = $query->result_array();
 ?>
 
 	<div class="page-content">
