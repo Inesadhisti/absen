@@ -574,17 +574,11 @@ body.stop-scrolling {
  * Copyright 2015 Daniel Cardoso <@DanielCardoso>
  * Licensed under MIT
  */
-.la-ball-fall, .la-ball-fall > div {
+.la-ball-fall > div {
   position: relative;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-}
-
-.la-ball-fall {
-  display: block;
-  font-size: 0;
-  color: #fff;
 }
 
 .la-ball-fall.la-dark {
@@ -596,11 +590,6 @@ body.stop-scrolling {
   float: none;
   background-color: currentColor;
   border: 0 solid currentColor;
-}
-
-.la-ball-fall {
-  width: 54px;
-  height: 18px;
 }
 
 .la-ball-fall > div {
