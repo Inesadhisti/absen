@@ -66,7 +66,7 @@ include('system/inc/nav-walikelas.php');
 									$this->db->from('kelas');      
 									$this->db->order_by('nm_kelas', 'asc');            
 									$query = this->db->get();
-									while($data=mysql_fetch_array($query))
+									while($data=$query->result_array())
 									{
 									?>
 									<option value="<?php  <?= $data['nm_kelas'] >?; ?>"><?php  <?= $data['nm_kelas'] >?; ?></option>
