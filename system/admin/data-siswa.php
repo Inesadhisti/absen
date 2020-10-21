@@ -103,6 +103,9 @@ $data = mysql_fetch_array($query);
 						//hitung jumlah data
 						FILTER_INPUT(INPUT_GET, 'kelas');
 						$query = mysql_query("SELECT * FROM siswa WHERE nm_kelas='$nm_kelas'");
+						$this->db->from('siswa');
+			    			$this->db->where('nm_kelas', '$nm_kelas');
+			    			$query->db->get();
           				$jml_data=mysql_num_rows($query);
     					
 						//Jumlah halaman
