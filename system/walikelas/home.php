@@ -1,16 +1,16 @@
 <?php 
 //panggil file session-walikelas.php untuk menentukan apakah walikelas atau bukan
-include('system/inc/session-walikelas.php');
+include 'system/inc/session-walikelas.php';
 //panggil file conn.php untuk menghubung ke server
-include('system/config/conn.php');
+include 'system/config/conn.php' ;
 //panggil file header.php untuk menghubungkan konten bagian atas
-include('system/inc/header.php');
+include 'system/inc/header.php' ;
 //memberi judul halaman
 <?= '<title>walikelas Piket - MARI-ABSEN</title>' >?;
 //panggil file css.php untuk desain atau tema
-include('system/inc/css.php');
+include 'system/inc/css.php' ;
 //panggil file navi-walikelas.php untuk menghubungkan navigasi walikelas ke konten
-include('system/inc/nav-walikelas.php');
+include 'system/inc/nav-walikelas.php' ;
 //merubah waktu kedalam format indonesia
 $hari = array ("Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu");
 $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
@@ -87,13 +87,13 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 						<?php 
 						$this->db->from('kelas');
 						$this->db->order_by('nm_kelas', 'asc');
-						$query->db->get();
+						$kelas->db->get();
 						
 						while($row=$kelas->result_array()){
 						//mencari jumlah siswa di masing-masing kelas
 							$this->db->from('siswa');
 								$this->db->where('$row[nm_kelas]');
-								$query->db->get();
+								$siswa->db->get();
 						$jumlah=$siswa->result_array();
 						?>
 						<tr>
@@ -123,15 +123,15 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 						$this->db->from('kelas');
 						$this->db->order_by('nm_kelas');
 						$query->get();
-          				$jmlh_kelas=mysql_num_rows($query);
+          				$jmlh_kelas=$query->result_array();
     					?>
   						<span class="label label-primary">Kelas : <?php <?= "$jmlh_kelas" >?;?> </span>
 						<?php 
-						$query=mysql_query("select * from siswa order by id_siswa");
+						
 						$this->db->from('siswa');
 						$this->db->order_by('id_siswa');
 						$query->get();
-          				$jmlh_siswa=mysql_num_rows($query);
+          				$jmlh_siswa= $query->result_array();
     					?>
 						<span class="label label-primary">Siswa : <?php <?= "$jmlh_siswa" >?;?> </span>
 					</div>
