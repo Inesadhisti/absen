@@ -118,7 +118,3 @@ include('inc/nav-walikelas.php');
 			
 		</div><!--.container-fluid-->
 	</div><!--.page-content-->
-	
-<?php 
-//panggil file footer.php untuk menghubungkan konten bagian bawah
-include(
