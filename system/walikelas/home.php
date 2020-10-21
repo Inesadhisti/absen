@@ -120,12 +120,17 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 						<br>
   						<span class="label label-success">Info! </span> Total
 						<?php 
-						$query=mysql_query("select * from kelas order by nm_kelas");
+						$this->db->from('kelas');
+						$this->db->order_by('nm_kelas');
+						$query->get();
           				$jmlh_kelas=mysql_num_rows($query);
     					?>
   						<span class="label label-primary">Kelas : <?php <?= "$jmlh_kelas" >?;?> </span>
 						<?php 
 						$query=mysql_query("select * from siswa order by id_siswa");
+						$this->db->from('siswa');
+						$this->db->order_by('id_siswa');
+						$query->get();
           				$jmlh_siswa=mysql_num_rows($query);
     					?>
 						<span class="label label-primary">Siswa : <?php <?= "$jmlh_siswa" >?;?> </span>
