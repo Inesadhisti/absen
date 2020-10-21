@@ -60,7 +60,9 @@
 	            <ul>
 	            <li>
 				<?php 
-				$query=mysql_query("SELECT * FROM kelas ORDER BY nm_kelas ASC",$connect);
+			    	$this->db->from('kelas');
+			    	$this->db->order_by('nm_kelas', 'asc');
+			    	$query->db->get();
 				while($row=mysql_fetch_array($query))
 				{
 				?>
@@ -80,7 +82,9 @@
 	            <ul>
 	            <li>
 				<?php 
-				$query=mysql_query("SELECT * FROM kelas ORDER BY nm_kelas ASC",$connect);
+				$this->db->from('kelas');
+			    	$this->db->order_by('nm_kelas', 'asc');
+			    	$query->db->get();
 				while($row=mysql_fetch_array($query))
 				{
 				?>
@@ -100,7 +104,9 @@
 	            <ul>
 	            <li>
 				<?php 
-				$query=mysql_query("SELECT * FROM kelas ORDER BY nm_kelas ASC",$connect);
+				$this->db->from('kelas');
+			    	$this->db->order_by('nm_kelas', 'asc');
+			    	$query->db->get();
 				while($row=mysql_fetch_array($query))
 				{
 				?>
@@ -120,7 +126,9 @@
 	            <ul>
 				<li>
 				<?php 
-				$query=mysql_query("SELECT * FROM kelas ORDER BY nm_kelas ASC",$connect);
+				$this->db->from('kelas');
+			    	$this->db->order_by('nm_kelas', 'asc');
+			    	$query->db->get();
 				while($row=mysql_fetch_array($query))
 				{
 				?>
