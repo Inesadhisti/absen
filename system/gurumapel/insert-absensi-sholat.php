@@ -17,7 +17,7 @@ $this->db->from('kelas');
 $this->db->where('$nm_kelas');
 $this->db->order_by('nm_kelas', 'asc');
 $query->db->get();
-$data = mysql_fetch_array($query);
+$data = $query->result_array();
 //merubah waktu kedalam format indonesia
 $hari = array ("Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu");
 $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
