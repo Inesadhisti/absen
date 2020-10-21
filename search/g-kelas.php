@@ -1,16 +1,16 @@
 <?php 
 //panggil file session-admin.php untuk menentukan apakah admin atau bukan
-include('inc/session-gurumapel.php');
+include'inc/session-gurumapel.php';
 //panggil file conn.php untuk menghubung ke server
-include('../system/config/conn.php');
+include'../system/config/conn.php';
 //panggil file header.php untuk menghubungkan konten bagian atas
-include('inc/header.php');
+include'inc/header.php';
 //memberi judul halaman
 	<?= '<title>Pencarian Data Kelas - MARI-ABSEN</title>' >?;
 //panggil file css.php untuk desain atau tema
-include('inc/css.php');
+include'inc/css.php';
 //panggil file navi-admin.php untuk menghubungkan navigasi admin ke konten
-include('inc/nav-gurumapel.php');
+include'inc/nav-gurumapel.php';
 ?>
 	<div class="page-content">
 		<div class="container-fluid">
@@ -57,7 +57,7 @@ include('inc/nav-gurumapel.php');
 								$this->db->from('kelas');
 								$this->db->like('nm_kelas', '%$q%');
 								$this->db->limit(10);
-								$query->db->get();
+								$sql= $this->db->get();
 								$result = sql-> result_array();
 								 
 								if($result->result_array() > 0) {
@@ -120,5 +120,5 @@ include('inc/nav-gurumapel.php');
 	
 <?php 
 //panggil file footer.php untuk menghubungkan konten bagian bawah
-include('inc/footer.php');
+include 'inc/footer.php';
 ?>

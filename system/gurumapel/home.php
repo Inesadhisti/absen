@@ -86,13 +86,13 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 						<?php 
 						$this->db->from('kelas');
 						$this->db->order_by('nm_kelas', 'asc');
-						$query->db->get();
+						$kelas= $this->db->get();
 						
 						while($row= $kelas->result_array()){
 						//mencari jumlah siswa di masing-masing kelas
 						$this->db->from('siswa');
-						$this->db->where('$row[nm_kelas');
-						$query->db->get();
+						$this->db->where('nm_kelas', '$row[nm_kelas');
+						$siswa= $this->db->get();
 						
 						$jumlah= $siswa->result_array();
 						
@@ -124,7 +124,7 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 						<?php 
 						$this->db->from('kelas');
 						$this->db->order_by('nm_kelas');
-						$query->db->get();
+						$query= $this->db->get();
 						($jmlh_kelas= $query->result_array();
 	 					
 						?>
@@ -132,7 +132,7 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 						<?php
 						$this->db->from('siswa');
 						$this->db->order_by('id_siswa');
-						$query->db->get();
+						$query= $this->db->get();
 						
 						($jmlh_siswa= $query->result_array();
     					?>

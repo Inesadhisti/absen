@@ -60,7 +60,7 @@
 	            <ul>
 	            <li>
 				<?php
-			    	$this->db->from('kelas');
+			    $this->db->from('kelas');
 				$this->db->order_by('nm_kelas', 'asc');
 				$query= $this->db->get();
 		
@@ -83,7 +83,7 @@
 	            <ul>
 	            <li>
 				<?php 
-			    	$this->db->from('kelas');
+			    $this->db->from('kelas');
 				$this->db->order_by('nm_kelas', 'asc');
 				$query= $this->db->get();
 				

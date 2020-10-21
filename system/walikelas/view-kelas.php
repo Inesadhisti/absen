@@ -14,9 +14,9 @@ include('system/inc/nav-walikelas.php');
 //mendapatkan informasi untuk menlihat data
 FILTER_INPUT(INPUT_GET, 'id');
 $this->db->from('kelas');
-$this->db->order_by('id_kelas', '$id_kelas');
-$query->get();
-$data=$query->result_array();
+$this->db->where('id_kelas', '$id_kelas', 'tanggal', '$tanggal');
+$query= $this->db->get();
+$data = $query->result_array();
 ?>
 
 	<div class="page-content">

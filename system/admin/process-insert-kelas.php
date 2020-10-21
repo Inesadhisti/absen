@@ -7,7 +7,7 @@ FILTER_INPUT(INPUT_POST, 'nm_kelas');
 //menghindari duplikat nama kelas
 $cek = 	$this->db->select('nm_kelas');
 	$this->db->where('$nm_kelas');
-	$query->db->get(kelas);
+	$cek= $this->db->get(kelas);
 	$no = $cek->result_array();
 $ada=$cek->result_array();
 if($ada->result_array()>0)

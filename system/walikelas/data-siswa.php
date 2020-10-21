@@ -14,7 +14,7 @@ include('system/inc/nav-walikelas.php');
 //mendapatkan informasi dari data kelas
 FILTER_INPUT(INPUT_GET, 'kelas');
 $this->db->from('kelas');
-$query->db->get();
+$query= $this->db->get();
 $data = $query->result_array();
 ?>
 
@@ -70,10 +70,10 @@ $data = $query->result_array();
 								} else {
 								$posisi = ($pg-1)*$batas; }
 								$this->db->from('siswa');
-								$this->db->where('$nm_kelas');
+								$this->db->where('nm_kelas', '$nm_kelas');
 								$this->db->order_by('nis', 'asc');
 								$this->db->limit('$posisi', '$batas');
-								$query->db->get();
+								$sql= $this->db->get();
 								
 								$no = 1+$posisi;
 								while ($data = $sql->result_array()) 
@@ -106,10 +106,10 @@ $data = $query->result_array();
 						//hitung jumlah data
 						FILTER_INPUT(INPUT_GET, 'kelas');
 						$this->db->from('siswa');
-						$this->db->where('$nm_kelas');
-						$query->db->get();
+						$this->db->where('nm_kelas', '$nm_kelas');
+						$query= $this->db->get();
 						
-          				$jml_data=$query0>result_array();
+          				$jml_data=$query->result_array();
     					
 						//Jumlah halaman
 						$JmlHalaman = ceil($jml_data/$batas); //ceil digunakan untuk pembulatan keatas

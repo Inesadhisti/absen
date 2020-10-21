@@ -15,8 +15,8 @@ include('system/inc/nav-gurumapel.php');
 FILTER_INPUT(INPUT_GET, 'id');
 $this->db->from('user');
 $this->db->where('id_user', '$id_user');
-$query->get();
-$data = $quer->result_array();
+$query= $this->db->get();
+$data = $query->result_array();
 ?>
 
 	<div class="page-content">

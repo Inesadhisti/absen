@@ -14,9 +14,9 @@ include('system/inc/nav-gurumapel.php');
 //mendapatkan informasi untuk mengabsen siswa
 FILTER_INPUT(INPUT_GET, 'kelas')
 $this->db->from('kelas');
-$this->db->where('$nm_kelas');
+$this->db->where('nm_kelas', '$nm_kelas');
 $this->db->order_by('nm_kelas', 'asc');
-$query->db->get();
+$query= $this->db->get();
 $data = $query->result_array();
 //merubah waktu kedalam format indonesia
 $hari = array ("Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu");
@@ -59,6 +59,7 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 									$tanggal=date("d/m/Y");
 									$no=0;
 									$i=1;
+									
 									$query=mysql_query("SELECT s.nama, s.nis, s.nm_kelas, s.jns_kel, ass.ket FROM siswa s LEFT JOIN absensi_sholat ass ON s.nis = ass.nis WHERE s.nm_kelas='$nm_kelas' AND (ass.tanggal='$tanggal' OR ass.tanggal IS NULL) ORDER BY s.nis ASC");
 									while($data=$query->result_array()){
 									?>

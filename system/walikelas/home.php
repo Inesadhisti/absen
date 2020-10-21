@@ -122,7 +122,7 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 						<?php 
 						$this->db->from('kelas');
 						$this->db->order_by('nm_kelas');
-						$query->get();
+						$query= $this->db->get();
           				$jmlh_kelas=$query->result_array();
     					?>
   						<span class="label label-primary">Kelas : <?php <?= "$jmlh_kelas" >?;?> </span>
@@ -130,7 +130,7 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 						
 						$this->db->from('siswa');
 						$this->db->order_by('id_siswa');
-						$query->get();
+						$query= $this->db->get();
           				$jmlh_siswa= $query->result_array();
     					?>
 						<span class="label label-primary">Siswa : <?php <?= "$jmlh_siswa" >?;?> </span>

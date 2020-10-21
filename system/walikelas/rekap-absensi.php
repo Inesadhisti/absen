@@ -125,15 +125,21 @@ include('system/inc/nav-walikelas.php');
 								//untuk option
 								(FILTER_INPUT(INPUT_POST, 'tgl1');
 								(FILTER_INPUT(INPUT_POST, 'tgl2');
-								FILTER_INPUT(INPUT_POST, 'nm_kelas')
-								$query=mysql_query("SELECT DISTINCT nis FROM absensi WHERE nm_kelas='$nm_kelas' AND tanggal BETWEEN '$tgl1' AND '$tgl2' ORDER BY nis ASC",$connect);
-								while($row=$query->result_array()){
+								FILTER_INPUT(INPUT_POST, 'nm_kelas');
+
+								$this->db->distinct('nis');
+								$this->db->where('nm_kelas', '$nm_kelas', 'tanggal BETWEEN 'tgl1' AND '$tgl2'');
+								$this->db->order_by('nis', 'asc');
+								$this->db->get('absensi'); // Produces: SELECT DISTINCT * FROM table
+
+								
+								while($row=mysql_fetch_array($query)){
 								$this->db->from('siswa');      
-								$this->db->where('$row[nis]');            
+								$this->db->where('nis', '$row[nis]');            
 								$query = this->db->get();
 								$ket=$row['ket'];
 								$this->db->from('absensi');      
-								$this->db->where('$row[nis]');            
+								$this->db->where('nis', '$row[nis]');            
 								$query = this->db->get();
 
 								?>
@@ -143,45 +149,45 @@ include('system/inc/nav-walikelas.php');
 								<td align="center">
 									<?php
 									$this->db->from('absensi');      
-									$this->db->where('$row[nis]','H');     
-									$query = this->db->get();
-									$jumlah=mysql_num_rows($hadir);
+									$this->db->where('nis', '$row[nis]','H');     
+									$hadir = this->db->get();
+									$jumlah=$hadir->result_array();
 									<?= $jumlah >?;
 									?>
 								</td>
 								<td align="center">
 									<?php
 									$this->db->from('absensi');      
-									$this->db->where('$row[nis]','S');     
-									$query = this->db->get();
-									$jumlah=mysql_num_rows($hadir);
+									$this->db->where('nis', '$row[nis]','S');     
+									$hadir = this->db->get();
+									$jumlah=$hadir->result_array();
 									<?= $jumlah >?;
 									?>
 								</td>
 								<td align="center">
 									<?php
 									$this->db->from('absensi');      
-									$this->db->where('$row[nis]','I');     
-									$query = this->db->get();
-									$jumlah=mysql_num_rows($hadir);
+									$this->db->where('nis', '$row[nis]','I');     
+									$hadir = this->db->get();
+									$jumlah=$hadir->result_array();
 									<?= $jumlah >?;
 									?>
 								</td>
 								<td align="center">
 									<?php
 									$this->db->from('absensi');      
-									$this->db->where('$row[nis]','A');     
-									$query = this->db->get();
-									$jumlah=mysql_num_rows($hadir);
+									$this->db->where('nis', '$row[nis]','A');     
+									$hadir = this->db->get();
+									$jumlah=$hadir->result_array();
 									<?= $jumlah >?;
 									?>
 								</td>
 								<td align="center">
 									<?php
 									$this->db->from('absensi');      
-									$this->db->where('$row[nis]','H', 'S', 'I', 'A');     
-									$query = this->db->get();
-									$jumlah=mysql_num_rows($hadir);
+									$this->db->where('nis', '$row[nis]','H', 'S', 'I', 'A');     
+									$hadir = this->db->get();
+									$jumlah=$hadir->result_array();
 									<?= $jumlah >?;
 									?>
 								</td>

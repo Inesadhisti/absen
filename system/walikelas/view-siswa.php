@@ -14,8 +14,8 @@ include('system/inc/nav-walikelas.php');
 //mendapatkan informasi untuk menlihat data
 (FILTER_INPUT(INPUT_GET, 'id'))
 $this->db->from('siswa');
-$this->db->where('$id_siswa');
-$query->db->get();
+$this->db->where('id_siswa', '$id_siswa');
+$query= $this->db->get();
 $data = $query->result_array();
 ?>
 

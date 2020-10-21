@@ -14,8 +14,8 @@ include('system/inc/nav-walikelas.php');
 //mendapatkan informasi untuk mengedit data
 FILTER_INPUT(INPUT_GET, 'id');
 $this->db->from('user');
-$this->db->where('$id_user');
-$query->db->get();
+$this->db->where('id_user', '$id_user');
+$query= $this->db->get();
 $data = $query->result_query();
 ?>
 

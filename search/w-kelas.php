@@ -58,7 +58,7 @@ include('inc/nav-walikelas.php');
 								$this->db->from('kelas');
 								$this->db->like('nm_kelas', '%$q%');
 								$this->db->limit(10);
-								$query->db->get();
+								$sql= $this->db->get();
 								$result = sql-> result_array();
 								 
 								if($result->result_array() > 0) {

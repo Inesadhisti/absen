@@ -62,7 +62,7 @@
 				<?php 
 			    	$this->db->from('kelas');
 			    	$this->db->order_by('nm_kelas', 'asc');
-			    	$query->get();
+			    	$query= $this->db->get();
 				while($row=$query->result_array())
 				{
 				?>
@@ -82,9 +82,9 @@
 	            <ul>
 	            <li>
 				<?php 
-			    	$this->db->from('kelas');
-			    	$this->db->order_by('nm_kelas', 'asc');
-			    	$query->get();
+				$this->db->from('kelas');
+				$this->db->order_by('nm_kelas', 'asc');
+				$query= $this->db->get();
 				while($row=$query->result_array())
 				{
 				?>
@@ -104,9 +104,9 @@
 	            <ul>
 	            <li>
 				<?php 
-			    	$this->db->from('kelas');
-			    	$this->db->order_by('nm_kelas', 'asc');
-			    	$query->get();
+				$this->db->from('kelas');
+				$this->db->order_by('nm_kelas', 'asc');
+				$query= $this->db->get();
 				while($row=$query->result_array())
 				{
 				?>
@@ -127,8 +127,8 @@
 				<li>
 				<?php 
 				$this->db->from('kelas');
-			    	$this->db->order_by('nm_kelas', 'asc');
-			    	$query->get();
+				$this->db->order_by('nm_kelas', 'asc');
+				$query= $this->db->get();
 				while($row=$query->result_array())
 				{
 				?>

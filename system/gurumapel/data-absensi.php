@@ -14,7 +14,7 @@ include('system/inc/nav-gurumapel.php');
 //mendapatkan informasi dari hasil absen siswa
 FILTER_INPUT(INPUT_POST, 'kelas');
 $this->db->from('kelas');
-$query->db->get();
+$query= $this->db->get();
 $data = $query->result_array();
 //merubah waktu kedalam format indonesia
 $hari = array ("Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu");
@@ -71,22 +71,22 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 								(FILTER_INPUT(INPUT_GET, 'kelas');
 								(FILTER_INPUT(INPUT_GET, 'tanggal');
 								$this->db->distinct('nis');
-								$this->db->where('$nm_kelas', '$tanggal');
+								$this->db->where('nm_kelas','$nm_kelas', 'tanggal','$tanggal');
 								$this->db->order_by('nis', 'asc');
-								$query->db->get('absensi');
+								$query= $this->db->get('absensi');
 								
 								while($row=$query->result_array()){
 									$data = $this->db->from('siswa');
-										$this->db->where('$row[nis]');
-										$query->db->get();
+										$this->db->where('nis', '$row[nis]');
+										$data= $this->db->get();
 										$no = $data->result_array();
 								
 								$ket=$row['ket'];
 									
 									$keterangan = 	$this->db->from('absensi');
-											$this->db->where('$row[nis]');
+											$this->db->where('nis', '$row[nis]');
 											$this->db->order_by('jam_pelajaran', 'desc');
-											$query->db->get();
+											$keterangan= $this->db->get();
 									$no = $keterangan->result_array();
 									
 								?>
@@ -97,8 +97,8 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 									<?php
 									
 									$this->db->select('ket');
-									$this->db->where('$row[nis]', '$tanggal', 'jam_pelajaran='1-2'');
-									$query->db->get('absensi');
+									$this->db->where('nis', '$row[nis]', 'tanggal', '$tanggal', 'jam_pelajaran='1-2'');
+									$hadir= $this->db->get('absensi');
 									
 									<?= $hadir->result_array()[0] >?;
 									?>
@@ -107,8 +107,8 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 									<?php
 									
 									$this->db->select('ket');
-									$this->db->where('$row[nis]', '$tanggal', 'jam_pelajaran='3-4'');
-									$query->db->get('absensi');
+									$this->db->where('nis', '$row[nis]', 'tanggal', '$tanggal', 'jam_pelajaran='3-4'');
+									$hadir= $this->db->get('absensi');
 									
 									<?= $hadir->result_array()[0] >?;
 									?>
@@ -116,8 +116,8 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 								<td align="center">
 									<?php
 									$this->db->select('ket');
-									$this->db->where('$row[nis]', '$tanggal', 'jam_pelajaran='562'');
-									$query->db->get('absensi');
+									$this->db->where('nis', '$row[nis]', 'tanggal', '$tanggal', 'jam_pelajaran='562'');
+									$hadir= $this->db->get('absensi');
 									
 									<?= $hadir->result_array()[0] >?;
 									?>
@@ -125,8 +125,8 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 								<td align="center">
 									<?php
 									$this->db->select('ket');
-									$this->db->where('$row[nis]', '$tanggal', 'jam_pelajaran='7-8'');
-									$query->db->get('absensi');
+									$this->db->where('nis', '$row[nis]', 'tanggal', '$tanggal', 'jam_pelajaran='7-8'');
+									$hadir= $this->db->get('absensi');
 									
 									<?= $hadir->result_array()[0] >?;
 									?>
@@ -134,8 +134,8 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 								<td align="center">
 									<?php
 									$this->db->select('ket');
-									$this->db->where('$row[nis]', '$tanggal', 'jam_pelajaran='9'');
-									$query->db->get('absensi');
+									$this->db->where('nis', '$row[nis]', 'tanggal', '$tanggal', 'jam_pelajaran='9'');
+									$hadir= $this->db->get('absensi');
 									
 									<?= $hadir->result_array()[0] >?;
 									?>
@@ -143,8 +143,8 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 								<td align="center">
 									<?php
 									$this->db->from('absensi');
-									$this->db->where('$row[nis]', '$tanggal', 'S', 'I', 'A');
-									$query->db->get();
+									$this->db->where('nis', '$row[nis]', 'tanggal', '$tanggal', 'S', 'I', 'A');
+									$hadir= $this->db->get();
 									
 									$jumlah=$hadir->result_array();
 									<?= $jumlah >?;

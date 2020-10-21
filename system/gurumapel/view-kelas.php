@@ -14,8 +14,8 @@ include('system/inc/nav-gurumapel.php');
 //mendapatkan informasi untuk menlihat data
 (FILTER_INPUT(INPUT_GET, 'id');
 $this->db->from('kelas');
-$this->db->where('$id_kelas');
-$query->db->get();
+$this->db->where('id_kelas', '$id_kelas');
+$query= $this->db->get();
 $data = $query->result_array();
 ?>
 

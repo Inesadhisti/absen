@@ -14,8 +14,8 @@ include('system/inc/nav-admin.php');
 //mendapatkan informasi untuk mengedit data
 FILTER_INPUT(INPUT_GET, 'id');
 $this->db->from('siswa');
-$this->db->where('$id_siswa');
-$query->db->get();
+$this->db->where('id_siswa', '$id_siswa');
+$query= $this->db->get();
 
 $data = $query->result_array();
 ?>
@@ -56,7 +56,7 @@ $data = $query->result_array();
 										<?php 
 										$this->db->from('kelas');
 										$this->db->order_by('nm_kelas', 'asc');
-										$query->get();
+										$query= $this->db->get();
 										while($row=$query->result_array()){
 										?>
 										<option value="<?php  <?= $row['nm_kelas'] >?; ?>"><?php  <?= $row['nm_kelas'] >?; ?></option>

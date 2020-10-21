@@ -14,9 +14,9 @@ include('system/inc/nav-walikelas.php');
 //mendapatkan informasi untuk mengabsen siswa
 FILTER_INPUT(INPUT_GET, 'kelas')
 $this->db->from('kelas');
-$this->db->where('$nm_kelas');
+$this->db->where('nm_kelas', '$nm_kelas');
 $this->db->order_by('nm_kelas', 'asc');
-$query->db->get();
+$query= $this->db->get();
 
 $data = $query->result_array();
 //merubah waktu kedalam format indonesia
@@ -56,9 +56,9 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 									//penting nech buat kasih nilai awal cekbox
 									$no=0;
 									$this->db->from('siswa');
-									$this->db->where('$nm_kelas');
+									$this->db->where('nm_kelas', '$nm_kelas');
 									$this->db->order_by('nis', 'asc');
-									$query->db->get();
+									$query= $this->db->get();
 									while($data=$query->result_array()){
 									?>
 									<tr>	

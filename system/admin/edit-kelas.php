@@ -15,8 +15,8 @@ include('system/inc/nav-admin.php');
 FILTER_INPUT(FILTER_GET, 'id');
 $this->db->from('kelas');
 $this->db->where('id_kelas', '$id_kelas');
-$query->get();
-$data=$query->result_array();
+$query= $this->db->get();
+$data = $query->result_array();
 ?>
 
 	<div class="page-content">

@@ -101,7 +101,7 @@ include('system/inc/nav-admin.php');
 								$this->db->from('siswa');
 								$this->db->like('nama', 'asc');
 								$this->db->limit('$posisi', '$batas');
-								$query->db->get();
+								$sql= $this->db->get();
 								$result = sql-> result_array();
 													
 								$no = 1+$posisi;
@@ -135,7 +135,7 @@ include('system/inc/nav-admin.php');
 						<?php
 						//hitung jumlah data
 						$jml_data = 	$this->db->from('siswa');
-								$query->db->get();
+										$jml_data= $this->db->get();
 						$no = $jml_data->result_array();
 						//Jumlah halaman
 						$JmlHalaman = ceil($jml_data/$batas); //ceil digunakan untuk pembulatan keatas

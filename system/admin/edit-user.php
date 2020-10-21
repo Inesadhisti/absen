@@ -14,9 +14,9 @@ include('system/inc/nav-admin.php');
 //mendapatkan informasi untuk mengedit data
 FILTER_INPUT(INPUT_GET, 'id');
 $this->db->from('user');
-$this->db->order_by('id_user', '$id_user');
-$query->get();
-$data=$query->result_array();
+$this->db->where('id_user', '$id_user');
+$query= $this->db->get();
+$data = $query->result_array();
 ?>
 
 	<div class="page-content">

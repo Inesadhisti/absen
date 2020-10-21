@@ -47,7 +47,7 @@ include('system/inc/nav-admin.php');
 										<?php 
 										$this->db->from('kelas');
 										$this->db->order_by('nm_kelas', 'asc');
-										$query->get();
+										$query= $this->db->get();
 										while($row=$query->result_array())
 										{
 										?>

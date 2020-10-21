@@ -89,9 +89,9 @@ include('system/inc/nav-admin.php');
 								$this->db->from('kelas');
 								$this->db->order_by('nm_kelas', 'asc');
 								$this->db->limit('$posisi', '$batas');
-								$query = $this->db->get();
+								$sql = $this->db->get();
 								$no = 1+$posisi;
-								while ($data = mysql_fetch_assoc($sql)) 
+								while ($data = $sql->result_array()) 
 								{
 								?>
 								<tr>

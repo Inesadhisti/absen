@@ -61,7 +61,7 @@ include('inc/nav-walikelas.php');
 								$this->db->from('siswa');
 								$this->db->like('nama', '%$q%'); this->db->or_like('nis', '%$q%');
 								$this->db->limit(10);
-								$query->db->get();
+								$sql= $this->db->get();
 								$result = sql-> result_array();
 								 
 								if($result->result_array() > 0) {

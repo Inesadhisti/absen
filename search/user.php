@@ -60,7 +60,7 @@ include('inc/nav-admin.php');
 								$this->db->from('user');
 								$this->db->like('nama', '%$q%');
 								$this->db->limit(10);
-								$query->db->get();
+								$sql= $this->db->get();
 								$result = sql-> result_array();
 								 
 								if($result->result_array() > 0) {

@@ -14,8 +14,8 @@ include('system/inc/nav-admin.php');
 //mendapatkan informasi untuk menlihat data
 $id_siswa = (FILTER_INPUT(INPUT_GET, 'id'));
 $this->db->from('siswa');
-$this->db->where('$id_siswa', 'asc');
-$query->db->get();
+$this->db->where('id_siswa', '$id_siswa', 'asc');
+$query= $this->db->get();
 $data = $query->result_array();
 ?>
 

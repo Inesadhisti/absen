@@ -79,7 +79,7 @@ include('system/inc/nav-admin.php');
 								$this->db->from('user');
 								$this->db->order_by('nama', 'asc');
 								$this->db->limit('$posisi', '$batas');
-								$query->db->get();
+								sql= $this->db->get();
 		
 								$no = 1+$posisi;
 								while ($data = $sql->result_array()) 
@@ -227,7 +227,7 @@ include('system/inc/nav-admin.php');
 								$this->db->from('kelas');
 								$this->db->order_by('nm_kelas', 'asc');
 								$this->db->limit('$posisi', '$batas');
-								$query->db->get();		
+								$sql= $this->db->get();		
 								
 								$no = 1+$posisi;
 								while ($data = $sql->result_array()) 
@@ -375,7 +375,7 @@ include('system/inc/nav-admin.php');
 								$this->db->from('siswa');
 								$this->db->order_by('nis', 'asc');
 								$this->db->limit('$posisi', '$batas');
-								$query->db->get();
+								$sql= $this->db->get();
 								
 								$no = 1+$posisi;
 								while ($data = $sql->result_array()) 

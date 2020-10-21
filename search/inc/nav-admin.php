@@ -86,9 +86,9 @@
 				<a href="../page.php?data-semua-siswa"> <span class="lbl"> Semua Siswa</span></a>
 				<?php 
 				$this->db->from('kelas');
-			    	$this->db->order_by('nm_kelas', 'asc');
-			    	$query->get();
-				while($row=$query->result_array())
+				$this->db->order_by('nm_kelas', 'asc');
+				$query= $this->db->get();
+				while($row=$query-> result_array())
 				{
 				?>
 				<a href="../page.php?data-siswa&kelas=<?php  <?= $row['nm_kelas'] >?; ?>"> <span class="lbl"> Kelas <?php  <?= $row['nm_kelas'] >?; ?></span></a>

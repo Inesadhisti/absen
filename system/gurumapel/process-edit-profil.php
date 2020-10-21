@@ -15,7 +15,17 @@ $nama = FILTER_INPUT(INPUT_POST, 'nama');
 $user = FILTER_INPUT(INPUT_POST, 'user');
 $level = FILTER_INPUT(INPUT_POST, 'level');
 
-	$query = mysql_query("update user set user='$user', pass='$pass', confirm='$confirm', level='$level', nama='$nama' where id_user='$id_user'");
+$data = array(
+	'user' => $user,
+	'pass' => $pass,
+	'confirm' => $confirm,
+	'level' => $level,
+	'nama' => $nama
+
+);
+	$this->db->where('id_user', '$id_user');
+	$this->db->update('user', $data);
+
 	header('location:page.php?g-home&message=edit-success');  
 
 

@@ -14,7 +14,7 @@ include('system/inc/nav-walikelas.php');
 //mendapatkan informasi dari hasil absen siswa
 FILTER_INPUT(INPUT_GET, 'kelas');
 $this->db->from('kelas');
-$query->db->get();
+$query= $this->db->get();
 $data = $query->result_array();
 //merubah waktu kedalam format indonesia
 $hari = array ("Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu");
@@ -70,21 +70,21 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 								FILTER_INPUT(INPUT_GET, 'kelas');
 								FILTER_INPUT(INPUT_GET, 'tanggal');
 								$this->db->from('absensi_sholat');
-								$this->db->where('$nm_kelas', '$tanggal');
+								$this->db->where('nm_kelas', '$nm_kelas', 'tanggal', '$tanggal');
 								$this->db->order_by('nis', 'asc');
-								$query->db->get();
+								$query= $this->db->get();
 								
 								while($row=$query->result_array()){
 									$data = $this->db->from('siswa');
-										$this->db->where('$row[nis]');
-										$query->db->get();
+										$this->db->where('nis', '$row[nis]');
+										$data= $this->db->get();
 									$no = $data->result_array();
 								
 								$ket=$row['ket'];
 									
 									$keterangan = 	$this->db->from('absensi_sholat');
-											$this->db->where('$row[nis]');
-											$query->db->get();
+											$this->db->where('nis', '$row[nis]');
+											$keterangan= $this->db->get();
 									$no = $keterangan->result_array();
 								
 								?>
@@ -94,8 +94,8 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 								<td align="center">
 									<?php
 									$this->db->from('absensi_sholat');
-									$this->db->where('$row=[nis]', '$tanggal', 'S');
-									$query->db->get();
+									$this->db->where('nis', '$row=[nis]', 'tanggal', '$tanggal', 'S');
+									$hadir= $this->db->get();
 									
 									$jumlah= $hadir->result_array();
 									<?= $jumlah >?;
@@ -104,19 +104,8 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 								<td align="center">
 									<?php
 									$this->db->from('absensi_sholat');
-									$this->db->where('$row=[nis]', '$tanggal', 'TS');
-									$query->db->get();
-									
-									$jumlah= $hadir->result_array();
-									<?= $jumlah >?;
-									?>
-								</td>
-								<td align="center">
-									<?php
-									
-									$this->db->from('absensi_sholat');
-									$this->db->where('$row=[nis]', '$tanggal', 'HL');
-									$query->db->get();
+									$this->db->where('nis', '$row=[nis]', 'tanggal', '$tanggal', 'TS');
+									$hadir= $this->db->get();
 									
 									$jumlah= $hadir->result_array();
 									<?= $jumlah >?;
@@ -126,8 +115,19 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 									<?php
 									
 									$this->db->from('absensi_sholat');
-									$this->db->where('$row=[nis]', '$tanggal', 'TS', 'HL');
-									$query->db->get();
+									$this->db->where('nis', '$row=[nis]', 'tanggal', '$tanggal', 'HL');
+									$hadir= $this->db->get();
+									
+									$jumlah= $hadir->result_array();
+									<?= $jumlah >?;
+									?>
+								</td>
+								<td align="center">
+									<?php
+									
+									$this->db->from('absensi_sholat');
+									$this->db->where('nis', '$row=[nis]', 'tanggal', '$tanggal', 'TS', 'HL');
+									$hadir= $this->db->get();
 									
 									$jumlah= $hadir->result_array();
 									<?= $jumlah >?;

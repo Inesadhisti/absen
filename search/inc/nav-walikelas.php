@@ -60,9 +60,9 @@
 	            <ul>
 	            <li>
 				<?php 
-				       	$this->db->from('kelas');
+				    $this->db->from('kelas');
 					$this->db->order_by('nm_kelas', 'asc');
-					$query->db->get();
+					$query= $this->db->get();
 				while($row=$query->result_array())
 				{
 				?>
@@ -82,9 +82,10 @@
 	            <ul>
 	            <li>
 				<?php 
+				$query=mysql_query("SELECT * FROM kelas ORDER BY nm_kelas ASC",$connect);
 			    	$this->db->from('kelas');
 			    	$this->db->order_by('nm_kelas');
-			    	$query->get();
+			    	$query= $this->db->get();
 				while($row=$query->result_array())
 				{
 				?>
@@ -118,9 +119,10 @@
 	            <ul>
 				<li>
 				<?php 
+				
 				$this->db->from('kelas');
 				$this->db->order_by('nm_kelas', 'asc');
-				$query->get();
+				$query= $this->db->get();
 				while($row=$query->result_array())
 				{
 				?>

@@ -14,9 +14,9 @@ include('system/inc/nav-gurumapel.php');
 //mendapatkan informasi untuk mengabsen siswa
 $nm_kelas = FILTER_INPUT(INPUT_GET, 'kelas');
 $this->db->from('kelas');
-$this->db->where('$nm_kelas');
+$this->db->where('nm_kelas', '$nm_kelas');
 $this->db->order_by('nm_kelas', 'asc');
-$query->db->get();
+$query= $this->db->get();
 $data = $query->result_array();
 //merubah waktu kedalam format indonesia
 date_default_timezone_set('Asia/Jakarta');
@@ -80,15 +80,15 @@ else{
 									$no=0;
 									$i=1;
 									$this->db->select('nama', 'nis', 'nm_kelas');
-									$this->db->where('$nm_kelas');
+									$this->db->where('nm_kelas', '$nm_kelas');
 									$this->db->order_by('nis', 'asc');
-									$query->db->get('siswa');
+									$query= $this->db->get('siswa');
 									
 									while($data=$query->result_array()){
 										$nis = $data['nis'];
 										$absen = 	$this->db->select('ket', 'keterangan');
-												$this->db->where('$nis', 'jam_pelajaran = '$jp' OR jam_pelajaran is NOT NULL');
-												$query->db->get('absensi');
+												$this->db->where('nis', '$nis', 'jam_pelajaran = '$jp' OR jam_pelajaran is NOT NULL');
+												$absen= $this->db->get('absensi');
 										$no = $absen->result_array();
 										
 										?>

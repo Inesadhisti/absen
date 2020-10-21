@@ -89,7 +89,7 @@ include('system/inc/nav-walikelas.php');
 								$this->db->from('kelas');
 								$this->db->order_by('nm_kelas', 'asc');
 								$this->db->limit('$posisi', '$batas');
-								$query->db->get();
+								$sql= $this->db->get();
 								
 								$no = 1+$posisi;
 								while ($data = $sql->result_array()) 

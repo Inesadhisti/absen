@@ -18,9 +18,8 @@ FILTER_INPUT(INPUT_POST, 'level');
 //menghindari duplikat username
 $cek = 	$this->db->select('user');
 $this->db->where('$user');
-$query->db->get('user);
+$cek= $this->db->get('user);
 $no = $cek->result_array();
-
 $ada= $cek->result_array();
 if($ada->result_array()>0)
 {
@@ -33,10 +32,10 @@ $data = array(
         ' ' => ' ',
         'user' => '$user',
         'pass' => '$pass',
-	'confirm => '$confirm',
-	'level' => '$level',
+		'confirm => '$confirm',
+		'level' => '$level',
         'nama' => '$nama',
-	'confotofirm => '$foto'
+		'foto => '$foto'
 );
 $this->db->insert('user', $data);
 

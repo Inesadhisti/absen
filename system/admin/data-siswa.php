@@ -73,7 +73,7 @@ $data = $query->result_array();
 								$this->db->where('$nm_kelas', '$tanggal');
 								$this->db->order_by('nama', 'asc');
 								$this->db->limit('$posisi', '$batas');
-								$query->db->get();
+								$sql= $this->db->get();
 								
 								$no = 1+$posisi;
 								while ($data = $sql->result_array()) 
@@ -110,7 +110,7 @@ $data = $query->result_array();
 						FILTER_INPUT(INPUT_GET, 'kelas');
 						$this->db->from('siswa');
 			    			$this->db->where('nm_kelas', '$nm_kelas');
-			    			$query->db->get();
+			    			$query= $this->db->get();
           					$jml_data=$query->result_array();
     					
 						//Jumlah halaman

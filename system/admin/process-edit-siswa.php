@@ -17,7 +17,20 @@ FILTER_INPUT(INPUT_POST, 'alamat');
 FILTER_INPUT(INPUT_POST, 'nama_ortu');
 
 	//update data di database sesuai id_siswa
-	$query = mysql_query("UPDATE siswa SET nis='$nis', nama='$nama', nm_kelas='$nm_kelas', jns_kel='$jns_kel', tmpt_lahir='$tmpt_lahir', tgl_lahir='$tgl_lahir', alamat='$alamat', nama_ortu='$nama_ortu' where id_siswa='$id_siswa'");
+	$data = array(
+			'nis' => $nis,
+			'nama' => $nama,
+			'nm_kelas' => $nm_kelas,
+			'jns_kel' => $jnl_kel,
+			'tmpt_lahir' => $tmpt_lahir,
+			'tgl_lahir' => $tgl_lahir,
+			'alamat' => $alamat,
+			'nm_ortu' => $nm_ortu
+		
+);
+			$this->db->where('id_siswa', '$id_siswa');
+			$this->db->update('siswa', $data);
+
 	header('location:page.php?data-semua-siswa&message=edit-success');   
 
 ?>
