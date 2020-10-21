@@ -21,7 +21,7 @@ if ($data->result_array() == 1)
 {
 //kalau username dan password sudah terdaftar di database
 //buat session dengan username dan level dengan isi nama user yang login
-$row = mysql_fetch_array($data);
+$row = $data->result_array();
 FILTER_INPUT(INPUT_SESSION, 'id_user') = $row['id_user'];
 FILTER_INPUT(INPUT_SESSION, 'user') = $row['user'];
 FILTER_INPUT(INPUT_SESSION, 'nama') = $row['nama'];
