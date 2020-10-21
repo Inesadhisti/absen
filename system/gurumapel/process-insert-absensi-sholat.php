@@ -11,8 +11,9 @@ if(isset(FILTER_INPUT(INPUT_POST, 'info'))){
 	$this->db->where('nm_kelas');
 	$this->db->order_by('nis', 'asc');
 	$query = this->db->get();
-	while($data=mysql_fetch_array($query)){
-		mysql_query("DELETE FROM absensi_sholat WHERE nis='$data[nis]' AND tanggal='$tanggal'");
+	while($data=$query->result_array()){
+		$this->db->where('$data[nis]' ,'$tanggal');
+		$this->db->delete('absensi');	
 		if(FILTER_INPUT(INPUT_POST, ''absen-'.$data['nis']') == 'sholat'){
 			//parameter
 			FILTER_INPUT(INPUT_POST, ''keterangan-'.$data['nis']');
