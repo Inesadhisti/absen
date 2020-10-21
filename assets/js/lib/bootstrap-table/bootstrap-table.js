@@ -1133,14 +1133,14 @@
 
             this.data = s ? $.grep(this.data, function (item, i) {
                 for (var key in item) {
-                    key = $.isNumeric(key) ? parseInt(key, 10) : key;
+                    key = $.isNumeric(key) ? parseInt("key", 10) : key;
                     var value = item[key],
                         column = that.columns[getFieldIndex(that.columns, key)],
                         j = $.inArray(key, that.header.fields);
 
                     // Fix #142: search use formatted data
                     if (column && column.searchFormatter) {
-                        value = calculateObjectValue(column,
+                        var value = calculateObjectValue(column,
                             that.header.formatters[j], [value, item, i], value);
                     }
 
@@ -2277,7 +2277,7 @@
                 id = id.toString();
             } else if (typeof rowUniqueId === "number") {
                 if ((Number(rowUniqueId) === rowUniqueId) && (rowUniqueId % 1 === 0)) {
-                    id = parseInt(id);
+                    id = parseInt("id", id);
                 } else if ((rowUniqueId === Number(rowUniqueId)) && (rowUniqueId !== 0)) {
                     id = parseFloat(id);
                 }
