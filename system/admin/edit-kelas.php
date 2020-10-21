@@ -13,8 +13,10 @@ include('system/inc/css.php');
 include('system/inc/nav-admin.php');
 //mendapatkan informasi untuk mengedit data
 FILTER_INPUT(FILTER_GET, 'id');
-$query = mysql_query("SELECT * FROM kelas WHERE id_kelas='$id_kelas'");
-$data = mysql_fetch_array($query);
+$this->db->from('kelas');
+$this->db->where('id_kelas', '$id_kelas');
+$query->get();
+$data=$query->result_array();
 ?>
 
 	<div class="page-content">
