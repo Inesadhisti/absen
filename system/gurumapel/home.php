@@ -84,10 +84,16 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 					</thead>
 					<tbody>
 						<?php 
-						$kelas=mysql_query("select * from kelas order by nm_kelas asc",$connect);
+						$this->db->from('kelas');
+						$this->db->order_by('nm_kelas', 'asc');
+						$query->db->get();
+						
 						while($row=mysql_fetch_array($kelas)){
 						//mencari jumlah siswa di masing-masing kelas
-						$siswa=mysql_query("select * from siswa where nm_kelas='$row[nm_kelas]'",$connect);
+						$this->db->from('siswa');
+						$this->db->where('$row[nm_kelas');
+						$query->db->get();
+						
 						$jumlah=mysql_num_rows($siswa);
 						?>
 						<tr>
@@ -115,12 +121,17 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 						<br>
   						<span class="label label-success">Info! </span> Total
 						<?php 
-						$query=mysql_query("select * from kelas order by nm_kelas");
-          				$jmlh_kelas=mysql_num_rows($query);
+						$this->db->from('kelas');
+						$this->db->order_by('nm_kelas');
+						$query->db->get();
+						$jmlh_kelas=mysql_num_rows($query);
     					?>
   						<span class="label label-primary">Kelas : <?php <?= "$jmlh_kelas" >?;?> </span>
-						<?php 
-						$query=mysql_query("select * from siswa order by id_siswa");
+						<?php
+						$this->db->from('siswa');
+						$this->db->order_by('id_siswa');
+						$query->db->get();
+						
           				$jmlh_siswa=mysql_num_rows($query);
     					?>
 						<span class="label label-primary">Siswa : <?php <?= "$jmlh_siswa" >?;?> </span>
