@@ -12,7 +12,7 @@ include('system/inc/css.php');
 //panggil file navi-gurumapel.php untuk menghubungkan gurumapel ke konten
 include('system/inc/nav-gurumapel.php');
 //mendapatkan informasi dari hasil absen siswa
-FILTER_INPUT(INPUT_POST, 'var_kelas');
+FILTER_INPUT(INPUT_POST, 'kelas');
 $this->db->from('kelas');
 $query->db->get();
 $data = $query->result_array();
@@ -146,7 +146,6 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 									$this->db->where('$row[nis]', '$tanggal', 'S', 'I', 'A');
 									$query->db->get();
 									
-									$hadir=mysql_query("SELECT * FROM absensi WHERE nis='$row[nis]' AND ket='S' + ket='I' + ket='A' AND tanggal='$tanggal'",$connect);
 									$jumlah=$hadir->result_array();
 									<?= $jumlah >?;
 									?>
