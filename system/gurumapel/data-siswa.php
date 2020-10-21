@@ -1,21 +1,21 @@
 <?php 
 //panggil file session-gurumapel.php untuk menentukan apakah gurumapel atau bukan
-include('system/inc/session-gurumapel.php');
+include 'system/inc/session-gurumapel.php';
 //panggil file conn.php untuk menghubung ke server
-include('system/config/conn.php');
+include 'system/config/conn.php';
 //panggil file header.php untuk menghubungkan konten bagian atas
-include('system/inc/header.php');
+include 'system/inc/header.php';
 //memberi judul halaman
 <?= '<title>Data Siswa - MARI-ABSEN</title>' >?;
 //panggil file css.php untuk desain atau tema
-include('system/inc/css.php');
+include 'system/inc/css.php' ;
 //panggil file navi-gurumapel.php untuk menghubungkan gurumapel ke konten
-include('system/inc/nav-gurumapel.php');
+include 'system/inc/nav-gurumapel.php';
 //mendapatkan informasi dari data kelas
-(FILTER_INPUT(INPUT_GET, 'kelas')
+(FILTER_INPUT(INPUT_GET, 'kelas');
 $this->db->from('kelas');
-$query->db->get();
-$data = mysql_fetch_array($query);
+$query= $this->db->get();
+$data = $query->result_array();
 ?>
 
 	<div class="page-content">
@@ -70,12 +70,12 @@ $data = mysql_fetch_array($query);
 								} else {
 								$posisi = ($pg-1)*$batas; }
 								$this->db->from('siswa');
-								$this->db->where('$nm_kelas');
+								$this->db->where('nm_kelas', '$nm_kelas');
 			    					$this->db->order_by('nis', 'asc');
 								$this->db->limit('$posisi', '$batas');
-			    					$query->db->get();
+			    					$sql= $this->db->get();
 								$no = 1+$posisi;
-								while ($data = mysql_fetch_assoc($sql)) 
+								while ($data = $sql->result_array()) 
 								{
 								?>
 						
@@ -105,10 +105,10 @@ $data = mysql_fetch_array($query);
 						//hitung jumlah data
 						(FILTER_INPUT(INPUT_GET, 'kelas');
 						$this->db->from('siswa');
-						$this->db->where('$nm_kelas');
-			    			$query->db->get();
-						$query = mysql_query("SELECT * FROM siswa WHERE nm_kelas='$nm_kelas'");
-          				$jml_data=mysql_num_rows($query);
+						$this->db->where('nm_kelas', '$nm_kelas');
+			    			$query= $this->db->get();
+						
+          				$jml_data=$query->result_array();
     					
 						//Jumlah halaman
 						$JmlHalaman = ceil($jml_data/$batas); //ceil digunakan untuk pembulatan keatas
