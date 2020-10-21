@@ -86,7 +86,11 @@ include('system/inc/nav-walikelas.php');
 								$pg = 1;
 								} else {
 								$posisi = ($pg-1)*$batas; }
-								$sql = mysql_query("SELECT * FROM kelas ORDER BY nm_kelas ASC limit $posisi, $batas ");
+								$this->db->from('kelas');
+								$this->db->order_by('nm_kelas', 'asc');
+								$this->db->limit('$posisi', '$batas');
+								$query->db->get();
+								
 								$no = 1+$posisi;
 								while ($data = mysql_fetch_assoc($sql)) 
 								{
