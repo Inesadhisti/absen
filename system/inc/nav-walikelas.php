@@ -59,9 +59,12 @@
 	            </span>
 	            <ul>
 	            <li>
-				<?php 
-				$query=mysql_query("SELECT * FROM kelas ORDER BY nm_kelas ASC",$connect);
-				while($row=mysql_fetch_array($query))
+				<?php
+			    	$this->db->from('kelas');
+				$this->db->order_by('nm_kelas', 'asc');
+				$query= $this->db->get();
+		
+				while($row=$query->result_array())
 				{
 				?>
 				<a href="page.php?w-data-absensi&kelas=<?php  <?= $row['nm_kelas'] >?; ?>&tanggal=<?php <?= $tanggal=date("d/m/Y") >?; ?>"> <span class="lbl"> Kelas <?php  <?= $row['nm_kelas'] >?; ?></span></a>
@@ -80,8 +83,11 @@
 	            <ul>
 	            <li>
 				<?php 
-				$query=mysql_query("SELECT * FROM kelas ORDER BY nm_kelas ASC",$connect);
-				while($row=mysql_fetch_array($query))
+			    	$this->db->from('kelas');
+				$this->db->order_by('nm_kelas', 'asc');
+				$query= $this->db->get();
+				
+				while($row=$query=>result_array())
 				{
 				?>
 				<a href="page.php?w-data-absensi-sholat&kelas=<?php  <?= $row['nm_kelas'] >?; ?>&tanggal=<?php <?= $tanggal=date("d/m/Y") >?; ?>"> <span class="lbl"> Kelas <?php  <?= $row['nm_kelas'] >?; ?></span></a>
@@ -114,8 +120,11 @@
 	            <ul>
 				<li>
 				<?php 
-				$query=mysql_query("SELECT * FROM kelas ORDER BY nm_kelas ASC",$connect);
-				while($row=mysql_fetch_array($query))
+				$this->db->from('kelas');
+				$this->db->order_by('nm_kelas', 'asc');
+				$query= $this->db->get();
+				
+				while($row=$query->result_array())
 				{
 				?>
 				<a href="page.php?w-data-siswa&kelas=<?php  <?= $row['nm_kelas'] >?; ?>"> <span class="lbl"> Kelas <?php  <?= $row['nm_kelas'] >?; ?></span></a>
