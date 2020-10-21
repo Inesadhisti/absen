@@ -585,7 +585,7 @@ body.stop-scrolling {
   color: #333;
 }
 
-.la-ball-fall > div {
+.la-ball-fall {
   display: inline-block;
   float: none;
   background-color: currentColor;
