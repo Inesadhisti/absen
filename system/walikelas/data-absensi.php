@@ -13,7 +13,8 @@ include('system/inc/css.php');
 include('system/inc/nav-walikelas.php');
 //mendapatkan informasi dari hasil absen siswa
 FILTER_INPUT(INPUT_GET, 'kelas');
-$query = mysql_query("SELECT * FROM kelas");
+$this->db->from('kelas');
+$query->db->get();
 $data = mysql_fetch_array($query);
 //merubah waktu kedalam format indonesia
 $hari = array ("Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu");
@@ -69,7 +70,10 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 								<?php
 								FILTER_INPUT(INPUT_GET, 'kelas');
 								FILTER_INPUT(INPUT_GET, 'tanggal');
-								$query=mysql_query("SELECT DISTINCT nis FROM absensi WHERE nm_kelas='$nm_kelas' AND tanggal='$tanggal' ORDER BY nis ASC",$connect);
+								$this->db->distinct('nis');
+								$this->db->where('$nm_kelas', '$tanggal');
+			    					$this->db->order_by('nis', 'asc');
+			    					$query->db->get(absensi);
 								while($row=mysql_fetch_array($query)){
 								$data=mysql_fetch_array(mysql_query("SELECT * FROM siswa WHERE nis='$row[nis]'",$connect));
 								$ket=$row['ket'];
@@ -80,6 +84,10 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 								<td><?php <?= $data['nis'] >?;?></td>
 								<td align="center">
 									<?php
+									$this->db->select('ket');
+									$this->db->from('absensi');
+									$this->db->where('$row[nis]', '$tanggal', 'jam_pelajaran='1-2'');
+			    						$query->db->get();
 									$hadir=mysql_query("SELECT ket FROM absensi WHERE nis='$row[nis]' AND tanggal='$tanggal' AND jam_pelajaran='1-2'",$connect);
 									<?= mysql_fetch_array($hadir)[0] >?;
 									?>
