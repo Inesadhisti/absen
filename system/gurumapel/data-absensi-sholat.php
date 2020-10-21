@@ -15,7 +15,7 @@ include('system/inc/nav-gurumapel.php');
 FILTER_INPUT(INPUT_GET, 'kelas')
 $this->db->from('kelas');
 $query->db->get();
-$data = mysql_fetch_array($query);
+$data = $query->result_array();
 //merubah waktu kedalam format indonesia
 $hari = array ("Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu");
 $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
@@ -74,10 +74,20 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 								$query->db->get();
 								if($query->result_array() > 0) {
 								while($row = $query->result_array()){
-								$data=mysql_fetch_array(mysql_query("SELECT * FROM siswa WHERE nis='$row[nis]'",$connect));
+									$this->db->from('siswa');
+									$this->db->where('$row[nis]');
+									$query->db->get();
+								$data = $this->db->from('siswa');
+									$this->db->where('$row[nis]');
+									$query->db->get();
+								$no = $data->result_array();
+								
 								$ket=$row['ket'];
-								$keterangan=mysql_fetch_array(mysql_query("SELECT * FROM absensi_sholat WHERE nis='$row[nis]'",$connect));
-
+								$keterangan = $this->db->from('absensi_sholat');
+									$this->db->where('$row[nis]');
+									$query->db->get();
+								$keterangan = $data->result_array();
+								
 								?>
 								<tr>
 								<td><?php <?= $data['nama'] >?;?></td>
@@ -88,7 +98,7 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 									$this->db->where('$nm_kelas', '$tanggal');
 									$this->db->order_by('nis', 'asc', 'S');
 									$query->db->get();
-									$jumlah=mysql_num_rows($hadir);
+									$jumlah=$hadir-?result_array();
 									<?= $jumlah >?;
 									?>
 								</td>
@@ -98,7 +108,7 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 									$this->db->where('$nm_kelas', '$tanggal');
 									$this->db->order_by('nis', 'asc', 'TS');
 									$query->db->get();
-									$jumlah=mysql_num_rows($hadir);
+									$jumlah=$hadir-?result_array();
 									<?= $jumlah >?;
 									?>
 								</td>
@@ -108,7 +118,7 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 									$this->db->where('$nm_kelas', '$tanggal');
 									$this->db->order_by('nis', 'asc', 'HL');
 									$query->db->get();
-									$jumlah=mysql_num_rows($hadir);
+									$jumlah=$hadir-?result_array();
 									<?= $jumlah >?;
 									?>
 								</td>
@@ -118,7 +128,7 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 									$this->db->where('$nm_kelas', '$tanggal');
 									$this->db->order_by('nis', 'asc', 'TS', 'HL');
 									$query->db->get();
-									$jumlah=mysql_num_rows($hadir);
+									$jumlah=$hadir-?result_array();
 									<?= $jumlah >?;
 									?>
 								</td>
