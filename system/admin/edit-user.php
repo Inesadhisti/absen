@@ -13,7 +13,6 @@ include('system/inc/css.php');
 include('system/inc/nav-admin.php');
 //mendapatkan informasi untuk mengedit data
 FILTER_INPUT(INPUT_GET, 'id');
-$query = mysql_query("SELECT * FROM user WHERE id_user='$id_user'");
 $this->db->from('user');
 $this->db->order_by('id_user', '$id_user');
 $query->get();
