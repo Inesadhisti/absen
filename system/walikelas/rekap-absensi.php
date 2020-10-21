@@ -127,7 +127,7 @@ include('system/inc/nav-walikelas.php');
 								(FILTER_INPUT(INPUT_POST, 'tgl2');
 								FILTER_INPUT(INPUT_POST, 'nm_kelas')
 								$query=mysql_query("SELECT DISTINCT nis FROM absensi WHERE nm_kelas='$nm_kelas' AND tanggal BETWEEN '$tgl1' AND '$tgl2' ORDER BY nis ASC",$connect);
-								while($row=mysql_fetch_array($query)){
+								while($row=$query->result_array()){
 								$this->db->from('siswa');      
 								$this->db->where('$row[nis]');            
 								$query = this->db->get();
