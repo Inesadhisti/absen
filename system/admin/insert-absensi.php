@@ -57,7 +57,7 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 									$this->db->from('kelas');
 									$this->db->where('nm_kelas');
 									$this->db->order_by('nm_kelas', 'asc');
-									$query = this->db->get();
+									$query->db->get();
 									while($data= $query->result_array()){
 									?>
 									<tr>	
