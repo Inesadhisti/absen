@@ -54,8 +54,10 @@ $data = $query->result_array();
 										<select  class="bootstrap-select" name="nm_kelas">
 										<option value="<?php  <?= $data['nm_kelas'] >?; ?>"><?php  <?= $data['nm_kelas'] >?; ?></option>
 										<?php 
-										$query=mysql_query("SELECT * FROM kelas ORDER BY nm_kelas ASC",$connect);
-										while($row=mysql_fetch_array($query)){
+										$this->db->from('kelas');
+										$this->db->order_by('nm_kelas', 'asc');
+										$query->get();
+										while($row=$query->result_array()){
 										?>
 										<option value="<?php  <?= $row['nm_kelas'] >?; ?>"><?php  <?= $row['nm_kelas'] >?; ?></option>
 										<?php 
