@@ -92,7 +92,7 @@ include('system/inc/nav-walikelas.php');
 								$query->db->get();
 								
 								$no = 1+$posisi;
-								while ($data = mysql_fetch_assoc($sql)) 
+								while ($data = $sql->result_array()) 
 								{
 								?>
 								<tr>
@@ -114,6 +114,7 @@ include('system/inc/nav-walikelas.php');
 					<div class="col-md-6">
 						<?php
 						//hitung jumlah data
+							
 						$jml_data = mysql_num_rows(mysql_query("SELECT * FROM kelas"));
 						//Jumlah halaman
 						$JmlHalaman = ceil($jml_data/$batas); //ceil digunakan untuk pembulatan keatas
