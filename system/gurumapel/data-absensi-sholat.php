@@ -72,7 +72,8 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 								$this->db->where('$nm_kelas', '$tanggal');
 								$this->db->order_by('nis', 'asc');
 								$query->db->get();
-								while($row=mysql_fetch_array($query)){
+								if($query->result_array() > 0) {
+								while($row = $query->result_array()){
 								$data=mysql_fetch_array(mysql_query("SELECT * FROM siswa WHERE nis='$row[nis]'",$connect));
 								$ket=$row['ket'];
 								$keterangan=mysql_fetch_array(mysql_query("SELECT * FROM absensi_sholat WHERE nis='$row[nis]'",$connect));
