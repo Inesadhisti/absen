@@ -76,9 +76,13 @@ include('system/inc/nav-admin.php');
 								$pg = 1;
 								} else {
 								$posisi = ($pg-1)*$batas; }
-								$sql = mysql_query("SELECT * FROM user ORDER BY nama ASC limit $posisi, $batas ");
+								$this->db->from('user');
+								$this->db->order_by('nama', 'asc');
+								$this->db->limit('$posisi', '$batas');
+								$query->db->get();
+		
 								$no = 1+$posisi;
-								while ($data = mysql_fetch_assoc($sql)) 
+								while ($data = $sql->result_array()) 
 								{
 								?>
 								<tr>
@@ -220,9 +224,13 @@ include('system/inc/nav-admin.php');
 								$pgk = 1;
 								} else {
 								$posisi = ($pgk-1)*$batas; }
-								$sql = mysql_query("SELECT * FROM kelas ORDER BY nm_kelas ASC limit $posisi, $batas ");
+								$this->db->from('kelas');
+								$this->db->order_by('nm_kelas', 'asc');
+								$this->db->limit('$posisi', '$batas');
+								$query->db->get();		
+								
 								$no = 1+$posisi;
-								while ($data = mysql_fetch_assoc($sql)) 
+								while ($data = $sql->result_array()) 
 								{
 								?>
 								<tr>
@@ -364,9 +372,13 @@ include('system/inc/nav-admin.php');
 								$pgs = 1;
 								} else {
 								$posisi = ($pgs-1)*$batas; }
-								$sql = mysql_query("SELECT * FROM siswa ORDER BY nis ASC limit $posisi, $batas ");
+								$this->db->from('siswa');
+								$this->db->order_by('nis', 'asc');
+								$this->db->limit('$posisi', '$batas');
+								$query->db->get();
+								
 								$no = 1+$posisi;
-								while ($data = mysql_fetch_assoc($sql)) 
+								while ($data = $sql->result_array()) 
 								{
 								?>
 								<tr>
