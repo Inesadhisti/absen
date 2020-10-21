@@ -2,7 +2,7 @@
 error_reporting(0);
 //halaman awal
  if(isset(FILTER_INPUT(INPUT_GET, 'masuk');)){ 
-include './sign-in.php';
+$this->load->model('./sign-out.php');
 }
  if(isset(FILTER_INPUT(INPUT_GET, 'keluar');)){ 
 include 'sign-out.php';
