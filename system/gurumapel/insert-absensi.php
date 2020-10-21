@@ -13,8 +13,11 @@ include('system/inc/css.php');
 include('system/inc/nav-gurumapel.php');
 //mendapatkan informasi untuk mengabsen siswa
 $nm_kelas = FILTER_INPUT(INPUT_GET, 'kelas');
-$query = mysql_query("SELECT * FROM kelas WHERE nm_kelas='$nm_kelas' ORDER BY nm_kelas ASC");
-$data = mysql_fetch_array($query);
+$this->db->from('kelas');
+$this->db->where('$nm_kelas');
+$this->db->order_by('nm_kelas', 'asc');
+$query->db->get();
+$data = $query->result_array();
 //merubah waktu kedalam format indonesia
 date_default_timezone_set('Asia/Jakarta');
 $hari = array ("Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu");
@@ -76,11 +79,19 @@ else{
 									$tanggal=date("d/m/Y");
 									$no=0;
 									$i=1;
-									$query=mysql_query("SELECT nama, nis, nm_kelas FROM siswa WHERE nm_kelas='$nm_kelas' ORDER BY nis ASC");
-									while($data=mysql_fetch_array($query)){
+									$this->db->select('nama', 'nis', 'nm_kelas');
+									$this->db->where('$nm_kelas');
+									$this->db->order_by('nis', 'asc');
+									$query->db->get('siswa');
+									
+									while($data=$query->result_array()){
 										$nis = $data['nis'];
-										$absen = mysql_fetch_array(mysql_query("SELECT ket, keterangan, jam_pelajaran FROM absensi WHERE nis='$nis' AND (jam_pelajaran = '$jp' OR jam_pelajaran IS NULL)"));
-									?>
+										$absen = 	$this->db->select('ket', 'keterangan');
+												$this->db->where('$nis', 'jam_pelajaran = '$jp' OR jam_pelajaran is NOT NULL');
+												$query->db->get('absensi');
+										$no = $absen->result_array();
+										
+										?>
 									<tr>	
 									<input type="hidden" value="<?php <?= $data['nm_kelas'] >?;?>" name="nm_kelas"/>
 									<input type="hidden" value="<?php <?= $tanggal >?; ?>" name="tanggal"/>
