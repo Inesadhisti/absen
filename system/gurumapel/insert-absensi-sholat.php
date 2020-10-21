@@ -13,7 +13,10 @@ include('system/inc/css.php');
 include('system/inc/nav-gurumapel.php');
 //mendapatkan informasi untuk mengabsen siswa
 FILTER_INPUT(INPUT_GET, 'kelas')
-$query = mysql_query("SELECT * FROM kelas WHERE nm_kelas='$nm_kelas' ORDER BY nm_kelas ASC");
+$this->db->from('kelas');
+$this->db->where('$nm_kelas');
+$this->db->order_by('nm_kelas', 'asc');
+$query->db->get();
 $data = mysql_fetch_array($query);
 //merubah waktu kedalam format indonesia
 $hari = array ("Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu");
