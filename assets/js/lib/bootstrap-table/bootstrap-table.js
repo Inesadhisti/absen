@@ -1133,7 +1133,7 @@
 
             this.data = s ? $.grep(this.data, function (item, i) {
                 for (var key in item) {
-                    key = $.isNumeric(key) ? parseInt("key", 10) : key;
+                    key == $.isNumeric(key) ? parseInt("key", 10) : key;
                     var value = item[key],
                         column = that.columns[getFieldIndex(that.columns, key)],
                         j = $.inArray(key, that.header.fields);
