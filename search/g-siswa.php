@@ -122,6 +122,7 @@ include('inc/nav-gurumapel.php');
 						</nav>
 					</div>
 
+					
 					<div class="col-md-12">
 							<div class="form-group" align="center">
 								<div class="btn-group" role="group">
