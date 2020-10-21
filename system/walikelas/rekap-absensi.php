@@ -125,15 +125,12 @@ include('system/inc/nav-walikelas.php');
 								//untuk option
 								(FILTER_INPUT(INPUT_POST, 'tgl1');
 								(FILTER_INPUT(INPUT_POST, 'tgl2');
-								FILTER_INPUT(INPUT_POST, 'nm_kelas');
+								(FILTER_INPUT(INPUT_POST, 'nm_kelas');
 
 								$this->db->distinct('nis');
 								$this->db->where('nm_kelas', '$nm_kelas', 'tanggal BETWEEN 'tgl1' AND '$tgl2'');
-								$this->db->order_by('nis', 'asc');
-								$this->db->get('absensi'); // Produces: SELECT DISTINCT * FROM table
-
+								while($row=$query->result_array(y)){						
 								
-								while($row=mysql_fetch_array($query)){
 								$this->db->from('siswa');      
 								$this->db->where('nis', '$row[nis]');            
 								$query = this->db->get();
