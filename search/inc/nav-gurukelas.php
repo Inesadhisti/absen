@@ -63,7 +63,9 @@
 			    	$this->db->from('kelas');
 			    	$this->db->order_by('nm_kelas', 'asc');
 			    	$query->db->get();
-				while($row=mysql_fetch_array($query))
+			    	    
+				while($row = $query->result_array())
+			    
 				{
 				?>
 				<a href="../page.php?absen-siswa&kelas=<?php  <?= $row['nm_kelas'] >?; ?>"> <span class="lbl"> Kelas <?php  <?= $row['nm_kelas'] >?; ?></span></a>
@@ -85,7 +87,7 @@
 				$this->db->from('kelas');
 			    	$this->db->order_by('nm_kelas', 'asc');
 			    	$query->db->get();
-				while($row=mysql_fetch_array($query))
+				while($row = $query->result_array())
 				{
 				?>
 				<a href="../page.php?absen-siswa&kelas=<?php  <?= $row['nm_kelas'] >?; ?>"> <span class="lbl"> Kelas <?php  <?= $row['nm_kelas'] >?; ?></span></a>
@@ -107,7 +109,7 @@
 				$this->db->from('kelas');
 			    	$this->db->order_by('nm_kelas', 'asc');
 			    	$query->db->get();
-				while($row=mysql_fetch_array($query))
+				while($row = $query->result_array())
 				{
 				?>
 				<a href="../page.php?data-absensi&kelas=<?php  <?= $row['nm_kelas'] >?; ?>&tanggal=<?php <?= $tanggal=date("d/m/Y") >?; ?>"> <span class="lbl"> Kelas <?php  <?= $row['nm_kelas'] >?; ?></span></a>
@@ -129,7 +131,7 @@
 				$this->db->from('kelas');
 			    	$this->db->order_by('nm_kelas', 'asc');
 			    	$query->db->get();
-				while($row=mysql_fetch_array($query))
+				while($row = $query->result_array())
 				{
 				?>
 				<a href="../page.php?g-data-siswa&kelas=<?php  <?= $row['nm_kelas'] >?; ?>"> <span class="lbl"> Kelas <?php  <?= $row['nm_kelas']>?; ?></span></a>
