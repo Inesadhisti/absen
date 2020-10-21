@@ -13,8 +13,12 @@ include('system/inc/css.php');
 include('system/inc/nav-walikelas.php');
 //mendapatkan informasi untuk mengabsen siswa
 FILTER_INPUT(INPUT_GET, 'kelas')
-$query = mysql_query("SELECT * FROM kelas WHERE nm_kelas='$nm_kelas' ORDER BY nm_kelas ASC");
-$data = mysql_fetch_array($query);
+$this->db->from('kelas');
+$this->db->where('$nm_kelas');
+$this->db->order_by('nm_kelas', 'asc');
+$query->db->get();
+
+$data = $query->result_array();
 //merubah waktu kedalam format indonesia
 $hari = array ("Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu");
 $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
@@ -51,8 +55,11 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 									<?php
 									//penting nech buat kasih nilai awal cekbox
 									$no=0;
-									$query=mysql_query("SELECT * FROM siswa WHERE nm_kelas='$nm_kelas' ORDER BY nis ASC");
-									while($data=mysql_fetch_array($query)){
+									$this->db->from('siswa');
+									$this->db->where('$nm_kelas');
+									$this->db->order_by('nis', 'asc');
+									$query->db->get();
+									while($data=$query->result_array()){
 									?>
 									<tr>	
 									<input type="hidden" value="<?php <?= $data['nm_kelas'] >?;?>" name="nm_kelas"/>
