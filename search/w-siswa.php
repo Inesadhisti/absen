@@ -58,10 +58,14 @@ include('inc/nav-walikelas.php');
 								//membentuk klausa where pencarian 
 								if(isset(FILTER_INPUT(INPUT_GET, 'q')) && FILTER_INPUT(INPUT_GET, 'q')){
 								(FILTER_INPUT(INPUT_GET, 'q'); 
-								$sql = "SELECT * FROM siswa WHERE nama like '%$q%' or  nis like '%$q%' limit 10";
-								$result = mysql_query($sql);
-								if(mysql_num_rows($result) > 0) {
-								while($data = mysql_fetch_array($result))
+								$this->db->from('siswa');
+								$this->db->like('nama', '%$q%'); this->db->or_like('nis', '%$q%');
+								$this->db->limit(10);
+								$query->db->get();
+								$result = sql-> result_array();
+								 
+								if($result->result_array() > 0) {
+								while($data = $resutl->result_array())
 								{
  								?>
 								<tr>
