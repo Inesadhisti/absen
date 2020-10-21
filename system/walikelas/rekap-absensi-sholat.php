@@ -66,8 +66,8 @@ include('system/inc/nav-walikelas.php');
 									$this->db->from('kelas');
 									$this->db->order_by('nm_kelas', 'asc');
 									$query->db->get();
-									$query=mysql_query("SELECT * FROM kelas ORDER BY nm_kelas ASC",$connect);
-									while($data=mysql_fetch_array($query))
+									
+									while($data=$query->result_array())
 									{
 									?>
 									<option value="<?php  <?= $data['nm_kelas'] >?; ?>"><?php  <?= $data['nm_kelas'] >?; ?></option>
@@ -130,11 +130,18 @@ include('system/inc/nav-walikelas.php');
 								$this->db->where('$nm_kelas', 'tanggal between $tgl1 AND $tgl2');
 								$this->db->order_by('nis', 'asc');
 								$query->db->get(absensi_sholat);
-								while($row=mysql_fetch_array($query)){
-								$data=mysql_fetch_array(mysql_query("SELECT * FROM siswa WHERE nis='$row[nis]'",$connect));
+								while($row=$query->result_array()){
+									$data = 	$this->db->from('siswa');
+											$this->db->where('$row[nis]');
+											$query->db->get();
+									$no = $data->result_array();
+								
 								$ket=$row['ket'];
-								$keterangan=mysql_fetch_array(mysql_query("SELECT * FROM absensi_sholat WHERE nis='$row[nis]'",$connect));
-
+									$keterangan = 	$this->db->from('absensi_sholat');
+											$this->db->where('$row[nis]');
+											$query->db->get();
+									$no = $keterangan->result_array();
+								
 								?>
 
 								<tr>
@@ -146,7 +153,7 @@ include('system/inc/nav-walikelas.php');
 									$this->db->where('$row[nis]', ,'S', 'tanggal between $tgl1 AND $tgl2');
 									$query->db->get();
 									
-									$jumlah=mysql_num_rows($hadir);
+									$jumlah=$hadir->result_array();
 									<?= $jumlah >?;
 									?>
 								</td>
@@ -156,7 +163,7 @@ include('system/inc/nav-walikelas.php');
 									$this->db->where('$row[nis]', ,'TS', 'tanggal between $tgl1 AND $tgl2');
 									$query->db->get();
 									
-									$jumlah=mysql_num_rows($hadir);
+									$jumlah=$hadir->result_array();
 									<?= $jumlah >?;
 									?>
 								</td>
@@ -166,7 +173,7 @@ include('system/inc/nav-walikelas.php');
 									$this->db->where('$row[nis]', ,'HL', 'tanggal between $tgl1 AND $tgl2');
 									$query->db->get();
 									
-									$jumlah=mysql_num_rows($hadir);
+									$jumlah=$hadir->result_array();
 									<?= $jumlah >?;
 									?>
 								</td>
@@ -176,7 +183,7 @@ include('system/inc/nav-walikelas.php');
 									$this->db->where('$row[nis]', ,'TS', 'HL', 'tanggal between $tgl1 AND $tgl2');
 									$query->db->get();
 									
-									$jumlah=mysql_num_rows($hadir);
+									$jumlah=$hadir->result_array();
 									<?= $jumlah >?;
 									?>
 
