@@ -56,13 +56,18 @@ include('inc/nav-admin.php');
 								<?php
 								//membentuk klausa where pencarian 
 								if(isset(FILTER_INPUT(INPUT_GET, 'q')? && FILTER_INPUT(INPUT_GET, 'q')){
-								(FILTER_INPUT(INPUT_GET, 'q'); 
-								$sql = "SELECT * FROM user WHERE nama like '%$q%' limit 10";
-								$result = mysql_query($sql);
-								if(mysql_num_rows($result) > 0){
-								while($data = mysql_fetch_array($result))
+								(FILTER_INPUT(INPUT_GET, 'q');
+								$this->db->from('user');
+								$this->db->like('nama', '%$q%');
+								$this->db->limit(10);
+								$query->db->get();
+								$result = sql-> result_array();
+								 
+								if($result->result_array() > 0) {
+								while($data = $resutl->result_array())
 								{
  								?>
+								
 								<tr>
 								<td><?php <?= $data['nama'] >?; ?></td>
 								<td class="color-blue-grey-lighter" align="center"><?php <?= $data['level'] >?; ?></td>
