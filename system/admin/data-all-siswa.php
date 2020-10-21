@@ -97,9 +97,15 @@ include('system/inc/nav-admin.php');
 								$pg = 1;
 								} else {
 								$posisi = ($pg-1)*$batas; }
-								$sql = mysql_query("SELECT * FROM siswa ORDER BY nama ASC limit $posisi, $batas ");
+								
+								$this->db->from('siswa');
+								$this->db->like('nama', 'asc');
+								$this->db->limit('$posisi', '$batas');
+								$query->db->get();
+								$result = sql-> result_array();
+													
 								$no = 1+$posisi;
-								while ($data = mysql_fetch_assoc($sql)) 
+								while($data = $sql->result_array()) 
 								{
 								?>
 								<tr>
@@ -128,7 +134,9 @@ include('system/inc/nav-admin.php');
 					<div class="col-md-6">
 						<?php
 						//hitung jumlah data
-						$jml_data = mysql_num_rows(mysql_query("SELECT * FROM siswa"));
+						$jml_data = 	$this->db->from('siswa');
+								$query->db->get();
+						$no = $jml_data->result_array();
 						//Jumlah halaman
 						$JmlHalaman = ceil($jml_data/$batas); //ceil digunakan untuk pembulatan keatas
 						?>
