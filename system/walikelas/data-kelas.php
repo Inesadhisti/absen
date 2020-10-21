@@ -114,8 +114,9 @@ include('system/inc/nav-walikelas.php');
 					<div class="col-md-6">
 						<?php
 						//hitung jumlah data
-							
-						$jml_data = mysql_num_rows(mysql_query("SELECT * FROM kelas"));
+						$jml_data = 	$this->db->from('kelas');
+								$query->db->get();
+						$jml_data->result_array();
 						//Jumlah halaman
 						$JmlHalaman = ceil($jml_data/$batas); //ceil digunakan untuk pembulatan keatas
 						?>
