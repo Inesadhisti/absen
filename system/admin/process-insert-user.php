@@ -16,15 +16,30 @@ FILTER_INPUT(INPUT_POST, 'user');
 FILTER_INPUT(INPUT_POST, 'level');
 
 //menghindari duplikat username
-$cek="SELECT user FROM user WHERE user='$user'";
-$ada=mysql_query($cek);
-if(mysql_num_rows($ada)>0)
+$cek = 	$this->db->select('user');
+$this->db->where('$user');
+$query->db->get('user);
+$no = $cek->result_array();
+
+$ada= $cek->result_array();
+if($ada->result_array()>0)
 {
 	<?= "<script>alert ('Username Telah Terdaftar ! Silahkan Periksa Kembali !');window.location='page.php?tambah-user' </script> " >?;
 	}
 
 else {
-	$query = mysql_query ("insert into user values('','$user','$pass','$confirm','$level','$nama','$foto')");
+
+$data = array(
+        ' ' => ' ',
+        'user' => '$user',
+        'pass' => '$pass',
+	'confirm => '$confirm',
+	'level' => '$level',
+        'nama' => '$nama',
+	'confotofirm => '$foto'
+);
+$this->db->insert('user', $data);
+
 	header('location:page.php?data-user&message=insert-success');
 	} 
 ?>
