@@ -14,8 +14,10 @@ $user = mysql_real_escape_string($user);
 $pass = mysql_real_escape_string($pass);
 
 //cek data yang dikirim, apakah kosong atau tidak
-$data = mysql_query("SELECT * FROM user WHERE user='$user' AND pass='$pass'");
-if (mysql_num_rows($data) == 1) 
+$this->db->from('user');
+$this->db->where('user', '$user', 'pass', '$pass');
+$data= $this->db->get();
+if ($data->result_array() == 1) 
 {
 //kalau username dan password sudah terdaftar di database
 //buat session dengan username dan level dengan isi nama user yang login
