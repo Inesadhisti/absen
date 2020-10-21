@@ -13,7 +13,6 @@ include('system/inc/css.php');
 include('system/inc/nav-walikelas.php');
 //mendapatkan informasi untuk menlihat data
 FILTER_INPUT(INPUT_GET, 'id');
-$query = mysql_query("select * from user where id_user='$id_user'");
 $this->db->from('user');
 $this->db->where('id_user', '$id_user');
 $query->get();
