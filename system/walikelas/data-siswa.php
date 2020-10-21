@@ -14,7 +14,9 @@ include('system/inc/nav-walikelas.php');
 //mendapatkan informasi dari data kelas
 FILTER_INPUT(INPUT_GET, 'kelas');
 $query = mysql_query("SELECT * FROM kelas");
-$data = mysql_fetch_array($query);
+$this->db->from('kelas');
+$query->db->get();
+$data = $query->result_array();
 ?>
 
 	<div class="page-content">
