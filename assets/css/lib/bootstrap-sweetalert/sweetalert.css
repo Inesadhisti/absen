@@ -585,14 +585,7 @@ body.stop-scrolling {
   color: #333;
 }
 
-.la-ball-fall {
-  display: inline-block;
-  float: none;
-  background-color: currentColor;
-  border: 0 solid currentColor;
-}
-
-.la-ball-fall > div {
+.la-ball-fall > div:nth-child(1) {
   width: 10px;
   height: 10px;
   margin: 4px;
