@@ -60,7 +60,7 @@ $bln = array ("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agust
 									$no=0;
 									$i=1;
 									$query=mysql_query("SELECT s.nama, s.nis, s.nm_kelas, s.jns_kel, ass.ket FROM siswa s LEFT JOIN absensi_sholat ass ON s.nis = ass.nis WHERE s.nm_kelas='$nm_kelas' AND (ass.tanggal='$tanggal' OR ass.tanggal IS NULL) ORDER BY s.nis ASC");
-									while($data=mysql_fetch_array($query)){
+									while($data=$query->result_array()){
 									?>
 									<tr>	
 									<input type="hidden" value="<?php <?= $data['nm_kelas'] >? ;?>" name="nm_kelas"/>
