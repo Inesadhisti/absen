@@ -117,7 +117,7 @@ include('system/inc/nav-admin.php');
 						<?php
 						//hitung jumlah data
 						$jml_data = 	$this->db->from('kelas');
-								$query->db->get();
+								$jml_data= $this->db->get();
 						$jml_data->result_array();
 						//Jumlah halaman
 						$JmlHalaman = ceil($jml_data/$batas); //ceil digunakan untuk pembulatan keatas
